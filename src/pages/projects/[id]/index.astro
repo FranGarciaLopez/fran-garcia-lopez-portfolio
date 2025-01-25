@@ -1,9 +1,9 @@
 ---
 import type { GetStaticPaths } from "astro";
-import projectData from "../../data/projects.json";
-import ProjectFeatures from "../../components/ProjectsFeatures.astro";
-import NavBar from "../../components/NavBar.astro";
-import BentoGrid from "../../components/BentoGrid.astro";
+import projectData from "../../../data/projects.json";
+import ProjectFeatures from "../../../components/ProjectsFeatures.astro";
+import NavBar from "../../../components/NavBar.astro";
+import BentoGrid from "../../../components/BentoGrid.astro";
 
 // Generate static paths for each project
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -84,7 +84,7 @@ const { project } = Astro.props as { project: Project };
                     </div>
 
                     <!-- Project Images -->
-                    <BentoGrid project_images={project.images} class="mt-8" />
+                    <BentoGrid project_images={project.images} />
 
                     <!-- Project Features -->
                     {
