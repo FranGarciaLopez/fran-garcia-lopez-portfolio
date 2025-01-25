@@ -9,20 +9,19 @@ const { project_images } = Astro.props as {
 ---
 
 <section
-    class="w-full max-w-[1400px] grid grid-cols-10 auto-rows-[35rem] gap-4 py-5"
+    class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 auto-rows-[20rem] md:auto-rows-[25rem] lg:auto-rows-[35rem] gap-4 py-5"
 >
     {
         project_images.map((image, index) => (
             <div
-                class={`rounded-lg overflow-hidden ${
-                    index === 0
-                        ? "col-span-10"
-                        : index === 3
-                          ? "col-span-10"
-                          : index === 1 || index === 5
-                            ? "col-span-10 md:col-span-4"
-                            : "col-span-10 md:col-span-6"
-                }`}
+                class={`rounded-lg overflow-hidden 
+                    ${
+                        index === 0 || index === 3
+                            ? "md:col-span-2 lg:col-span-10"
+                            : index === 1 || index === 5
+                              ? "md:col-span-1 lg:col-span-4"
+                              : "md:col-span-1 lg:col-span-6"
+                    }`}
             >
                 <img
                     src={image}

@@ -5,11 +5,10 @@ import ProjectFeatures from "../../../components/ProjectsFeatures.astro";
 import NavBar from "../../../components/NavBar.astro";
 import BentoGrid from "../../../components/BentoGrid.astro";
 
-// Generate static paths for each project
 export const getStaticPaths: GetStaticPaths = async () => {
           return projectData.projects.map((project) => ({
-                    params: { id: project.id.toString() }, // Ensure ID is a string
-                    props: { project }, // Pass the project data as props
+                    params: { id: project.id.toString() },
+                    props: { project },
           }));
 };
 
@@ -40,17 +39,17 @@ const { project } = Astro.props as { project: Project };
 ---
 
 <section
-          class="relative min-h-screen bg-[#222428] text-white py-16 px-6 sm:px-12"
+          class="relative min-h-screen bg-[#222428] text-white py-8 sm:py-12 px-4 sm:px-6 lg:px-12 xl:px-20"
 >
-          <div class="max-w-4xl mx-auto">
+          <div class="max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto">
                     <!-- Back arrow -->
                     <button
                               type="button"
-                              class="text-[#eae0d5] rounded-xl py-2 hover:bg-[#c2b280] hover:text-black px-3 transition-all duration-300"
-                              onclick="history.back();"
+                              class="text-[#eae0d5] rounded-xl py-2 px-4 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
+                              onclick="window.history.back()"
                     >
                               <svg
-                                        class="w-6 h-6"
+                                        class="w-5 h-5 sm:w-6 sm:h-6"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -64,19 +63,21 @@ const { project } = Astro.props as { project: Project };
 
                     <!-- Project Title -->
                     <h1
-                              class="text-[5vh] md:text-[5vw] font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start mt-8"
+                              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+            font-serif leading-tight tracking-wide
+            text-[#f5f5dc] uppercase text-start
+            mt-4 sm:mt-6"
                     >
                               {project.name}
-                              <span class="italic text-[#eae0d5]">Details</span>
                     </h1>
 
-                    <!-- Project Description -->
-                    <div
-                              class="mt-6 text-lg italic text-[#eae0d5] leading-relaxed text-start"
-                    >
+                    <div class="mt-4 sm:mt-6 leading-relaxed text-start">
                               {
                                         project.description.map((desc) => (
-                                                  <p class="py-2">
+                                                  <p
+                                                            class="py-2 text-sm sm:text-base md:text-lg 
+                        tracking-wide text-[#eae0d5]"
+                                                  >
                                                             {desc.text}
                                                   </p>
                                         ))
@@ -84,12 +85,15 @@ const { project } = Astro.props as { project: Project };
                     </div>
 
                     <!-- Project Images -->
-                    <BentoGrid project_images={project.images} />
+                    <BentoGrid
+                              project_images={project.images}
+                              class="mt-6 sm:mt-8"
+                    />
 
                     <!-- Project Features -->
                     {
                               project.algorithm_features && (
-                                        <div class="my-12">
+                                        <div class="my-8 sm:my-12">
                                                   <ProjectFeatures
                                                             algorithm_features={
                                                                       project.algorithm_features
@@ -101,7 +105,9 @@ const { project } = Astro.props as { project: Project };
 
                     <!-- Additional Details -->
                     <div
-                              class="text-[#c2b280] text-start border-t border-[#44484d] pt-6 grid grid-cols-1 md:grid-cols-2 gap-6"
+                              class="text-[#c2b280] text-start border-t border-[#44484d] pt-6
+            grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+            gap-4 sm:gap-6 lg:gap-8"
                     >
                               <p>
                                         <strong class="text-[#f5f5dc]"
@@ -117,14 +123,12 @@ const { project } = Astro.props as { project: Project };
                                                   project.institution.includes(
                                                             "MiduDev",
                                                   ) ? (
-                                                            <>
+                                                            <span class="text-[#c2b280] font-bold">
                                                                       Inspired
-                                                                      by{" "}
-                                                                      <span class="text-[#c2b280] font-bold">
-                                                                                MiduDev's
-                                                                      </span>{" "}
+                                                                      by
+                                                                      MiduDev's
                                                                       tutorial
-                                                            </>
+                                                            </span>
                                                   ) : (
                                                             <span class="text-[#fcb700]">
                                                                       {
@@ -141,10 +145,12 @@ const { project } = Astro.props as { project: Project };
                                         {project.timeframe}
                               </p>
                               <!-- Link to the project -->
-                              <div class="mt-8 text-lg">
+                              <div class="mt-4 sm:mt-0">
                                         <a
                                                   href={project.url}
-                                                  class="inline-block px-8 py-3 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all"
+                                                  class="inline-block px-4 sm:px-6 md:px-8 py-2 sm:py-3
+                    text-black bg-[#eae0d5] rounded-lg
+                    hover:bg-[#c2b280] transition-all text-sm sm:text-base"
                                         >
                                                   Check the Project
                                         </a>

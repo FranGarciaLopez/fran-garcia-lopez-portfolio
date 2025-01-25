@@ -1,5 +1,4 @@
 ---
-import Layout from "../layouts/Layout.astro";
 interface AlgorithmFeature {
           description: string;
           benefits?: string[];
@@ -15,9 +14,9 @@ const { algorithm_features } = Astro.props as {
 };
 ---
 
-<div class="space-y-8">
+<div class="container mx-auto px-4 max-w-7xl space-y-6 md:space-y-8">
           <h2
-                    class="text-[5vh] md:text-[5vw] font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start"
+                    class="text-2xl md:text-3xl lg:text-4xl font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start"
           >
                     Algorithm <span class="italic text-[#eae0d5]">Features</span
                     >
@@ -25,25 +24,25 @@ const { algorithm_features } = Astro.props as {
           {
                     Object.entries(algorithm_features).map(([key, feature]) => (
                               <div
-                                        class="border border-[#44484d] p-8 rounded-lg bg-[#1a1c1e] 
+                                        class="border border-[#44484d] md:p-6 lg:p-8 rounded-lg bg-[#1a1c1e] 
                                         transform transition-all duration-500 
                                         hover:bg-gradient-to-t from-[#2c2f36] via-[#3c4049] to-[#4a4e58]
                                         hover:shadow-2xl hover:scale-105"
                               >
-                                        <h3 class="text-3xl font-serif tracking-wide text-[#f5f5dc] capitalize">
+                                        <h3 class="text-xl md:text-2xl lg:text-3xl font-serif tracking-wide text-[#f5f5dc] capitalize">
                                                   {key.replace(/_/g, " ")}
                                         </h3>
-                                        <p class="text-lg text-[#a1a1aa] mt-4 leading-relaxed">
+                                        <p class="text-base md:text-lg text-[#a1a1aa] mt-3 md:mt-4 leading-relaxed">
                                                   {feature.description}
                                         </p>
 
                                         {feature.benefits && (
-                                                  <ul class="list-disc list-inside text-[#c2b280] mt-4">
+                                                  <ul class="list-disc list-inside text-[#c2b280] mt-3 md:mt-4 space-y-2">
                                                             {feature.benefits.map(
                                                                       (
                                                                                 benefit,
                                                                       ) => (
-                                                                                <li class="leading-relaxed">
+                                                                                <li class="leading-relaxed text-sm md:text-base">
                                                                                           {
                                                                                                     benefit
                                                                                           }
@@ -54,12 +53,12 @@ const { algorithm_features } = Astro.props as {
                                         )}
 
                                         {feature.steps && (
-                                                  <ol class="list-decimal list-inside text-[#eae0d5] mt-4">
+                                                  <ol class="list-decimal list-inside text-[#eae0d5] mt-3 md:mt-4 space-y-2">
                                                             {feature.steps.map(
                                                                       (
                                                                                 step,
                                                                       ) => (
-                                                                                <li class="leading-relaxed">
+                                                                                <li class="leading-relaxed text-sm md:text-base">
                                                                                           {
                                                                                                     step
                                                                                           }
