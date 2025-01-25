@@ -1,0 +1,65 @@
+---
+import Icons from "./Icons.astro";
+import projectData from "../data/projects.json";
+const projects = projectData.projects;
+---
+
+<section class="container mx-auto text-white">
+          <h2 class="text-3xl font-bold text-blue-400 mb-4">
+                    Technologies Used
+          </h2>
+          {
+                    projects.map((project, index) => (
+                              <div class="py-6 mb-6">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                  <div>
+                                                            <h3 class="text-xl font-semibold text-blue-300 mb-2">
+                                                                      Frontend
+                                                            </h3>
+                                                            <ul class="flex flex-wrap gap-4">
+                                                                      {project.technologies.frontend.map(
+                                                                                (
+                                                                                          tech,
+                                                                                ) => (
+                                                                                          <li
+                                                                                                    class="flex items-center bg-slate-700 px-4 py-2 rounded text-gray-200
+                                                                                          hover:bg-gray-600 cursor-pointer transition-colors duration-300"
+                                                                                          >
+                                                                                                    <Icons
+                                                                                                              tech={
+                                                                                                                        tech
+                                                                                                              }
+                                                                                                    />
+                                                                                          </li>
+                                                                                ),
+                                                                      )}
+                                                            </ul>
+                                                  </div>
+                                                  <div>
+                                                            <h3 class="text-xl font-semibold text-blue-300 mb-2">
+                                                                      Backend
+                                                            </h3>
+                                                            <ul class="flex flex-wrap gap-4">
+                                                                      {project.technologies.backend.map(
+                                                                                (
+                                                                                          tech,
+                                                                                ) => (
+                                                                                          <li
+                                                                                                    class="flex items-center bg-slate-700 px-4 py-2 rounded
+                                                                                          hover:bg-gray-600 cursor-pointer transition-colors duration-300"
+                                                                                          >
+                                                                                                    <Icons
+                                                                                                              tech={
+                                                                                                                        tech
+                                                                                                              }
+                                                                                                    />
+                                                                                          </li>
+                                                                                ),
+                                                                      )}
+                                                            </ul>
+                                                  </div>
+                                        </div>
+                              </div>
+                    ))
+          }
+</section>

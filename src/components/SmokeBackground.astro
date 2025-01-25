@@ -1,0 +1,100 @@
+---
+
+---
+
+<div id="smoke-bg" class="fixed top-0 h-full w-full"></div>
+
+<script>
+          import * as THREE from "three";
+
+          const $smokeBg = document.getElementById("smoke-bg");
+
+          const w = window.innerWidth;
+          const h = window.innerHeight;
+
+          // inicializar three.js
+          // camara, escena, render
+
+          // scene
+          const scene = new THREE.Scene();
+
+          // camera
+          const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
+          camera.position.z = 10;
+          scene.add(camera);
+
+          // renderer
+          const renderer = new THREE.WebGLRenderer();
+          renderer.setSize(w, h);
+
+          // bg color
+          renderer.setClearColor(0x1a1a1a, 1);
+          $smokeBg?.appendChild(renderer.domElement);
+
+          // añadir luz
+          const light = new THREE.DirectionalLight(0xffffff, 0.5);
+          light.position.set(-1, 3, 1);
+          scene.add(light);
+
+          const ambientLight = new THREE.AmbientLight(0x666666, 0.3);
+          scene.add(ambientLight);
+
+          // crear un objeto
+          // geometria, material, mesh
+          const smokeParticles: THREE.Mesh[] = [];
+
+          const loader = new THREE.TextureLoader();
+          loader.crossOrigin = "";
+
+          loader.load("./images/smoke.png", (texture) => {
+                    // crear plano geometrico
+                    const smokeGeo = new THREE.PlaneGeometry(300, 300);
+
+                    // crear material
+                    const smokeMaterial = new THREE.MeshLambertMaterial({
+                              map: texture,
+                              transparent: true,
+                              opacity: 0.2, // Lower opacity for lighter effect
+                              depthWrite: false, // Prevent smoke from affecting text readability
+                    });
+
+                    const NUM_OF_PARTICLES = 150;
+                    for (let p = 0; p < NUM_OF_PARTICLES; p++) {
+                              const particle = new THREE.Mesh(
+                                        smokeGeo,
+                                        smokeMaterial,
+                              );
+
+                              particle.position.set(
+                                        Math.random() * 1000 - 500,
+                                        Math.random() * 400 - 200,
+                                        Math.random() * 1000 - 500,
+                              );
+
+                              particle.rotation.z = Math.random() * 360;
+                              // añadir a la escena
+                              scene.add(particle);
+                              // añadir a la lista de particulas
+                              smokeParticles.push(particle);
+                    }
+          });
+
+          const animate = () => {
+                    requestAnimationFrame(animate);
+
+                    smokeParticles.forEach((p) => {
+                              p.rotation.z += 0.001;
+                    });
+
+                    renderer.render(scene, camera);
+          };
+
+          animate();
+
+          // resize
+          window.addEventListener("resize", () => {
+                    camera.aspect = w / h;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+          });
+</script>
