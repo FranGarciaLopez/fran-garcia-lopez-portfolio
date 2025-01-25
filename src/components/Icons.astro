@@ -1,0 +1,32 @@
+---
+import viteIcon from "../../public/icons/vite-icon.svg";
+import reactIcon from "../../public/icons/react-icon.svg";
+import axiosIcon from "../../public/icons/axios-icon.svg";
+import fontAwesomeIcon from "../../public/icons/fontawesome-icon.svg";
+import tailwindIcon from "../../public/icons/tailwind-icon.svg";
+import socketIOIcon from "../../public/icons/socketio-icon.svg";
+import nodeIcon from "../../public/icons/node-icon.svg";
+import expressIcon from "../../public/icons/express-icon.svg";
+import mongoDBIcon from "../../public/icons/mongodb-icon.svg";
+import mongooseIcon from "../../public/icons/mongoose-icon.svg";
+import jwtIcon from "../../public/icons/jwt-icon.svg";
+
+const techIcons: Record<string, string> = {
+          "Vite with React": viteIcon.src,
+          "React Router": reactIcon.src,
+          Axios: axiosIcon.src,
+          "Font Awesome": fontAwesomeIcon.src,
+          "Tailwind CSS": tailwindIcon.src,
+          "Socket.IO": socketIOIcon.src,
+          "Node.js": nodeIcon.src,
+          Express: expressIcon.src,
+          MongoDB: mongoDBIcon.src,
+          Mongoose: mongooseIcon.src,
+          JWT: jwtIcon.src,
+};
+
+const { tech } = Astro.props as { tech: keyof typeof techIcons };
+const iconPath = techIcons[tech] || null;
+---
+
+{iconPath ? <img src={iconPath} alt={tech} class="w-8 h-8" /> : null}

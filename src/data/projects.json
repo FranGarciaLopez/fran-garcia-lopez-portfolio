@@ -1,0 +1,115 @@
+{
+          "projects": [
+                    {
+                              "id": 1,
+                              "name": "Groupify",
+                              "role": "Full Stack Developer",
+                              "institution": "Nuclio Digital School",
+                              "timeframe": "From June 2024 to January 2025",
+                              "url": "https://rojo-frontend.onrender.com/",
+                              "description": [
+                                        {
+                                                  "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
+                                        },
+                                        {
+                                                  "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
+                                        },
+                                        {
+                                                  "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
+                                        }
+                              ],
+                              "bg-image": "/images/Nuclio/Nuclio-final-project.png",
+                              "images": [
+                                        "/images/Nuclio/Nuclio-final-project-landing.png",
+                                        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.png",
+                                        "/images/Nuclio/Nuclio-final-project-dashboard.png",
+                                        "/images/Nuclio/Nuclio-final-project-event-details.png",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.png",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.png"
+                              ],
+                              "technologies": {
+                                        "frontend": [
+                                                  "Vite with React",
+                                                  "React Router",
+                                                  "Axios",
+                                                  "Font Awesome",
+                                                  "Tailwind CSS",
+                                                  "Socket.IO"
+                                        ],
+                                        "backend": [
+                                                  "Node.js",
+                                                  "Express",
+                                                  "Socket.IO",
+                                                  "MongoDB",
+                                                  "Mongoose",
+                                                  "JWT"
+                                        ]
+                              },
+                              "algorithm_features": {
+                                        "dynamic_grouping": {
+                                                  "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
+                                                  "benefits": [
+                                                            "Prevents event duplication through an efficient tracking system."
+                                                  ]
+                                        },
+                                        "group_formation_process": {
+                                                  "description": "Users with common interests are extracted through aggregated queries.",
+                                                  "steps": [
+                                                            "A random shuffle method is used to ensure diversity in group formation.",
+                                                            "Users are divided into pairs using list partitioning techniques."
+                                                  ]
+                                        },
+                                        "unique_event_assignment": {
+                                                  "description": "Event availability for each user is verified in real time.",
+                                                  "benefits": [
+                                                            "Ensures fairness by avoiding duplicate event assignments to groups."
+                                                  ]
+                                        },
+                                        "data_persistence": {
+                                                  "description": "Formed groups are stored in the MongoDB database.",
+                                                  "steps": [
+                                                            "Group references are updated in user profiles."
+                                                  ]
+                                        }
+                              }
+                    },
+                    {
+                              "id": 2,
+                              "name": "Tesla Clone Landing Page",
+                              "role": "Frontend Development",
+                              "institution": "Inspired in MiduDev's tutorial",
+                              "timeframe": "June 2023",
+                              "url": "https://tesla-clone-website-6cz8.onrender.com/",
+                              "description": [
+                                        {
+                                                  "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
+                                        },
+                                        {
+                                                  "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
+                                        }
+                              ],
+                              "bg-image": "/images/tesla-landing-clone.png",
+                              "images": [
+                                        "/images/tesla-landing-clone-1.png"
+                              ],
+                              "technologies": {
+                                        "frontend": [
+                                                  "Vite with React",
+                                                  "React Router",
+                                                  "Axios",
+                                                  "Font Awesome",
+                                                  "Tailwind CSS",
+                                                  "Socket.IO"
+                                        ],
+                                        "backend": [
+                                                  ".js",
+                                                  "Express",
+                                                  "Socket.IO",
+                                                  "MongoDB",
+                                                  "Mongoose",
+                                                  "JWT"
+                                        ]
+                              }
+                    }
+          ]
+}
