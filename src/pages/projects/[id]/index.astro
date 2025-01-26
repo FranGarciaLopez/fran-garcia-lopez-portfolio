@@ -48,7 +48,7 @@ const { project } = Astro.props as { project: Project };
                               onclick="window.history.back()"
                     >
                               <svg
-                                        class="w-12 w-14 h-12 h-14"
+                                        class="w-14 h-14"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                               >
@@ -58,15 +58,13 @@ const { project } = Astro.props as { project: Project };
                                                   clip-rule="evenodd"></path>
                               </svg>
                     </button>
-
                     <h1
-                              class="text-5xl lg:text-4xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6 lg:px-0"
+                              class="text-5xl lg:text-4xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
                     >
                               {project.name}
                     </h1>
-
                     <div
-                              class="mt-6 text-3xl lg:text-lg text-[#eae0d5] leading-relaxed lg:px-0"
+                              class="mt-6 text-3xl lg:text-lg text-[#eae0d5] leading-relaxed"
                     >
                               {
                                         project.description.map((desc) => (
@@ -76,23 +74,18 @@ const { project } = Astro.props as { project: Project };
                                         ))
                               }
                     </div>
-
                     <BentoGrid project_images={project.images} class="mt-12" />
-
                     {
                               project.algorithm_features && (
-                                        <div>
-                                                  <ProjectFeatures
-                                                            algorithm_features={
-                                                                      project.algorithm_features
-                                                            }
-                                                  />
-                                        </div>
+                                        <ProjectFeatures
+                                                  algorithm_features={
+                                                            project.algorithm_features
+                                                  }
+                                        />
                               )
                     }
-
                     <div
-                              class="text-[#c2b280] pt-10 text-2xl md:text-xl space-y-4 px-4 lg:px-0"
+                              class="text-[#c2b280] pt-10 text-2xl md:text-xl space-y-4"
                     >
                               <p>
                                         <strong class="text-[#f5f5dc]"
@@ -129,12 +122,10 @@ const { project } = Astro.props as { project: Project };
                                         >
                                         {project.timeframe}
                               </p>
-
                               <div class="mt-6">
                                         <a
                                                   href={project.url}
-                                                  class="inline-block text-black fornt-bold bg-[#eae0d5] rounded-lg
-                                                  hover:bg-[#c2b280] transition-all duration-300 py-3 px-6"
+                                                  class="inline-block text-black font-bold bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-3 px-6"
                                         >
                                                   Check the Project
                                         </a>
@@ -142,7 +133,6 @@ const { project } = Astro.props as { project: Project };
                     </div>
           </div>
 </section>
-
 <script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
           defer></script>
