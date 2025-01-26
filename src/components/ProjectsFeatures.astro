@@ -16,7 +16,7 @@ const { algorithm_features } = Astro.props as {
 
 <div class="container mx-auto max-w-7xl lg:px-0">
           <h2
-                    class="text-6xl lg:text-4xl mt-10
+                    class="text-4xl sm:text-6xl md:text-5xl lg:text-4xl mt-10
                     md:mt-20 md:mb-10
                     font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start"
           >
@@ -32,12 +32,12 @@ const { algorithm_features } = Astro.props as {
                                hover:shadow-2xl hover:scale-105"
                               >
                                         <h3
-                                                  class="text-4xl md:text-4xl font-serif tracking-wide text-[#f5f5dc] capitalize
+                                                  class="text-3xl sm:text-5xl md:text-4xl font-serif tracking-wide text-[#f5f5dc] capitalize
                                         md:mb-4 md:mt-0"
                                         >
                                                   {key.replace(/_/g, " ")}
                                         </h3>
-                                        <p class="text-3xl md:text-3xl text-[#a1a1aa] mt-4 leading-relaxed py-3 tracking-wide">
+                                        <p class="text-xl sm:text-3xl md:text-3xl text-[#a1a1aa] mt-4 leading-relaxed py-3 tracking-wide">
                                                   {feature.description}
                                         </p>
 
@@ -47,7 +47,7 @@ const { algorithm_features } = Astro.props as {
                                                                       (
                                                                                 benefit,
                                                                       ) => (
-                                                                                <li class="leading-relaxed text-3xl md:text-3xl">
+                                                                                <li class="leading-relaxed text-xl sm:text-3xl md:text-2xl">
                                                                                           {
                                                                                                     benefit
                                                                                           }
@@ -63,7 +63,7 @@ const { algorithm_features } = Astro.props as {
                                                                       (
                                                                                 step,
                                                                       ) => (
-                                                                                <li class="leading-relaxed text-3xl md:text-3xl">
+                                                                                <li class="leading-relaxed text-xl sm:text-3xl md:text-2xl">
                                                                                           {
                                                                                                     step
                                                                                           }
