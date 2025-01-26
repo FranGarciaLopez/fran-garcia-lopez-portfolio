@@ -39,16 +39,16 @@ const { project } = Astro.props as { project: Project };
 ---
 
 <section
-          class="relative min-h-screen bg-[#222428] text-white py-12 px-4 sm:px-6 lg:px-8"
+          class="relative min-h-screen bg-[#222428] text-white py-16 px-8 lg:px-12"
 >
           <div class="max-w-4xl mx-auto">
                     <button
                               type="button"
-                              class="text-[#eae0d5] rounded-xl py-3 px-5 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
+                              class="text-[#eae0d5] rounded-2xl py-4 px-6 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
                               onclick="window.history.back()"
                     >
                               <svg
-                                        class="w-8 sm:w-10 h-8 sm:h-10"
+                                        class="w-12 w-14 h-12 h-14"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                               >
@@ -60,24 +60,24 @@ const { project } = Astro.props as { project: Project };
                     </button>
 
                     <h1
-                              class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6 p-6 sm:p-8"
+                              class="text-5xl lg:text-4xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6 px-8 lg:px-0"
                     >
                               {project.name}
                     </h1>
 
                     <div
-                              class="mt-6 text-2xl text-[#eae0d5] leading-relaxed p-6 sm:p-8"
+                              class="mt-6 text-3xl lg:text-lg text-[#eae0d5] leading-relaxed px-8 lg:px-0"
                     >
                               {
                                         project.description.map((desc) => (
-                                                  <p class="py-4">
+                                                  <p class="py-3">
                                                             {desc.text}
                                                   </p>
                                         ))
                               }
                     </div>
 
-                    <BentoGrid project_images={project.images} class="mt-8" />
+                    <BentoGrid project_images={project.images} class="mt-12" />
 
                     {
                               project.algorithm_features && (
@@ -92,7 +92,7 @@ const { project } = Astro.props as { project: Project };
                     }
 
                     <div
-                              class="text-[#c2b280] pt-6 text-lg sm:text-xl md:text-2xl space-y-4 p-6 sm:p-8"
+                              class="text-[#c2b280] pt-10 text-2xl md:text-3xl space-y-4"
                     >
                               <p>
                                         <strong class="text-[#f5f5dc]"
@@ -129,10 +129,11 @@ const { project } = Astro.props as { project: Project };
                                         >
                                         {project.timeframe}
                               </p>
+
                               <div class="mt-6">
                                         <a
                                                   href={project.url}
-                                                  class="inline-block px-6 py-3 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all duration-300"
+                                                  class="inline-block px-8 py-4 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all duration-300 text-2xl"
                                         >
                                                   Check the Project
                                         </a>
