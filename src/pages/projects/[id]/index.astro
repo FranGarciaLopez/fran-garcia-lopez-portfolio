@@ -5,11 +5,10 @@ import ProjectFeatures from "../../../components/ProjectsFeatures.astro";
 import NavBar from "../../../components/NavBar.astro";
 import BentoGrid from "../../../components/BentoGrid.astro";
 
-// Generate static paths for each project
 export const getStaticPaths: GetStaticPaths = async () => {
           return projectData.projects.map((project) => ({
-                    params: { id: project.id.toString() }, // Ensure ID is a string
-                    props: { project }, // Pass the project data as props
+                    params: { id: project.id.toString() },
+                    props: { project },
           }));
 };
 
@@ -39,19 +38,19 @@ interface Project {
 const { project } = Astro.props as { project: Project };
 ---
 
-<section class="relative min-h-screen bg-[#222428] text-white py-12 px-4">
+<section
+          class="relative min-h-screen bg-[#222428] text-white py-12 px-4 sm:px-6 lg:px-8"
+>
           <div class="max-w-4xl mx-auto">
-                    <!-- Back arrow -->
                     <button
                               type="button"
-                              class="text-[#eae0d5] rounded-xl py-2 px-4 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
+                              class="text-[#eae0d5] rounded-xl py-3 px-5 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
                               onclick="window.history.back()"
                     >
                               <svg
-                                        class="w-5 h-5"
+                                        class="w-8 sm:w-10 h-8 sm:h-10"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg"
                               >
                                         <path
                                                   fill-rule="evenodd"
@@ -60,37 +59,29 @@ const { project } = Astro.props as { project: Project };
                               </svg>
                     </button>
 
-                    <!-- Project Title -->
                     <h1
-                              class="text-4xl font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start mt-6
-                              lg:text-5xl xl:text-6xl mx-4"
+                              class="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6 p-6 sm:p-8"
                     >
                               {project.name}
                     </h1>
 
                     <div
-                              class="mt-6 text-base italic text-[#eae0d5] leading-relaxed text-start mx-4"
+                              class="mt-6 text-2xl text-[#eae0d5] leading-relaxed p-6 sm:p-8"
                     >
                               {
                                         project.description.map((desc) => (
-                                                  <p
-                                                            class="py-2 text-xl tracking-wide
-                                                            lg:text-2xl xl:text-3xl
-                                                  "
-                                                  >
+                                                  <p class="py-4">
                                                             {desc.text}
                                                   </p>
                                         ))
                               }
                     </div>
 
-                    <!-- Project Images -->
                     <BentoGrid project_images={project.images} class="mt-8" />
 
-                    <!-- Project Features -->
                     {
                               project.algorithm_features && (
-                                        <div class="my-12">
+                                        <div>
                                                   <ProjectFeatures
                                                             algorithm_features={
                                                                       project.algorithm_features
@@ -100,10 +91,8 @@ const { project } = Astro.props as { project: Project };
                               )
                     }
 
-                    <!-- Additional Details -->
                     <div
-                              class="text-[#c2b280] text-start border-t border-[#44484d] pt-6 grid gap-4
-                                        mx-4 text-xl lg:text-2xl xl:text-3xl"
+                              class="text-[#c2b280] pt-6 text-lg sm:text-xl md:text-2xl space-y-4 p-6 sm:p-8"
                     >
                               <p>
                                         <strong class="text-[#f5f5dc]"
@@ -140,12 +129,10 @@ const { project } = Astro.props as { project: Project };
                                         >
                                         {project.timeframe}
                               </p>
-                              <!-- Link to the project -->
-                              <div class="mt-6 text-base">
+                              <div class="mt-6">
                                         <a
                                                   href={project.url}
-                                                  class="inline-block px-4 py-2 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all
-                                                            text-xl lg:text-2xl xl:text-3xl duration-300"
+                                                  class="inline-block px-6 py-3 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all duration-300"
                                         >
                                                   Check the Project
                                         </a>
