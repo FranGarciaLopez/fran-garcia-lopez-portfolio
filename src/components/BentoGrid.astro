@@ -9,16 +9,15 @@ const { project_images } = Astro.props as {
 ---
 
 <section
-    class={`w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 
+    class={`w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-10 
     ${
         project_images.length === 1
-            ? "md:grid-cols-10 lg:grid-cols-10"
+            ? "sm:grid-cols-2 md:grid-cols-10 lg:grid-cols-10"
             : project_images.length === 2
-              ? "md:grid-cols-10 lg:grid-cols-4"
-              : "md:grid-cols-10 lg:grid-cols-6"
+              ? "sm:grid-cols-2 md:grid-cols-10 lg:grid-cols-4"
+              : "sm:grid-cols-2 md:grid-cols-10 lg:grid-cols-6"
     } 
-    gap-5 pt-2  lg:grid-rows-[minmax(20rem,_auto)] md:grid-rows-[minmax(20rem,_auto)] lg:
-    auto-rows-[minmax(20rem,_auto)]`}
+    gap-5 pt-2 sm:grid-rows-[minmax(15rem,_auto)] md:grid-rows-[minmax(20rem,_auto)] lg:auto-rows-[minmax(20rem,_auto)]`}
 >
     {
         project_images.map((image, index) => (
@@ -35,7 +34,7 @@ const { project_images } = Astro.props as {
                 <img
                     src={image}
                     alt={`Nuclio Project Image ${index + 1}`}
-                    class="w-full h-full object-cover fadeIn"
+                    class="w-full h-full object-cover "
                     draggable="false"
                 />
             </div>

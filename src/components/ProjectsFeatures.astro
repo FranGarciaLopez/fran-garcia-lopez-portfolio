@@ -16,9 +16,9 @@ const { algorithm_features } = Astro.props as {
 
 <div class="container mx-auto max-w-7xl lg:px-0">
   <h2
-    class="text-4xl sm:text-6xl md:text-5xl lg:text-4xl mt-10
+    class="text-2xl sm:text-6xl md:text-5xl lg:text-4xl mt-10
                     md:mt-20 md:mb-10
-                    font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start"
+                    font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start mx-2"
   >
     Algorithm <span class="italic text-[#eae0d5]">Features</span>
   </h2>
@@ -31,21 +31,19 @@ const { algorithm_features } = Astro.props as {
         hover:shadow-2xl hover:scale-105"
       >
         <h3
-          class="text-3xl sm:text-5xl md:text-4xl font-serif tracking-wide text-[#f5f5dc] capitalize
-                                        md:mb-4 md:mt-0"
+          class="text-2xl md:text-4xl font-serif tracking-wide text-[#f5f5dc] capitalize
+          md:mb-4 md:mt-0"
         >
           {key.replace(/_/g, " ")}
         </h3>
-        <p class="text-xl sm:text-3xl md:text-3xl text-[#a1a1aa] mt-4 leading-relaxed py-3 tracking-wide">
+        <p class="text-lg md:text-3xl text-[#a1a1aa] mt-4 leading-relaxed py-3 tracking-wide">
           {feature.description}
         </p>
 
         {feature.benefits && (
           <ul class="list-disc list-inside text-[#c2b280] mt-4 space-y-3">
             {feature.benefits.map((benefit) => (
-              <li class="leading-relaxed text-xl sm:text-3xl md:text-3xl">
-                {benefit}
-              </li>
+              <li class="leading-relaxed text-lg md:text-3xl">{benefit}</li>
             ))}
           </ul>
         )}
@@ -53,9 +51,7 @@ const { algorithm_features } = Astro.props as {
         {feature.steps && (
           <ul class="list-disc list-inside text-[#c2b280] mt-4 space-y-3">
             {feature.steps.map((step) => (
-              <li class="leading-relaxed text-xl sm:text-3xl md:text-3xl">
-                {step}
-              </li>
+              <li class="leading-relaxed text-lg md:text-3xl">{step}</li>
             ))}
           </ul>
         )}
