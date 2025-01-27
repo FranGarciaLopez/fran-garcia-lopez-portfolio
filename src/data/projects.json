@@ -18,14 +18,14 @@
                                                   "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
                                         }
                               ],
-                              "bg-image": "/images/Nuclio/Nuclio-final-project.png",
+                              "bg-image": "/images/Nuclio/Nuclio-final-project.webp",
                               "images": [
-                                        "/images/Nuclio/Nuclio-final-project-landing.png",
-                                        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.png",
-                                        "/images/Nuclio/Nuclio-final-project-dashboard.png",
-                                        "/images/Nuclio/Nuclio-final-project-event-details.png",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.png",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.png"
+                                        "/images/Nuclio/Nuclio-final-project-landing.webp",
+                                        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.webp",
+                                        "/images/Nuclio/Nuclio-final-project-dashboard.webp",
+                                        "/images/Nuclio/Nuclio-final-project-event-details.webp",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.webp",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.webp"
                               ],
                               "technologies": {
                                         "frontend": [
@@ -88,9 +88,9 @@
                                                   "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
                                         }
                               ],
-                              "bg-image": "/images/tesla-landing-clone.png",
+                              "bg-image": "/images/tesla-landing-clone.webp",
                               "images": [
-                                        "/images/tesla-landing-clone-1.png"
+                                        "/images/tesla-landing-clone-1.webp"
                               ],
                               "technologies": {
                                         "frontend": [
