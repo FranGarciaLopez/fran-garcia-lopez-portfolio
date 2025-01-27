@@ -14,36 +14,20 @@ const { algorithm_features } = Astro.props as {
 };
 ---
 
-<div class="container mx-auto max-w-7xl lg:px-0">
-  <h2
-    class="text-4xl sm:text-6xl md:text-5xl lg:text-4xl mt-10
-                    md:mt-20 md:mb-10
-                    font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start"
-  >
-    Algorithm <span class="italic text-[#eae0d5]">Features</span>
+<div class="algorithm-section">
+  <h2 class="algorithm-title">
+    Algorithm <span class="algorithm-title-highlight">Features</span>
   </h2>
   {
     Object.entries(algorithm_features).map(([key, feature]) => (
-      <div
-        class="border border-[#4448] p-10 rounded-xl bg-[#1a1c1e] mt-10 transform 
-        md:p-16 md:mt-10 md:mb-5 md:hover:scale-105 md:hover:shadow-2xl
-        transition-all duration-500 hover:bg-gradient-to-t from-[#2c2f36] via-[#3c4049] to-[#4a4e58]
-        hover:shadow-2xl hover:scale-105"
-      >
-        <h3
-          class="text-3xl sm:text-5xl md:text-4xl font-serif tracking-wide text-[#f5f5dc] capitalize
-                                        md:mb-4 md:mt-0"
-        >
-          {key.replace(/_/g, " ")}
-        </h3>
-        <p class="text-xl sm:text-3xl md:text-3xl text-[#a1a1aa] mt-4 leading-relaxed py-3 tracking-wide">
-          {feature.description}
-        </p>
+      <div class="feature-card" key={key}>
+        <h3 class="feature-heading">{key.replace(/_/g, " ")}</h3>
+        <p class="feature-description">{feature.description}</p>
 
         {feature.benefits && (
-          <ul class="list-disc list-inside text-[#c2b280] mt-4 space-y-3">
-            {feature.benefits.map((benefit) => (
-              <li class="leading-relaxed text-xl sm:text-3xl md:text-3xl">
+          <ul class="feature-list">
+            {feature.benefits.map((benefit, index) => (
+              <li class="feature-list-item" key={index}>
                 {benefit}
               </li>
             ))}
@@ -51,9 +35,9 @@ const { algorithm_features } = Astro.props as {
         )}
 
         {feature.steps && (
-          <ul class="list-disc list-inside text-[#c2b280] mt-4 space-y-3">
-            {feature.steps.map((step) => (
-              <li class="leading-relaxed text-xl sm:text-3xl md:text-3xl">
+          <ul class="feature-list">
+            {feature.steps.map((step, index) => (
+              <li class="feature-list-item" key={index}>
                 {step}
               </li>
             ))}
