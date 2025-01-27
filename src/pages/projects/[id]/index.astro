@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import projectData from "../../../data/projects.json";
 import ProjectFeatures from "../../../components/ProjectsFeatures.astro";
-import Layout from "../../../layouts/Layout.astro";
+import NavBar from "../../../components/NavBar.astro";
 import BentoGrid from "../../../components/BentoGrid.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -38,115 +38,100 @@ interface Project {
 const { project } = Astro.props as { project: Project };
 ---
 
-<Layout title="Project Details">
-          <section class="project-details">
-                    <div class="project-details-container">
-                              <button
-                                        type="button"
-                                        class="project-back-button"
-                                        onclick="window.history.back()"
+<section
+          class="relative min-h-screen bg-[#222428] text-white py-16 px-8 lg:px-0"
+>
+          <div class="max-w-4xl mx-auto">
+                    <button
+                              type="button"
+                              class="text-[#eae0d5] rounded-2xl py-4 px-6 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
+                              onclick="window.history.back()"
+                    >
+                              <svg
+                                        class="w-14 h-14"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
                               >
-                                        <svg
-                                                  class="project-back-icon"
-                                                  fill="currentColor"
-                                                  viewBox="0 0 20 20"
+                                        <path
+                                                  fill-rule="evenodd"
+                                                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                                                  clip-rule="evenodd"></path>
+                              </svg>
+                    </button>
+                    <h1
+                              class="text-4xl sm:text-7xl md:text-7xl lg:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
+                    >
+                              {project.name}
+                    </h1>
+                    <div
+                              class="mt-6 text-xl sm:text-5xl md:text-3xl lg:text-xl text-[#eae0d5] leading-relaxed"
+                    >
+                              {
+                                        project.description.map((desc) => (
+                                                  <p class="py-4 md:py-6">
+                                                            {desc.text}
+                                                  </p>
+                                        ))
+                              }
+                    </div>
+                    <BentoGrid project_images={project.images} class="mt-12" />
+                    {
+                              project.algorithm_features && (
+                                        <ProjectFeatures
+                                                  algorithm_features={
+                                                            project.algorithm_features
+                                                  }
+                                        />
+                              )
+                    }
+                    <div class="text-[#c2b280] pt-10 md:text-xl space-y-4">
+                              <p class="text-3xl">
+                                        <strong class="text-[#f5f5dc] text-3xl"
+                                                  >Role:</strong
                                         >
-                                                  <path
-                                                            fillRule="evenodd"
-                                                            d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                                                            clipRule="evenodd"
-                                                  ></path>
-                                        </svg>
-                              </button>
-
-                              <h1 class="project-title">{project.name}</h1>
-
-                              <div class="project-description">
+                                        {project.role}
+                              </p>
+                              <p class="text-3xl">
+                                        <strong class="text-[#f5f5dc] text-3xl"
+                                                  >Institution:</strong
+                                        >
                                         {
-                                                  project.description.map(
-                                                            (desc) => (
-                                                                      <p
-                                                                                key={
-                                                                                          desc.text
-                                                                                }
-                                                                                class="project-description-text"
-                                                                      >
-                                                                                {
-                                                                                          desc.text
-                                                                                }
-                                                                      </p>
-                                                            ),
+                                                  project.institution.includes(
+                                                            "MiduDev",
+                                                  ) ? (
+                                                            <span class="text-[#0099ff] font-bold text-3xl">
+                                                                      Inspired
+                                                                      by
+                                                                      MiduDev's
+                                                                      tutorial
+                                                            </span>
+                                                  ) : (
+                                                            <span class="text-[#fcb700] text-3xl">
+                                                                      {
+                                                                                project.institution
+                                                                      }
+                                                            </span>
                                                   )
                                         }
-                              </div>
-
-                              <BentoGrid
-                                        project_images={project.images}
-                                        class="project-features"
-                              />
-
-                              {
-                                        project.algorithm_features && (
-                                                  <ProjectFeatures
-                                                            algorithm_features={
-                                                                      project.algorithm_features
-                                                            }
-                                                  />
-                                        )
-                              }
-
-                              <div class="project-metadata">
-                                        <p class="project-metadata-value">
-                                                  <strong
-                                                            class="project-metadata-title"
-                                                            >Role:</strong
-                                                  >
-                                                  {project.role}
-                                        </p>
-                                        <p class="project-metadata-value">
-                                                  <strong
-                                                            class="project-metadata-title"
-                                                            >Institution:</strong
-                                                  >
-                                                  {
-                                                            project.institution.includes(
-                                                                      "MiduDev",
-                                                            ) ? (
-                                                                      <span class="institution-inspired">
-                                                                                Inspired
-                                                                                by
-                                                                                MiduDev's
-                                                                                tutorial
-                                                                      </span>
-                                                            ) : (
-                                                                      <span class="institution-other">
-                                                                                {
-                                                                                          project.institution
-                                                                                }
-                                                                      </span>
-                                                            )
-                                                  }
-                                        </p>
-                                        <p class="project-metadata-value">
-                                                  <strong
-                                                            class="project-metadata-title"
-                                                            >Timeframe:</strong
-                                                  >
-                                                  {project.timeframe}
-                                        </p>
-                                        <div class="mt-6">
-                                                  <a
-                                                            href={project.url}
-                                                            class="project-link"
-                                                  >
-                                                            Check the Project
-                                                  </a>
-                                        </div>
+                              </p>
+                              <p class="text-3xl">
+                                        <strong class="text-[#f5f5dc] text-3xl"
+                                                  >Timeframe:</strong
+                                        >
+                                        {project.timeframe}
+                              </p>
+                              <div class="mt-6">
+                                        <a
+                                                  href={project.url}
+                                                  class="inline-block text-black font-bold bg-[#eae0d5] text-3xl
+                                                  rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-3 px-6"
+                                        >
+                                                  Check the Project
+                                        </a>
                               </div>
                     </div>
-          </section>
-</Layout>
-
+          </div>
+</section>
 <script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
           defer></script>
