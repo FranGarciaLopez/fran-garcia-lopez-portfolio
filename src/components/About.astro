@@ -47,99 +47,61 @@
                                         class="hidden mt-6 space-y-6"
                               >
                                         <!-- Accordion Item 1 -->
-                                        <div
+                                        <details
                                                   class="border border-[#f5f5dc] bg-black/20 rounded-lg shadow-lg overflow-hidden"
+                                                  name="classified"
                                         >
-                                                  <button
-                                                            class="w-full text-left p-5 sm:p-6 bg-[#f5f5dc] font-serif text-xl sm:text-2xl text-black flex justify-between items-center transition-all hover:bg-[#eae0d5]"
-                                                            onclick="toggleAccordion('content1')"
+                                                  <summary
+                                                            class="p-5 sm:p-6 bg-[#f5f5dc] font-serif text-xl sm:text-2xl text-black flex justify-between items-center cursor-pointer transition-all hover:bg-[#eae0d5]"
                                                   >
                                                             <span
                                                                       >Classified
                                                                       File #001</span
                                                             >
-                                                            <span
-                                                                      id="icon1"
-                                                                      class="transition-transform duration-300"
-                                                                      >▼</span
-                                                            >
-                                                  </button>
+                                                  </summary>
                                                   <div
-                                                            id="content1"
-                                                            class="max-h-0 overflow-hidden transition-all duration-700 ease-in-out bg-[#1a1a1a]"
+                                                            class="p-5 sm:p-6 text-lg leading-relaxed text-[#eae0d5] font-light bg-[#1a1a1a]"
                                                   >
-                                                            <p
-                                                                      class="p-5 sm:p-6 text-lg leading-relaxed text-[#eae0d5] font-light"
-                                                            >
-                                                                      So yeah, I
-                                                                      love
-                                                                      coding and
-                                                                      spy
-                                                                      movies—cool
-                                                                      combo,
-                                                                      right? I
-                                                                      went all
-                                                                      in and
-                                                                      studied a
-                                                                      Full Stack
-                                                                      Development
-                                                                      Master's
-                                                                      at Nuclio
-                                                                      Digital
-                                                                      School to
-                                                                      make it
-                                                                      happen.
-                                                            </p>
+                                                            So yeah, I love
+                                                            coding and spy
+                                                            movies—cool combo,
+                                                            right? I went all in
+                                                            and studied a Full
+                                                            Stack Development
+                                                            Master's at Nuclio
+                                                            Digital School to
+                                                            make it happen.
                                                   </div>
-                                        </div>
+                                        </details>
 
                                         <!-- Accordion Item 2 -->
-                                        <div
+                                        <details
                                                   class="border border-[#f5f5dc] bg-black/20 rounded-lg shadow-lg overflow-hidden"
+                                                  name="classified"
                                         >
-                                                  <button
-                                                            class="w-full text-left p-5 sm:p-6 bg-[#f5f5dc] font-serif text-xl sm:text-2xl text-black flex justify-between items-center transition-all hover:bg-[#eae0d5]"
-                                                            onclick="toggleAccordion('content2')"
+                                                  <summary
+                                                            class="p-5 sm:p-6 bg-[#f5f5dc] font-serif text-xl sm:text-2xl text-black flex justify-between items-center cursor-pointer transition-all hover:bg-[#eae0d5]"
                                                   >
                                                             <span
                                                                       >Classified
                                                                       File #002</span
                                                             >
-                                                            <span
-                                                                      id="icon2"
-                                                                      class="transition-transform duration-300"
-                                                                      >▼</span
-                                                            >
-                                                  </button>
+                                                  </summary>
                                                   <div
-                                                            id="content2"
-                                                            class="max-h-0 overflow-hidden transition-all duration-700 ease-in-out bg-[#1a1a1a]"
+                                                            class="p-6 sm:p-12 text-lg leading-relaxed text-[#eae0d5] font-light bg-[#1a1a1a]"
                                                   >
-                                                            <p
-                                                                      class="p-6 sm:p-12 text-lg leading-relaxed text-[#eae0d5] font-light"
-                                                            >
-                                                                      Besides
-                                                                      that, I'm
-                                                                      really
-                                                                      into
-                                                                      dancing
-                                                                      and
-                                                                      traveling.
-                                                                      Dancing
-                                                                      sparks my
-                                                                      creativity,
-                                                                      and let's
-                                                                      be real,
-                                                                      that's an
-                                                                      important
-                                                                      part when
-                                                                      it comes
-                                                                      to
-                                                                      Frontend
-                                                                      development.
-                                                            </p>
+                                                            Besides that, I'm
+                                                            really into dancing
+                                                            and traveling.
+                                                            Dancing sparks my
+                                                            creativity, and
+                                                            let's be real,
+                                                            that's an important
+                                                            part when it comes
+                                                            to Frontend
+                                                            development.
                                                   </div>
-                                        </div>
+                                        </details>
                               </div>
 
                               <!-- Call to Action -->
@@ -166,52 +128,6 @@
 
 <script>
           document.addEventListener("DOMContentLoaded", () => {
-                    const accordions =
-                              document.querySelectorAll('[id^="content"]');
-                    const icons = document.querySelectorAll('[id^="icon"]');
-
-                    const toggleAccordion = (id) => {
-                              accordions.forEach((content) => {
-                                        if (content.id !== id) {
-                                                  content.classList.add(
-                                                            "max-h-0",
-                                                  );
-                                                  content.classList.remove(
-                                                            "max-h-[500px]",
-                                                  );
-                                        }
-                              });
-
-                              icons.forEach((icon) => {
-                                        if (icon.id !== `icon${id.slice(-1)}`) {
-                                                  icon.classList.remove(
-                                                            "rotate-180",
-                                                  );
-                                        }
-                              });
-
-                              const content = document.getElementById(id);
-                              const button = content?.previousElementSibling;
-                              const icon =
-                                        button?.querySelector(
-                                                  "span:last-child",
-                                        );
-
-                              if (content?.classList.contains("max-h-0")) {
-                                        content?.classList.remove("max-h-0");
-                                        content?.classList.add(
-                                                  "max-h-[1000px]",
-                                        );
-                                        icon.classList.add("rotate-180");
-                              } else {
-                                        content?.classList.add("max-h-0");
-                                        content?.classList.remove(
-                                                  "max-h-[1000px]",
-                                        );
-                                        icon.classList.remove("rotate-180");
-                              }
-                    };
-
                     // Function to unlock the key element
                     window.unlockKey = () => {
                               const secretKey =
@@ -239,7 +155,5 @@
                                         secretKey.classList.add("hidden");
                               }
                     };
-
-                    window.toggleAccordion = toggleAccordion;
           });
 </script>
