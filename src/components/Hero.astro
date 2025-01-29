@@ -1,3 +1,10 @@
+---
+interface h1 {
+          h1?: string;
+          h1Text: string;
+}
+---
+
 <section
           class="relative w-full min-h-screen bg-[#222428] text-white flex items-center justify-center px-4 pb-0 sm:px-8 md:px-12"
 >
@@ -14,8 +21,9 @@
                     >
                               In the world of web development, one name stands
                               with style and precision:
-                              <span class="text-[#c2b280] font-bold"
-                                        >Fran García López.</span
+                              <span
+                                        class="text-[#c2b280] font-bold"
+                                        id="name-span">Fran García López.</span
                               >
                     </p>
 
@@ -127,3 +135,69 @@
                     </div>
           </div>
 </section>
+
+<script>
+          document.addEventListener("astro:page-load", () => {
+                    if (typeof gsap === "undefined") {
+                              console.error("GSAP not loaded.");
+                              return;
+                    }
+
+                    /* typewriter for the h1 */
+                    const h1 = document.querySelector("h1");
+
+                    if (!h1) return;
+
+                    const h1Text = h1.textContent?.trim() || "";
+                    h1.innerHTML = "";
+
+                    h1Text.split("").forEach((char, i) => {
+                              const span = document.createElement("span");
+                              span.textContent = char === " " ? "\u00A0" : char; // Preserve spaces
+                              span.style.opacity = "0"; // Hide initially
+                              h1.appendChild(span);
+                    });
+
+                    // Animate each letter with GSAP
+                    gsap.to(h1.children, {
+                              opacity: 1,
+                              duration: 0.05,
+                              ease: "power2.out",
+                              stagger: 0.05, // Delay between each letter
+                    });
+
+                    const spanName = document.getElementById("name-span");
+                    if (!spanName) return;
+
+                    /* change text */
+
+                    const names = [
+                              "Fran García López",
+                              "a Developer",
+                              "a Team Player",
+                              "a Dancer",
+                              "a Traveler",
+                              "Fran García López",
+                    ];
+
+                    let currentName = 0;
+                    names.forEach((name, i) => {
+                              setTimeout(() => {
+                                        gsap.to(spanName, {
+                                                  duration: 0.5,
+                                                  opacity: 0,
+                                                  onComplete: () => {
+                                                            spanName.textContent =
+                                                                      name;
+                                                  },
+                                        });
+
+                                        gsap.to(spanName, {
+                                                  duration: 0.5,
+                                                  opacity: 1,
+                                                  delay: 0.5,
+                                        });
+                              }, i * 3000);
+                    });
+          });
+</script>
