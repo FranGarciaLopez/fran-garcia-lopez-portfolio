@@ -1,14 +1,7 @@
----
-interface h1 {
-          h1?: string;
-          h1Text: string;
-}
----
-
 <section
           class="relative w-full min-h-screen bg-[#222428] text-white flex items-center justify-center px-4 pb-0 sm:px-8 md:px-12"
 >
-          <div class="max-w-4xl text-center">
+          <div class="max-w-4xl text-center m-4">
                     <h1
                               class="text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4vw] font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase"
                     >
@@ -21,9 +14,8 @@ interface h1 {
                     >
                               In the world of web development, one name stands
                               with style and precision:
-                              <span
-                                        class="text-[#c2b280] font-bold"
-                                        id="name-span">Fran García López.</span
+                              <span class="text-[#c2b280] font-bold"
+                                        >Fran García López.</span
                               >
                     </p>
 
@@ -138,38 +130,30 @@ interface h1 {
 
 <script>
           document.addEventListener("astro:page-load", () => {
-                    if (typeof gsap === "undefined") {
-                              console.error("GSAP not loaded.");
+                    if (
+                              typeof gsap === "undefined" ||
+                              typeof ScrollTrigger === "undefined"
+                    ) {
+                              console.error(
+                                        "GSAP or ScrollTrigger not loaded.",
+                              );
                               return;
                     }
 
                     /* typewriter for the h1 */
                     const h1 = document.querySelector("h1");
+                    const h1Text = h1?.textContent;
+                    h1.textContent = "";
 
-                    if (!h1) return;
+                    for (let i = 0; i < h1Text.length; i++) {
+                              setTimeout(() => {
+                                        h1.textContent += h1Text[i];
+                              }, 150 * i);
+                    }
 
-                    const h1Text = h1.textContent?.trim() || "";
-                    h1.innerHTML = "";
-
-                    h1Text.split("").forEach((char, i) => {
-                              const span = document.createElement("span");
-                              span.textContent = char === " " ? "\u00A0" : char; // Preserve spaces
-                              span.style.opacity = "0"; // Hide initially
-                              h1.appendChild(span);
-                    });
-
-                    // Animate each letter with GSAP
-                    gsap.to(h1.children, {
-                              opacity: 1,
-                              duration: 0.05,
-                              ease: "power2.out",
-                              stagger: 0.05, // Delay between each letter
-                    });
-
-                    const spanName = document.getElementById("name-span");
-                    if (!spanName) return;
-
-                    /* change text */
+                    const spanName = document.querySelector("p > span");
+                    const spanText = spanName?.textContent;
+                    spanName.textContent = "";
 
                     const names = [
                               "Fran García López",
@@ -180,24 +164,15 @@ interface h1 {
                               "Fran García López",
                     ];
 
-                    let currentName = 0;
-                    names.forEach((name, i) => {
-                              setTimeout(() => {
-                                        gsap.to(spanName, {
-                                                  duration: 0.5,
-                                                  opacity: 0,
-                                                  onComplete: () => {
-                                                            spanName.textContent =
-                                                                      name;
-                                                  },
-                                        });
-
-                                        gsap.to(spanName, {
-                                                  duration: 0.5,
-                                                  opacity: 1,
-                                                  delay: 0.5,
-                                        });
-                              }, i * 3000);
-                    });
+                    const duration = 20;
+                    for (let i = 0; i < names.length; i++) {
+                              setTimeout(
+                                        () => {
+                                                  spanName.textContent =
+                                                            names[i];
+                                        },
+                                        150 * i * duration,
+                              );
+                    }
           });
 </script>
