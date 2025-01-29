@@ -11,6 +11,8 @@ import { ClientRouter } from "astro:transitions";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- Client Router for Page Transitions -->
     <ClientRouter />
 
     <!-- GSAP and Lenis Scripts -->
@@ -22,6 +24,7 @@ import { ClientRouter } from "astro:transitions";
       defer></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer
     ></script>
+    <script src="/src/scripts/scrollAnimations.js" defer></script>
   </head>
 
   <body class="relative bg-[#222428]">
@@ -31,11 +34,21 @@ import { ClientRouter } from "astro:transitions";
     </div>
 
     <script>
-      // Initialize Lenis
-      const lenis = new Lenis();
+      // Initialize Lenis for Smooth Scrolling
+      const lenis = new Lenis({
+        smooth: true,
+        lerp: 0.1,
+        wheelMultiplier: 1,
+        infinite: false,
+      });
 
-      // Use requestAnimationFrame to continuously update the scroll
       function raf(time) {
+        if (
+          !document.startViewTransition ||
+          document.startViewTransition.active
+        ) {
+          return; // Stop Lenis when transitioning
+        }
         lenis.raf(time);
         requestAnimationFrame(raf);
       }
