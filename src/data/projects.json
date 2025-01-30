@@ -7,6 +7,10 @@
                               "institution": "Nuclio Digital School",
                               "timeframe": "From June 2024 to January 2025",
                               "url": "https://rojo-frontend.onrender.com/",
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/rojo-frontend",
+                                        "https://github.com/FranGarciaLopez/rojo-backend"
+                              ],
                               "description": [
                                         {
                                                   "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
@@ -80,6 +84,9 @@
                               "institution": "Inspired in MiduDev's tutorial",
                               "timeframe": "June 2023",
                               "url": "https://tesla-clone-website-6cz8.onrender.com/",
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/tesla-clone-website"
+                              ],
                               "description": [
                                         {
                                                   "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."

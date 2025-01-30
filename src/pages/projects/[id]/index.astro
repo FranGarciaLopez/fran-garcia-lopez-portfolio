@@ -4,6 +4,7 @@ import projectData from "../../../data/projects.json";
 import ProjectFeatures from "../../../components/ProjectsFeatures.astro";
 import Layout from "../../../layouts/Layout.astro";
 import BentoGrid from "../../../components/BentoGrid.astro";
+import { fetchGitHubRepoData } from "../../../utils/github";
 
 export const getStaticPaths: GetStaticPaths = async () => {
           return projectData.projects.map((project) => ({
@@ -26,6 +27,7 @@ interface Project {
           role: string;
           institution: string;
           timeframe: string;
+          github_repositories?: string[];
           algorithm_features?: {
                     dynamic_grouping?: AlgorithmFeature;
                     group_formation_process?: AlgorithmFeature;
@@ -36,6 +38,10 @@ interface Project {
 }
 
 const { project } = Astro.props as { project: Project };
+
+const repoData = await Promise.all(
+          project.github_repositories?.map(fetchGitHubRepoData) || [],
+);
 ---
 
 <Layout title=`Project | ${project.name}`>
@@ -80,6 +86,59 @@ const { project } = Astro.props as { project: Project };
                                                   )
                                         }
                               </div>
+
+                              {
+                                        repoData.length > 0 && (
+                                                  <div class="mt-6">
+                                                            <h2 class="text-lg text-[#f5f5dc] font-bold">
+                                                                      GitHub
+                                                                      Repositories:
+                                                            </h2>
+                                                            <ul class="list-disc list-inside text-[#c2b280]">
+                                                                      {repoData.map(
+                                                                                (
+                                                                                          repo,
+                                                                                ) =>
+                                                                                          repo ? (
+                                                                                                    <li class="mb-2">
+                                                                                                              <a
+                                                                                                                        href={
+                                                                                                                                  repo.url
+                                                                                                                        }
+                                                                                                                        class="text-[#0099ff] underline hover:text-[#0077cc] transition-all duration-300"
+                                                                                                                        target="_blank"
+                                                                                                                        rel="noopener noreferrer"
+                                                                                                              >
+                                                                                                                        {repo.url
+                                                                                                                                  .split(
+                                                                                                                                            "/",
+                                                                                                                                  )
+                                                                                                                                  .pop()}
+                                                                                                              </a>
+                                                                                                              <span class="text-[#f5f5dc] ml-2">
+                                                                                                                        ⭐{" "}
+                                                                                                                        {
+                                                                                                                                  repo.stars
+                                                                                                                        }{" "}
+                                                                                                                        |
+                                                                                                                        🍴{" "}
+                                                                                                                        {
+                                                                                                                                  repo.forks
+                                                                                                                        }{" "}
+                                                                                                                        |
+                                                                                                                        📅{" "}
+                                                                                                                        {
+                                                                                                                                  repo.lastUpdated
+                                                                                                                        }
+                                                                                                              </span>
+                                                                                                    </li>
+                                                                                          ) : null,
+                                                                      )}
+                                                            </ul>
+                                                  </div>
+                                        )
+                              }
+
                               <BentoGrid
                                         project_images={project.images}
                                         class="mt-12"
@@ -147,24 +206,3 @@ const { project } = Astro.props as { project: Project };
                     </div>
           </section>
 </Layout>
-
-<script
-          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-          defer></script>
-<script
-          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-          defer></script>
-<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js" defer></script>
-
-<script>
-          // Initialize Lenis
-          const lenis = new Lenis();
-
-          // Use requestAnimationFrame to continuously update the scroll
-          function raf(time) {
-                    lenis.raf(time);
-                    requestAnimationFrame(raf);
-          }
-
-          requestAnimationFrame(raf);
-</script>
