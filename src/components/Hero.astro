@@ -16,8 +16,9 @@ const { lang } = Astro.props;
                               class="mt-4 text-base sm:text-lg md:text-xl italic text-[#eae0d5] leading-relaxed"
                     >
                               {getTranslation(lang, "hero", "subtitle")}
-                              <span class="text-[#c2b280] font-bold"
-                                        >Fran García López.</span
+                              <span
+                                        class="text-[#c2b280] font-bold"
+                                        id="dev-name">Fran García López.</span
                               >
                     </p>
 
@@ -159,7 +160,8 @@ const { lang } = Astro.props;
                               }, 150 * i);
                     }
 
-                    const spanName = document.querySelector("p > span");
+                    const spanName =
+                              document.querySelector("p > span#dev-name");
                     const spanText = spanName?.textContent;
                     spanName.textContent = "";
 

@@ -19,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 interface Project {
           id: number;
           name: { en: string; es: string };
-          description: { en: string[]; es: string[] };
+          description: { en: { text: string }[]; es: { text: string }[] };
           role: { en: string; es: string };
           institution: string;
           timeframe: { en: string; es: string };
@@ -159,24 +159,11 @@ const repoData = await Promise.all(
                                                                                 : "Institution:"
                                                             }</strong
                                                   >
-                                                  {
-                                                            project.institution.includes(
-                                                                      "MiduDev",
-                                                            ) ? (
-                                                                      <span class="text-[#0099ff] font-bold text-lg">
-                                                                                {lang ===
-                                                                                "es"
-                                                                                          ? "Inspirado en el tutorial de MiduDev"
-                                                                                          : "Inspired by MiduDev's tutorial"}
-                                                                      </span>
-                                                            ) : (
-                                                                      <span class="text-[#fcb700] text-lg">
-                                                                                {
-                                                                                          project.institution
-                                                                                }
-                                                                      </span>
-                                                            )
-                                                  }
+                                                  {typeof project.institution === "string" 
+                                                  ? project.institution.includes("MiduDev") 
+                                                    ? <span class="text-[#0099ff] font-bold text-lg">{lang === "es" ? "Inspirado en el tutorial de MiduDev" : "Inspired by MiduDev's tutorial"}</span>
+                                                    : <span class="text-[#fcb700] text-lg">{project.institution}</span>
+                                                  : <span class="text-[#0099ff] text-lg">{project.institution[lang]}</span>}
                                         </p>
                                         <p class="text-lg">
                                                   <strong
