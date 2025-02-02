@@ -1,0 +1,38 @@
+{
+          "title": {
+                    "en": "About Me",
+                    "es": "Sobre Mí"
+          },
+          "subtitle": {
+                    "en": "Top Secret: The truth awaits inside...",
+                    "es": "Ultra Secreto: La verdad te espera dentro..."
+          },
+          "classified_files": [
+                    {
+                              "id": "001",
+                              "title": {
+                                        "en": "Classified File #001",
+                                        "es": "Expediente Clasificado #001"
+                              },
+                              "content": {
+                                        "en": "So yeah, I love coding and spy movies—cool combo, right? I went all in and studied a Full Stack Development Master's at Nuclio Digital School to make it happen.",
+                                        "es": "Me encanta programar y las películas de espías, ¿combinación genial, verdad? Me metí de lleno y estudié un Máster en Desarrollo Full Stack en Nuclio Digital School para hacerlo realidad."
+                              }
+                    },
+                    {
+                              "id": "002",
+                              "title": {
+                                        "en": "Classified File #002",
+                                        "es": "Expediente Clasificado #002"
+                              },
+                              "content": {
+                                        "en": "Besides that, I'm really into dancing and traveling. Dancing sparks my creativity, and let's be real, that's an important part when it comes to Frontend development.",
+                                        "es": "Además de eso, me encanta bailar y viajar. Bailar despierta mi creatividad y, siendo honestos, eso es fundamental cuando se trata de desarrollo Frontend."
+                              }
+                    }
+          ],
+          "email_button": {
+                    "en": "Email Me",
+                    "es": "Envíame un Correo"
+          }
+}

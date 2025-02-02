@@ -1,3 +1,10 @@
+---
+const { lang } = Astro.props as { lang: "es" | "en" };
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+debugger;
+---
+
 <header
           id="landing-header"
           class="fixed top-0 right-0 z-50 py-1 px-3 w-full flex justify-end items-center"
@@ -42,27 +49,30 @@
                               </svg>
                     </button>
 
+                    <!-- Language Switcher -->
+                    <LanguageSwitcher lang={lang} />
+
                     <!-- Menu Items -->
                     <ul
                               class="flex flex-col items-center space-y-12 text-black"
                     >
                               <li>
                                         <a
-                                                  href="/#projects"
+                                                  href={`/${lang}/#projects`}
                                                   class="text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
                                                   >Works</a
                                         >
                               </li>
                               <li>
                                         <a
-                                                  href="/#about"
+                                                  href={`/${lang}/#about`}
                                                   class="text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
                                                   >About</a
                                         >
                               </li>
                               <li>
                                         <a
-                                                  href="/#about"
+                                                  href={`/${lang}/#about`}
                                                   class="text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
                                                   >Contact</a
                                         >

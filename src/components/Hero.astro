@@ -1,3 +1,8 @@
+---
+import { getTranslation } from "../i18n/getTranslation";
+const { lang } = Astro.props;
+---
+
 <section
           class="relative w-full min-h-screen bg-[#222428] text-white flex items-center justify-center px-4 pb-0 sm:px-8 md:px-12"
 >
@@ -5,15 +10,12 @@
                     <h1
                               class="text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4vw] font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase"
                     >
-                              Clean Code <span class="italic text-[#eae0d5]"
-                                        >Maketh</span
-                              > Developer
+                              {getTranslation(lang, "hero", "title")}
                     </h1>
                     <p
                               class="mt-4 text-base sm:text-lg md:text-xl italic text-[#eae0d5] leading-relaxed"
                     >
-                              In the world of web development, one name stands
-                              with style and precision:
+                              {getTranslation(lang, "hero", "subtitle")}
                               <span class="text-[#c2b280] font-bold"
                                         >Fran García López.</span
                               >
@@ -24,9 +26,15 @@
                     >
                               <a
                                         href="#projects"
-                                        class="inline-block px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all"
+                                        class="inline-block px-6 py-3 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all"
                               >
-                                        View My Work
+                                        {
+                                                  getTranslation(
+                                                            lang,
+                                                            "hero",
+                                                            "viewWork",
+                                                  )
+                                        }
                               </a>
 
                               <a

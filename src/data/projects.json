@@ -2,26 +2,48 @@
           "projects": [
                     {
                               "id": 1,
-                              "name": "Groupify",
-                              "role": "Full Stack Developer",
+                              "name": {
+                                        "es": "Groupify",
+                                        "en": "Groupify"
+                              },
+                              "role": {
+                                        "en": "Full Stack Developer",
+                                        "es": "Desarrollador Full Stack"
+                              },
                               "institution": "Nuclio Digital School",
-                              "timeframe": "From June 2024 to January 2025",
+                              "timeframe": {
+                                        "en": "From June 2024 to January 2025",
+                                        "es": "De junio 2024 a enero 2025"
+                              },
                               "url": "https://rojo-frontend.onrender.com/",
                               "github_repositories": [
                                         "https://github.com/FranGarciaLopez/rojo-frontend",
                                         "https://github.com/FranGarciaLopez/rojo-backend"
                               ],
-                              "description": [
-                                        {
-                                                  "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
-                                        },
-                                        {
-                                                  "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
-                                        },
-                                        {
-                                                  "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
-                                        }
-                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Nuestro equipo, compuesto por Luigi Cucciolilio, Belen Bastos y yo, desarrollamos una aplicación web que conecta a los usuarios con intereses compartidos en diversos eventos."
+                                                  },
+                                                  {
+                                                            "text": "Los usuarios pueden seleccionar sus eventos preferidos, y a través de un algoritmo de agrupación avanzado, gestionado por un administrador, se organizan en grupos con otras personas afines que no han conocido antes, utilizando un algoritmo."
+                                                  },
+                                                  {
+                                                            "text": "A cada grupo se le proporciona acceso a un chat en vivo, fomentando la interacción en tiempo real y garantizando una experiencia social fluida y enriquecedora."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
+                                                  },
+                                                  {
+                                                            "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
+                                                  },
+                                                  {
+                                                            "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
+                                                  }
+                                        ]
+                              },
                               "bg-image": "/images/Nuclio/Nuclio-final-project.webp",
                               "images": [
                                         "/images/Nuclio/Nuclio-final-project-landing.webp",
@@ -50,51 +72,102 @@
                                         ]
                               },
                               "algorithm_features": {
-                                        "dynamic_grouping": {
-                                                  "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
-                                                  "benefits": [
-                                                            "Prevents event duplication through an efficient tracking system."
-                                                  ]
+                                        "es": {
+                                                  "dynamic_grouping": {
+                                                            "description": "Los usuarios se agrupan automáticamente en función de los eventos seleccionados mediante agregaciones de MongoDB.",
+                                                            "benefits": [
+                                                                      "Evita la duplicación de eventos a través de un sistema de seguimiento eficiente."
+                                                            ]
+                                                  },
+                                                  "group_formation_process": {
+                                                            "description": "Los usuarios con intereses comunes se extraen mediante consultas agregadas.",
+                                                            "steps": [
+                                                                      "Se utiliza un método de mezcla aleatoria para garantizar la diversidad en la formación de grupos.",
+                                                                      "Los usuarios se dividen en pares mediante técnicas de particionamiento de listas."
+                                                            ]
+                                                  },
+                                                  "unique_event_assignment": {
+                                                            "description": "La disponibilidad de eventos para cada usuario se verifica en tiempo real.",
+                                                            "benefits": [
+                                                                      "Garantiza la equidad al evitar asignaciones de eventos duplicados a los grupos."
+                                                            ]
+                                                  },
+                                                  "data_persistence": {
+                                                            "description": "Los grupos formados se almacenan en la base de datos de MongoDB.",
+                                                            "steps": [
+                                                                      "Las referencias de los grupos se actualizan en los perfiles de usuario."
+                                                            ]
+                                                  }
                                         },
-                                        "group_formation_process": {
-                                                  "description": "Users with common interests are extracted through aggregated queries.",
-                                                  "steps": [
-                                                            "A random shuffle method is used to ensure diversity in group formation.",
-                                                            "Users are divided into pairs using list partitioning techniques."
-                                                  ]
-                                        },
-                                        "unique_event_assignment": {
-                                                  "description": "Event availability for each user is verified in real time.",
-                                                  "benefits": [
-                                                            "Ensures fairness by avoiding duplicate event assignments to groups."
-                                                  ]
-                                        },
-                                        "data_persistence": {
-                                                  "description": "Formed groups are stored in the MongoDB database.",
-                                                  "steps": [
-                                                            "Group references are updated in user profiles."
-                                                  ]
+                                        "en": {
+                                                  "dynamic_grouping": {
+                                                            "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
+                                                            "benefits": [
+                                                                      "Prevents event duplication through an efficient tracking system."
+                                                            ]
+                                                  },
+                                                  "group_formation_process": {
+                                                            "description": "Users with common interests are extracted through aggregated queries.",
+                                                            "steps": [
+                                                                      "A random shuffle method is used to ensure diversity in group formation.",
+                                                                      "Users are divided into pairs using list partitioning techniques."
+                                                            ]
+                                                  },
+                                                  "unique_event_assignment": {
+                                                            "description": "Event availability for each user is verified in real time.",
+                                                            "benefits": [
+                                                                      "Ensures fairness by avoiding duplicate event assignments to groups."
+                                                            ]
+                                                  },
+                                                  "data_persistence": {
+                                                            "description": "Formed groups are stored in the MongoDB database.",
+                                                            "steps": [
+                                                                      "Group references are updated in user profiles."
+                                                            ]
+                                                  }
                                         }
                               }
                     },
                     {
                               "id": 2,
-                              "name": "Tesla Clone Landing Page",
-                              "role": "Frontend Development",
-                              "institution": "Inspired in MiduDev's tutorial",
-                              "timeframe": "June 2023",
+                              "name": {
+                                        "es": "Clon de la página Landing de Tesla",
+                                        "en": "Tesla Landing Page Clone"
+                              },
+                              "role": {
+                                        "es": "Desarrollador Frontend",
+                                        "en": "Frontend Developer"
+                              },
+                              "institution": {
+                                        "es": "Inspirado en el tutorial de MiduDev",
+                                        "en": "Inspired in MiduDev's tutorial"
+                              },
+                              "timeframe": {
+                                        "es": "Junio 2023",
+                                        "en": "June 2023"
+                              },
                               "url": "https://tesla-clone-website-6cz8.onrender.com/",
                               "github_repositories": [
                                         "https://github.com/FranGarciaLopez/tesla-clone-website"
                               ],
-                              "description": [
-                                        {
-                                                  "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
-                                        },
-                                        {
-                                                  "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
-                                        }
-                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Clon de la página Landing de Tesla desarrollado con el Framework frontend Astro y Tailwind CSS, es un diseño responsive que se adapta a diferentes tamaños de pantalla."
+                                                  },
+                                                  {
+                                                            "text": "El proyecto incluye un encabezado dinámico que cambia su apariencia según la posición de desplazamiento, una barra de navegación responsive, y un efecto de desplazamiento que permite al usuario navegar por las diferentes secciones de la página."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
+                                                  },
+                                                  {
+                                                            "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
+                                                  }
+                                        ]
+                              },
                               "bg-image": "/images/tesla-landing-clone.webp",
                               "images": [
                                         "/images/tesla-landing-clone-1.webp"

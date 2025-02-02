@@ -1,7 +1,7 @@
 ---
 import NavBar from "../components/NavBar.astro";
-const { title } = Astro.props;
 import { ClientRouter } from "astro:transitions";
+const { title, lang } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,7 +28,7 @@ import { ClientRouter } from "astro:transitions";
 
   <body class="relative bg-[#222428]">
     <div class="relative z-10">
-      <NavBar />
+      <NavBar lang={lang} />
       <slot />
     </div>
 

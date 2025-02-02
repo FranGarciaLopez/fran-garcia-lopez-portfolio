@@ -1,50 +1,44 @@
 ---
 import type { GetStaticPaths } from "astro";
-import projectData from "../../../data/projects.json";
-import ProjectFeatures from "../../../components/ProjectsFeatures.astro";
-import Layout from "../../../layouts/Layout.astro";
-import BentoGrid from "../../../components/BentoGrid.astro";
-import { fetchGitHubRepoData } from "../../../utils/github";
+import projectData from "../../../../data/projects.json";
+import ProjectFeatures from "../../../../components/ProjectsFeatures.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import BentoGrid from "../../../../components/BentoGrid.astro";
+import { fetchGitHubRepoData } from "../../../../utils/github";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-          return projectData.projects.map((project) => ({
-                    params: { id: project.id.toString() },
-                    props: { project },
-          }));
+          const locales = ["en", "es"];
+          return projectData.projects.flatMap((project) =>
+                    locales.map((lang) => ({
+                              params: { lang, id: project.id.toString() },
+                              props: { project, lang },
+                    })),
+          );
 };
 
-interface AlgorithmFeature {
-          description: string;
-          benefits?: string[];
-          steps?: string[];
-}
-
 interface Project {
-          id: string;
-          name: string;
-          images: string;
-          description: { text: string }[];
-          role: string;
+          id: number;
+          name: { en: string; es: string };
+          description: { en: string[]; es: string[] };
+          role: { en: string; es: string };
           institution: string;
-          timeframe: string;
+          timeframe: { en: string; es: string };
           github_repositories?: string[];
-          algorithm_features?: {
-                    dynamic_grouping?: AlgorithmFeature;
-                    group_formation_process?: AlgorithmFeature;
-                    unique_event_assignment?: AlgorithmFeature;
-                    data_persistence?: AlgorithmFeature;
-          };
           url: string;
+          images: string[];
 }
 
-const { project } = Astro.props as { project: Project };
+const { project, lang } = Astro.props as {
+          project: Project;
+          lang: "en" | "es";
+};
 
 const repoData = await Promise.all(
           project.github_repositories?.map(fetchGitHubRepoData) || [],
 );
 ---
 
-<Layout title=`Project | ${project.name}`>
+<Layout title={`Project | ${project.name[lang]}`} lang={lang}>
           <section
                     class="relative min-h-screen bg-[#222428] text-white py-16 px-4 lg:px-0"
           >
@@ -66,33 +60,29 @@ const repoData = await Promise.all(
                                                   ></path>
                                         </svg>
                               </button>
+
                               <h1
                                         class="text-3xl md:text-7xl lg:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
                               >
-                                        {project.name}
+                                        {project.name[lang]}
                               </h1>
-                              <div
-                                        class="mt-6 text-lg md:text-2xl lg:text-xl text-[#eae0d5] leading-relaxed lg:m-2"
-                              >
-                                        {
-                                                  project.description.map(
-                                                            (desc) => (
-                                                                      <p class="py-4 md:py-6">
-                                                                                {
-                                                                                          desc.text
-                                                                                }
-                                                                      </p>
-                                                            ),
-                                                  )
-                                        }
-                              </div>
+
+                              <div class="mt-6 text-lg md:text-2xl lg:text-xl text-[#eae0d5] leading-relaxed">
+                                        {project.description[lang].map((descObj) => (
+                                          <p class="py-4 md:py-6">
+                                            {descObj.text} <!-- ✅ Now accessing the text property correctly -->
+                                          </p>
+                                        ))}
+                                      </div>
 
                               {
                                         repoData.length > 0 && (
                                                   <div class="mt-6">
                                                             <h2 class="text-lg text-[#f5f5dc] font-bold">
-                                                                      GitHub
-                                                                      Repositories:
+                                                                      {lang ===
+                                                                      "es"
+                                                                                ? "Repositorios de GitHub:"
+                                                                                : "GitHub Repositories:"}
                                                             </h2>
                                                             <ul class="list-disc list-inside text-[#c2b280]">
                                                                       {repoData.map(
@@ -143,39 +133,41 @@ const repoData = await Promise.all(
                                         project_images={project.images}
                                         class="mt-12"
                               />
-                              {
-                                        project.algorithm_features && (
-                                                  <ProjectFeatures
-                                                            algorithm_features={
-                                                                      project.algorithm_features
-                                                            }
-                                                  />
-                                        )
-                              }
+
                               <div
                                         class="text-[#c2b280] md:text-xl space-y-4 mx-2 my-2"
                               >
                                         <p class="text-lg">
                                                   <strong
                                                             class="text-[#f5f5dc] text-lg"
-                                                            >Role:</strong
+                                                            >{
+                                                                      lang ===
+                                                                      "es"
+                                                                                ? "Rol:"
+                                                                                : "Role:"
+                                                            }</strong
                                                   >
-                                                  {project.role}
+                                                  {project.role[lang]}
                                         </p>
                                         <p class="text-lg">
                                                   <strong
                                                             class="text-[#f5f5dc] text-lg"
-                                                            >Institution:</strong
+                                                            >{
+                                                                      lang ===
+                                                                      "es"
+                                                                                ? "Institución:"
+                                                                                : "Institution:"
+                                                            }</strong
                                                   >
                                                   {
                                                             project.institution.includes(
                                                                       "MiduDev",
                                                             ) ? (
                                                                       <span class="text-[#0099ff] font-bold text-lg">
-                                                                                Inspired
-                                                                                by
-                                                                                MiduDev's
-                                                                                tutorial
+                                                                                {lang ===
+                                                                                "es"
+                                                                                          ? "Inspirado en el tutorial de MiduDev"
+                                                                                          : "Inspired by MiduDev's tutorial"}
                                                                       </span>
                                                             ) : (
                                                                       <span class="text-[#fcb700] text-lg">
@@ -189,17 +181,26 @@ const repoData = await Promise.all(
                                         <p class="text-lg">
                                                   <strong
                                                             class="text-[#f5f5dc] text-lg"
-                                                            >Timeframe:</strong
+                                                            >{
+                                                                      lang ===
+                                                                      "es"
+                                                                                ? "Período de tiempo:"
+                                                                                : "Timeframe:"
+                                                            }</strong
                                                   >
-                                                  {project.timeframe}
+                                                  {project.timeframe[lang]}
                                         </p>
                                         <div class="mt-6">
                                                   <a
                                                             href={project.url}
-                                                            class="inline-block text-black font-bold bg-[#eae0d5] text-lg
-                                                            rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
+                                                            class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
                                                   >
-                                                            Check the Project
+                                                            {
+                                                                      lang ===
+                                                                      "es"
+                                                                                ? "Ver el Proyecto"
+                                                                                : "Check the Project"
+                                                            }
                                                   </a>
                                         </div>
                               </div>

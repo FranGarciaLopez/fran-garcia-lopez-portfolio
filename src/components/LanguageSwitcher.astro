@@ -1,0 +1,33 @@
+---
+import { locales } from "../i18n/config";
+const { lang } = Astro.props;
+---
+
+<select id="lang-switcher">
+  {Object.entries(locales).map(([code, name]) => (
+    <option value={code} {code === lang ? 'selected' : ''}>{name}</option>
+  ))}
+</select>
+
+<script>
+  window.changeLanguage = function (lang) {
+    const currentPath = window.location.pathname;
+    const pathParts = currentPath.split("/").filter(part => part !== ""); // Remove empty segments
+
+    // Ensure the first part is always a valid locale
+    if (["en", "es"].includes(pathParts[0])) {
+      pathParts[0] = lang; // Replace the current language code
+    } else {
+      pathParts.unshift(lang); // If no lang exists, add it
+    }
+
+    window.location.href = `/${pathParts.join("/")}`;
+  };
+
+  // Attach event listener manually to avoid issues
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("lang-switcher")?.addEventListener("change", function () {
+      window.changeLanguage(this.value);
+    });
+  });
+</script>
