@@ -5,192 +5,203 @@ import ProjectFeatures from "../../../../components/ProjectsFeatures.astro";
 import Layout from "../../../../layouts/Layout.astro";
 import BentoGrid from "../../../../components/BentoGrid.astro";
 import { fetchGitHubRepoData } from "../../../../utils/github";
+import ProjectDetailsSkeleton from "../../../../skeletons/ProjectDetailsSkeleton.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-          const locales = ["en", "es"];
-          return projectData.projects.flatMap((project) =>
-                    locales.map((lang) => ({
-                              params: { lang, id: project.id.toString() },
-                              props: { project, lang },
-                    })),
-          );
+  const locales = ["en", "es"];
+  return projectData.projects.flatMap((project) =>
+    locales.map((lang) => ({
+      params: { lang, id: project.id.toString() },
+      props: { project, lang },
+    })),
+  );
 };
 
+interface AlgorithmFeature {
+  description: string;
+  benefits?: string[];
+  steps?: string[];
+}
+
 interface Project {
-          id: number;
-          name: { en: string; es: string };
-          description: { en: { text: string }[]; es: { text: string }[] };
-          role: { en: string; es: string };
-          institution: string;
-          timeframe: { en: string; es: string };
-          github_repositories?: string[];
-          url: string;
-          images: string[];
+  id: number;
+  name: { en: string; es: string };
+  description: { en: { text: string }[]; es: { text: string }[] };
+  role: { en: string; es: string };
+  institution: string | { en: string; es: string };
+  timeframe: { en: string; es: string };
+  github_repositories?: string[];
+  url: string;
+  images: string[];
+  algorithm_features?: Record<string, AlgorithmFeature>;
 }
 
 const { project, lang } = Astro.props as {
-          project: Project;
-          lang: "en" | "es";
+  project: Project;
+  lang: "en" | "es";
 };
 
 const repoData = await Promise.all(
-          project.github_repositories?.map(fetchGitHubRepoData) || [],
+  project.github_repositories?.map(fetchGitHubRepoData) || [],
 );
 ---
 
 <Layout title={`Project | ${project.name[lang]}`} lang={lang}>
-          <section
-                    class="relative min-h-screen bg-[#222428] text-white py-16 px-4 lg:px-0"
+  <section
+    class="relative min-h-screen bg-[#222428] text-white py-16 px-4 lg:px-0"
+  >
+    <div
+      id="project-loader"
+      class="absolute inset-0 flex items-center justify-center"
+    >
+      <ProjectDetailsSkeleton />
+    </div>
+
+    <div class="max-w-4xl mx-auto my-10" id="project-content">
+      <!-- Back Button -->
+      <button
+        type="button"
+        class="text-[#eae0d5] rounded-2xl py-2 px-2 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
+        onclick="window.history.back()"
+      >
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <!-- Project Title -->
+      <h1
+        class="text-3xl md:text-7xl lg:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
+      >
+        {project.name[lang]}
+      </h1>
+
+      <!-- Project Description -->
+      <div
+        class="mt-6 text-lg md:text-2xl lg:text-xl text-[#eae0d5] leading-relaxed"
+      >
+        {
+          project.description[lang].map((descObj) => (
+            <p class="py-4 md:py-6">{descObj.text}</p>
+          ))
+        }
+      </div>
+
+      <!-- GitHub Repositories -->
+      {
+        repoData.length > 0 && (
+          <div class="mt-6">
+            <h2 class="text-lg text-[#f5f5dc] font-bold">
+              {lang === "es"
+                ? "Repositorios de GitHub:"
+                : "GitHub Repositories:"}
+            </h2>
+            <ul class="list-disc list-inside text-[#c2b280]">
+              {repoData.map((repo) =>
+                repo ? (
+                  <li class="mb-2">
+                    <a
+                      href={repo.url}
+                      class="text-[#0099ff] underline hover:text-[#0077cc] transition-all duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {repo.url.split("/").pop()}
+                    </a>
+                    <span class="text-[#f5f5dc] ml-2">
+                      ⭐ {repo.stars} | 🍴 {repo.forks} | 📅 {repo.lastUpdated}
+                    </span>
+                  </li>
+                ) : null,
+              )}
+            </ul>
+          </div>
+        )
+      }
+
+      <!-- Project Images -->
+      <BentoGrid project_images={project.images} class="mt-12" />
+
+      <!-- Algorithm Features -->
+      {
+        project.algorithm_features && (
+          <ProjectFeatures
+            algorithm_features={project.algorithm_features[lang]}
+          />
+        )
+      }
+
+      <!-- Additional Details -->
+      <div class="text-[#c2b280] md:text-xl space-y-4 mx-2 my-2">
+        <p class="text-lg">
+          <strong class="text-[#f5f5dc] text-lg">
+            {lang === "es" ? "Rol:" : "Role:"}
+          </strong>
+          {project.role[lang]}
+        </p>
+        <p class="text-lg">
+          <strong class="text-[#f5f5dc] text-lg">
+            {lang === "es" ? "Institución:" : "Institution:"}
+          </strong>
+          {
+            typeof project.institution === "string" ? (
+              project.institution.includes("MiduDev") ? (
+                <span class="text-[#0099ff] font-bold text-lg">
+                  {lang === "es"
+                    ? "Inspirado en el tutorial de MiduDev"
+                    : "Inspired by MiduDev's tutorial"}
+                </span>
+              ) : (
+                <span class="text-[#fcb700] text-lg">
+                  {project.institution}
+                </span>
+              )
+            ) : (
+              <span class="text-[#0099ff] text-lg">
+                {project.institution[lang]}
+              </span>
+            )
+          }
+        </p>
+        <p class="text-lg">
+          <strong class="text-[#f5f5dc] text-lg">
+            {lang === "es" ? "Período de tiempo:" : "Timeframe:"}
+          </strong>
+          {project.timeframe[lang]}
+        </p>
+        <div class="mt-6">
+          <a
+            href={project.url}
+            class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
           >
-                    <div class="max-w-4xl mx-auto">
-                              <button
-                                        type="button"
-                                        class="text-[#eae0d5] rounded-2xl py-2 px-2 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
-                                        onclick="window.history.back()"
-                              >
-                                        <svg
-                                                  class="w-8 h-8"
-                                                  fill="currentColor"
-                                                  viewBox="0 0 20 20"
-                                        >
-                                                  <path
-                                                            fill-rule="evenodd"
-                                                            d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                                                            clip-rule="evenodd"
-                                                  ></path>
-                                        </svg>
-                              </button>
-
-                              <h1
-                                        class="text-3xl md:text-7xl lg:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
-                              >
-                                        {project.name[lang]}
-                              </h1>
-
-                              <div class="mt-6 text-lg md:text-2xl lg:text-xl text-[#eae0d5] leading-relaxed">
-                                        {project.description[lang].map((descObj) => (
-                                          <p class="py-4 md:py-6">
-                                            {descObj.text} <!-- ✅ Now accessing the text property correctly -->
-                                          </p>
-                                        ))}
-                                      </div>
-
-                              {
-                                        repoData.length > 0 && (
-                                                  <div class="mt-6">
-                                                            <h2 class="text-lg text-[#f5f5dc] font-bold">
-                                                                      {lang ===
-                                                                      "es"
-                                                                                ? "Repositorios de GitHub:"
-                                                                                : "GitHub Repositories:"}
-                                                            </h2>
-                                                            <ul class="list-disc list-inside text-[#c2b280]">
-                                                                      {repoData.map(
-                                                                                (
-                                                                                          repo,
-                                                                                ) =>
-                                                                                          repo ? (
-                                                                                                    <li class="mb-2">
-                                                                                                              <a
-                                                                                                                        href={
-                                                                                                                                  repo.url
-                                                                                                                        }
-                                                                                                                        class="text-[#0099ff] underline hover:text-[#0077cc] transition-all duration-300"
-                                                                                                                        target="_blank"
-                                                                                                                        rel="noopener noreferrer"
-                                                                                                              >
-                                                                                                                        {repo.url
-                                                                                                                                  .split(
-                                                                                                                                            "/",
-                                                                                                                                  )
-                                                                                                                                  .pop()}
-                                                                                                              </a>
-                                                                                                              <span class="text-[#f5f5dc] ml-2">
-                                                                                                                        ⭐{" "}
-                                                                                                                        {
-                                                                                                                                  repo.stars
-                                                                                                                        }{" "}
-                                                                                                                        |
-                                                                                                                        🍴{" "}
-                                                                                                                        {
-                                                                                                                                  repo.forks
-                                                                                                                        }{" "}
-                                                                                                                        |
-                                                                                                                        📅{" "}
-                                                                                                                        {
-                                                                                                                                  repo.lastUpdated
-                                                                                                                        }
-                                                                                                              </span>
-                                                                                                    </li>
-                                                                                          ) : null,
-                                                                      )}
-                                                            </ul>
-                                                  </div>
-                                        )
-                              }
-
-                              <BentoGrid
-                                        project_images={project.images}
-                                        class="mt-12"
-                              />
-
-                              <div
-                                        class="text-[#c2b280] md:text-xl space-y-4 mx-2 my-2"
-                              >
-                                        <p class="text-lg">
-                                                  <strong
-                                                            class="text-[#f5f5dc] text-lg"
-                                                            >{
-                                                                      lang ===
-                                                                      "es"
-                                                                                ? "Rol:"
-                                                                                : "Role:"
-                                                            }</strong
-                                                  >
-                                                  {project.role[lang]}
-                                        </p>
-                                        <p class="text-lg">
-                                                  <strong
-                                                            class="text-[#f5f5dc] text-lg"
-                                                            >{
-                                                                      lang ===
-                                                                      "es"
-                                                                                ? "Institución:"
-                                                                                : "Institution:"
-                                                            }</strong
-                                                  >
-                                                  {typeof project.institution === "string" 
-                                                  ? project.institution.includes("MiduDev") 
-                                                    ? <span class="text-[#0099ff] font-bold text-lg">{lang === "es" ? "Inspirado en el tutorial de MiduDev" : "Inspired by MiduDev's tutorial"}</span>
-                                                    : <span class="text-[#fcb700] text-lg">{project.institution}</span>
-                                                  : <span class="text-[#0099ff] text-lg">{project.institution[lang]}</span>}
-                                        </p>
-                                        <p class="text-lg">
-                                                  <strong
-                                                            class="text-[#f5f5dc] text-lg"
-                                                            >{
-                                                                      lang ===
-                                                                      "es"
-                                                                                ? "Período de tiempo:"
-                                                                                : "Timeframe:"
-                                                            }</strong
-                                                  >
-                                                  {project.timeframe[lang]}
-                                        </p>
-                                        <div class="mt-6">
-                                                  <a
-                                                            href={project.url}
-                                                            class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
-                                                  >
-                                                            {
-                                                                      lang ===
-                                                                      "es"
-                                                                                ? "Ver el Proyecto"
-                                                                                : "Check the Project"
-                                                            }
-                                                  </a>
-                                        </div>
-                              </div>
-                    </div>
-          </section>
+            {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const projectLoader = document.getElementById("project-loader");
+    const projectContent = document.getElementById("project-content");
+
+    if (document.readyState === "complete") {
+      if (projectLoader && projectContent) {
+        projectLoader.style.display = "none";
+        projectContent.style.opacity = "1";
+      }
+    } else {
+      window.addEventListener("load", () => {
+        if (projectLoader && projectContent) {
+          projectLoader.style.display = "none";
+          projectContent.style.opacity = "1";
+        }
+      });
+    }
+  });
+</script>

@@ -3,31 +3,44 @@ import { locales } from "../i18n/config";
 const { lang } = Astro.props;
 ---
 
-<select id="lang-switcher">
-  {Object.entries(locales).map(([code, name]) => (
-    <option value={code} {code === lang ? 'selected' : ''}>{name}</option>
-  ))}
+<select
+  id="lang-switcher"
+  class="block w-full px-4 py-2 text-[#eae0d5] bg-transparent
+  rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+>
+  {
+    Object.entries(locales).map(([code, name]) => (
+      <option
+        class="text-white bg-gray-800"
+        value={code}
+        selected={code === lang}
+      >
+        {name}
+      </option>
+    ))
+  }
 </select>
 
 <script>
-  window.changeLanguage = function (lang) {
-    const currentPath = window.location.pathname;
-    const pathParts = currentPath.split("/").filter(part => part !== ""); // Remove empty segments
+  document.addEventListener("astro:page-load", () => {
+    const langSwitcher = document.getElementById(
+      "lang-switcher",
+    ) as HTMLSelectElement;
 
-    // Ensure the first part is always a valid locale
-    if (["en", "es"].includes(pathParts[0])) {
-      pathParts[0] = lang; // Replace the current language code
-    } else {
-      pathParts.unshift(lang); // If no lang exists, add it
-    }
+    if (!langSwitcher) return;
 
-    window.location.href = `/${pathParts.join("/")}`;
-  };
+    langSwitcher.addEventListener("change", function () {
+      const newLang = this.value;
+      const currentPath = window.location.pathname;
+      const pathParts = currentPath.split("/").filter((part) => part !== "");
 
-  // Attach event listener manually to avoid issues
-  document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("lang-switcher")?.addEventListener("change", function () {
-      window.changeLanguage(this.value);
+      if (["en", "es"].includes(pathParts[0])) {
+        pathParts[0] = newLang;
+      } else {
+        pathParts.unshift(newLang);
+      }
+
+      window.location.href = `/${pathParts.join("/")}`;
     });
   });
 </script>

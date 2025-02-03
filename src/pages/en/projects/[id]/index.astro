@@ -5,6 +5,7 @@ import ProjectFeatures from "../../../../components/ProjectsFeatures.astro";
 import Layout from "../../../../layouts/Layout.astro";
 import BentoGrid from "../../../../components/BentoGrid.astro";
 import { fetchGitHubRepoData } from "../../../../utils/github";
+import ProjectDetailsSkeleton from "../../../../skeletons/ProjectDetailsSkeleton.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const locales = ["es", "en"];
@@ -16,6 +17,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
 };
 
+interface AlgorithmFeature {
+  description: string;
+  benefits?: string[];
+  steps?: string[];
+}
+
 interface Project {
   id: number;
   name: { en: string; es: string };
@@ -24,6 +31,8 @@ interface Project {
   institution: string;
   timeframe: { en: string; es: string };
   github_repositories?: string[];
+  algorithm_features?: Record<string, AlgorithmFeature>;
+
   url: string;
   images: string[];
 }
@@ -42,7 +51,15 @@ const repoData = await Promise.all(
   <section
     class="relative min-h-screen bg-[#222428] text-white py-16 px-4 lg:px-0"
   >
-    <div class="max-w-4xl mx-auto">
+    <div
+      id="project-loader"
+      class="absolute inset-0 flex items-center justify-center"
+    >
+      <ProjectDetailsSkeleton />
+    </div>
+
+    <div class="max-w-4xl mx-auto my-10" id="project-content">
+      <!-- Back Button -->
       <button
         type="button"
         class="text-[#eae0d5] rounded-2xl py-2 px-2 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
@@ -56,12 +73,14 @@ const repoData = await Promise.all(
         </svg>
       </button>
 
+      <!-- Project Title -->
       <h1
         class="text-3xl md:text-7xl lg:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
       >
         {project.name[lang]}
       </h1>
 
+      <!-- Project Description -->
       <div
         class="mt-6 text-lg md:text-2xl lg:text-xl text-[#eae0d5] leading-relaxed"
       >
@@ -72,6 +91,7 @@ const repoData = await Promise.all(
         }
       </div>
 
+      <!-- GitHub Repositories -->
       {
         repoData.length > 0 && (
           <div class="mt-6">
@@ -103,33 +123,54 @@ const repoData = await Promise.all(
         )
       }
 
+      <!-- Project Images -->
       <BentoGrid project_images={project.images} class="mt-12" />
 
+      <!-- Algorithm Features -->
+      {
+        project.algorithm_features && (
+          <ProjectFeatures
+            algorithm_features={project.algorithm_features[lang]}
+          />
+        )
+      }
+
+      <!-- Additional Details -->
       <div class="text-[#c2b280] md:text-xl space-y-4 mx-2 my-2">
         <p class="text-lg">
-          <strong class="text-[#f5f5dc] text-lg"
-            >{lang === "es" ? "Rol:" : "Role:"}</strong
-          >
+          <strong class="text-[#f5f5dc] text-lg">
+            {lang === "es" ? "Rol:" : "Role:"}
+          </strong>
           {project.role[lang]}
         </p>
         <p class="text-lg">
           <strong class="text-[#f5f5dc] text-lg">
             {lang === "es" ? "Institución:" : "Institution:"}
           </strong>
-          {typeof project.institution === "string" && project.institution.includes("MiduDev") ? (
-            <span class="text-[#0099ff] font-bold text-lg">
-              {lang === "es" ? "Inspirado en el tutorial de MiduDev" : "Inspired by MiduDev's tutorial"}
-            </span>
-          ) : (
-            <span class="text-[#fcb700] text-lg">
-              {project.institution ? project.institution : "Unknown Institution"} <!-- ✅ Prevents undefined errors -->
-            </span>
-          )}
+          {
+            typeof project.institution === "string" ? (
+              project.institution.includes("MiduDev") ? (
+                <span class="text-[#0099ff] font-bold text-lg">
+                  {lang === "es"
+                    ? "Inspirado en el tutorial de MiduDev"
+                    : "Inspired by MiduDev's tutorial"}
+                </span>
+              ) : (
+                <span class="text-[#fcb700] text-lg">
+                  {project.institution}
+                </span>
+              )
+            ) : (
+              <span class="text-[#0099ff] text-lg">
+                {project.institution[lang]}
+              </span>
+            )
+          }
         </p>
         <p class="text-lg">
-          <strong class="text-[#f5f5dc] text-lg"
-            >{lang === "es" ? "Período de tiempo:" : "Timeframe:"}</strong
-          >
+          <strong class="text-[#f5f5dc] text-lg">
+            {lang === "es" ? "Período de tiempo:" : "Timeframe:"}
+          </strong>
           {project.timeframe[lang]}
         </p>
         <div class="mt-6">
@@ -144,3 +185,24 @@ const repoData = await Promise.all(
     </div>
   </section>
 </Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const projectLoader = document.getElementById("project-loader");
+    const projectContent = document.getElementById("project-content");
+
+    if (document.readyState === "complete") {
+      if (projectLoader && projectContent) {
+        projectLoader.style.display = "none";
+        projectContent.style.opacity = "1";
+      }
+    } else {
+      window.addEventListener("load", () => {
+        if (projectLoader && projectContent) {
+          projectLoader.style.display = "none";
+          projectContent.style.opacity = "1";
+        }
+      });
+    }
+  });
+</script>
