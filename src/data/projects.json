@@ -170,7 +170,7 @@
                               },
                               "bg-image": "/images/tesla-landing-clone.webp",
                               "images": [
-                                        "/images/tesla-landing-clone-1.webp"
+                                        "/images/tesla/tesla-landing-clone-1.webp"
                               ],
                               "technologies": {
                                         "frontend": [
@@ -188,6 +188,104 @@
                                                   "MongoDB",
                                                   "Mongoose",
                                                   "JWT"
+                                        ]
+                              }
+                    },
+                    {
+                              "id": 3,
+                              "name": {
+                                        "es": "Harmonic - VOS 360",
+                                        "en": "Harmonic - VOS 360"
+                              },
+                              "role": {
+                                        "es": "Ingeniero DevOps",
+                                        "en": "DevOps Engineer"
+                              },
+                              "institution": "Harmonic Inc.",
+                              "timeframe": {
+                                        "es": "Desde enero 2025",
+                                        "en": "From January 2025"
+                              },
+                              "url": "https://www.harmonicinc.com/",
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Experto en comandos de Kubernetes para evaluación del estado de contenedores, con gran habilidad en la comunicación con clientes a través de Slack, obteniendo experiencia On Call para turnos en EMEA, AMS y APAC."
+                                                  },
+                                                  {
+                                                            "text": "Ingeniero de nivel 1 - Proporcioné soporte técnico 24/7 y monitoreo proactivo para Harmonic's VOS 360 Cloud Media Processing, asegurando un rendimiento y fiabilidad óptimos de las soluciones de video multiscreen en entornos de nube pública y privada, trabajando con clientes internacionales."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Expert in Kubernetes commands for container status evaluation, with strong client communication skills via Slack, gaining On Call experience for shifts in EMEA, AMS, and APAC."
+                                                  },
+                                                  {
+                                                            "text": "Level 1 Engineer - Provided 24/7 technical support and proactive monitoring for Harmonic's VOS 360 Cloud Media Processing, ensuring optimal performance and reliability of multiscreen video solutions in public and private cloud environments, working with international clients."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/harmonic-logo.webp",
+                              "images": [
+                                        "/images/harmonic-logo.webp"
+                              ],
+                              "technologies": {
+                                        "devops": [
+                                                  "Kubernetes",
+                                                  "Docker",
+                                                  "Grafana",
+                                                  "Prometheus",
+                                                  "Slack",
+                                                  "AWS Cloud",
+                                                  "Linux Bash Scripting"
+                                        ]
+                              }
+                    },
+                    {
+                              "id": 4,
+                              "name": {
+                                        "es": "Framework Frontend Agnóstico",
+                                        "en": "Frontend Agnostic Framework"
+                              },
+                              "role": {
+                                        "es": "Desarrollador",
+                                        "en": "Developer"
+                              },
+                              "institution": {
+                                        "es": "Proyecto Personal",
+                                        "en": "Personal Project"
+                              },
+                              "timeframe": {
+                                        "es": "2024",
+                                        "en": "2024"
+                              },
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/dance-website"
+                              ],
+                              "url": "https://www.thelatinaction.com",
+                              "bg-image": "/images/the-latin-action-landing.webp",
+                              "images": [
+                                        "/images/thelatinaction/the-latin-action-landing-project.webp",
+                                        "/images/thelatinaction/the-latin-action-gallery.webp",
+                                        "/images/thelatinaction/the-latin-action-mobile.png"
+                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Framework agnóstico de frontend, Astro, para el desarrollo web, utilizando JavaScript, HTML y Tailwind CSS."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Frontend agnostic framework for web development, Astro, using JavaScript, HTML, and Tailwind CSS."
+                                                  }
+                                        ]
+                              },
+                              "technologies": {
+                                        "frontend": [
+                                                  "JavaScript",
+                                                  "HTML",
+                                                  "Tailwind CSS"
                                         ]
                               }
                     }

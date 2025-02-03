@@ -51,12 +51,12 @@ const repoData = await Promise.all(
   <section
     class="relative min-h-screen bg-[#222428] text-white py-16 px-4 lg:px-0"
   >
-    <div
+    <!--  <div
       id="project-loader"
       class="absolute inset-0 flex items-center justify-center"
     >
       <ProjectDetailsSkeleton />
-    </div>
+    </div> -->
 
     <div class="max-w-4xl mx-auto my-10" id="project-content">
       <!-- Back Button -->
@@ -174,12 +174,23 @@ const repoData = await Promise.all(
           {project.timeframe[lang]}
         </p>
         <div class="mt-6">
-          <a
-            href={project.url}
-            class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
-          >
-            {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
-          </a>
+          {
+            project.url === "https://www.harmonicinc.com/" ? (
+              <a
+                href={project.url}
+                class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
+              >
+                {lang === "es" ? "Ver web" : "Check website"}
+              </a>
+            ) : (
+              <a
+                href={project.url}
+                class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
+              >
+                {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
+              </a>
+            )
+          }
         </div>
       </div>
     </div>
