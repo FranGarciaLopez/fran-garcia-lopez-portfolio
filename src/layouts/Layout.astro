@@ -41,7 +41,7 @@ const { title, lang } = Astro.props;
         infinite: false,
       });
 
-      function raf(time) {
+      function raf(time = 0) {
         if (
           !document.startViewTransition ||
           document.startViewTransition.active

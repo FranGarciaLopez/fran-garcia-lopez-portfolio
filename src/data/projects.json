@@ -50,8 +50,8 @@
                                         "/images/Nuclio/Nuclio-final-project-dashboard-mobile.webp",
                                         "/images/Nuclio/Nuclio-final-project-dashboard.webp",
                                         "/images/Nuclio/Nuclio-final-project-event-details.webp",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.webp",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.webp"
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.webp",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.webp"
                               ],
                               "technologies": {
                                         "frontend": [
@@ -266,8 +266,8 @@
                               "bg-image": "/images/the-latin-action-landing.webp",
                               "images": [
                                         "/images/thelatinaction/the-latin-action-landing-project.webp",
-                                        "/images/thelatinaction/the-latin-action-gallery.webp",
-                                        "/images/thelatinaction/the-latin-action-mobile.png"
+                                        "/images/thelatinaction/the-latin-action-mobile.png",
+                                        "/images/thelatinaction/the-latin-action-gallery.webp"
                               ],
                               "description": {
                                         "es": [

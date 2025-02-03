@@ -18,7 +18,7 @@ const projects = projectData.projects;
             Frontend
           </h3>
           <ul class="flex flex-wrap gap-4">
-            {project.technologies.frontend.map((tech) => (
+            {project.technologies.frontend?.map((tech) => (
               <li
                 class="tech-item flex items-center bg-slate-700 px-4 py-2 rounded text-gray-200
                 hover:bg-gray-600 cursor-pointer transition-colors duration-300 opacity-0"
@@ -36,7 +36,7 @@ const projects = projectData.projects;
             Backend
           </h3>
           <ul class="flex flex-wrap gap-4">
-            {project.technologies.backend.map((tech) => (
+            {project.technologies.backend?.map((tech) => (
               <li
                 class="tech-item flex items-center bg-slate-700 px-4 py-2 rounded
                 hover:bg-gray-600 cursor-pointer transition-colors duration-300 opacity-0"
