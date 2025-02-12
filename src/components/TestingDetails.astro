@@ -1,0 +1,30 @@
+---
+const { testingDetails, lang } = Astro.props;
+
+const testKey =
+          lang === "es" ? "configuración_de_pruebas" : "testing_configuration";
+---
+
+{testingDetails && (
+          <h2 class="text-3xl md:text-5xl font-extrabold  uppercase tracking-wide mt-5">
+              {lang === "es" ? "Pruebas End-to-End" : "End-to-End Testing"}
+          </h2>
+          <section class="relative mt-5 flex flex-col ">
+
+                    <!-- Animated Card -->
+                    <div class="relative shadow-2xl rounded-lg p-4 mb-10 max-w-4xl text-start bg-[#1a1c1e]
+                    transform transition duration-500 hover:scale-105 hover:border-[#ffcc00] hover:border-1 hover:shadow-[#ffcc00]/20
+                    hover:shadow-xl hover:bg-gradient-to-t from-[#2c2f36] via-[#3c4049] to-[#4a4e58]">
+
+                    <!-- Description -->
+                    <div class="mt-6 space-y-4 text-lg text-white leading-relaxed">
+                              {testingDetails[testKey].description.map((descObj) => (
+                                        <p class="opacity-90 transition duration-300 hover:opacity-100 hover:text-[#ffcc00]">
+                                        {descObj.text}
+                                        </p>
+                              ))}
+                    </div>
+
+                    </div>
+          </section>
+)}

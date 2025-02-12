@@ -5,7 +5,7 @@ import ProjectFeatures from "../../../../components/ProjectsFeatures.astro";
 import Layout from "../../../../layouts/Layout.astro";
 import BentoGrid from "../../../../components/BentoGrid.astro";
 import { fetchGitHubRepoData } from "../../../../utils/github";
-import ProjectDetailsSkeleton from "../../../../skeletons/ProjectDetailsSkeleton.astro";
+import TestingDetails from "../../../../components/TestingDetails.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const locales = ["es", "en"];
@@ -31,8 +31,15 @@ interface Project {
   institution: string;
   timeframe: { en: string; es: string };
   github_repositories?: string[];
-  algorithm_features?: Record<string, AlgorithmFeature>;
-
+  algorithm_features: {
+    titles: { en: string; es: string };
+    en: Record<string, string>;
+    es: Record<string, string>;
+  };
+  end_to_end_testing_with_vitest: {
+    en: { description: { text: string }[] };
+    es: { description: { text: string }[] };
+  };
   url: string;
   images: string[];
 }
@@ -129,11 +136,25 @@ const repoData = await Promise.all(
       <!-- Algorithm Features -->
       {
         project.algorithm_features && (
-          <ProjectFeatures
-            algorithm_features={project.algorithm_features[lang]}
-          />
+          <div class="mt-12">
+            <h2
+              class="text-2xl sm:text-6xl md:text-5xl lg:text-4xl mt-10
+              md:mt-20 md:mb-10
+              font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start mx-2"
+            >
+              {project.algorithm_features.titles[lang]}
+            </h2>
+            <ProjectFeatures
+              algorithm_features={project.algorithm_features[lang]}
+            />
+          </div>
         )
       }
+
+      <TestingDetails
+        testingDetails={project.end_to_end_testing_with_vitest?.[lang]}
+        lang={lang}
+      />
 
       <!-- Additional Details -->
       <div class="text-[#c2b280] md:text-xl space-y-4 mx-2 my-2">

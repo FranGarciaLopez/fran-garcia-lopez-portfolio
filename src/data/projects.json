@@ -72,27 +72,31 @@
                                         ]
                               },
                               "algorithm_features": {
+                                        "titles": {
+                                                  "es": "Características del Algoritmo",
+                                                  "en": "Algorithm Features"
+                                        },
                                         "es": {
-                                                  "dynamic_grouping": {
+                                                  "agrupación_dinámica": {
                                                             "description": "Los usuarios se agrupan automáticamente en función de los eventos seleccionados mediante agregaciones de MongoDB.",
                                                             "benefits": [
                                                                       "Evita la duplicación de eventos a través de un sistema de seguimiento eficiente."
                                                             ]
                                                   },
-                                                  "group_formation_process": {
+                                                  "proceso_de_formación_de_grupos": {
                                                             "description": "Los usuarios con intereses comunes se extraen mediante consultas agregadas.",
                                                             "steps": [
                                                                       "Se utiliza un método de mezcla aleatoria para garantizar la diversidad en la formación de grupos.",
                                                                       "Los usuarios se dividen en pares mediante técnicas de particionamiento de listas."
                                                             ]
                                                   },
-                                                  "unique_event_assignment": {
+                                                  "asignación_de_eventos_únicos": {
                                                             "description": "La disponibilidad de eventos para cada usuario se verifica en tiempo real.",
                                                             "benefits": [
                                                                       "Garantiza la equidad al evitar asignaciones de eventos duplicados a los grupos."
                                                             ]
                                                   },
-                                                  "data_persistence": {
+                                                  "persistencia_de_datos": {
                                                             "description": "Los grupos formados se almacenan en la base de datos de MongoDB.",
                                                             "steps": [
                                                                       "Las referencias de los grupos se actualizan en los perfiles de usuario."
@@ -123,6 +127,38 @@
                                                             "description": "Formed groups are stored in the MongoDB database.",
                                                             "steps": [
                                                                       "Group references are updated in user profiles."
+                                                            ]
+                                                  }
+                                        }
+                              },
+                              "end_to_end_testing_with_vitest": {
+                                        "es": {
+                                                  "configuración_de_pruebas": {
+                                                            "description": [
+                                                                      {
+                                                                                "text": "Se ha realizado la configuracion para realizar pruebas end-to-end con Vite y Jest una vez que el proyecto se guarda en local"
+                                                                      },
+                                                                      {
+                                                                                "text": "Para ello, se ha utilizado la librería concurrently, la cual permite ejecutar múltiples comandos en paralelo."
+                                                                      },
+                                                                      {
+                                                                                "text": "También se ha configurado GitHub Actions en la rama dev para ejecutar las pruebas de extremo a extremo previo a realizar un pull request."
+                                                                      }
+                                                            ]
+                                                  }
+                                        },
+                                        "en": {
+                                                  "testing_configuration": {
+                                                            "description": [
+                                                                      {
+                                                                                "text": "Configuration has been made to perform end-to-end tests with Vite and Jest once the project is saved locally."
+                                                                      },
+                                                                      {
+                                                                                "text": "For this purpose, the concurrently library has been used, which allows running multiple commands in parallel."
+                                                                      },
+                                                                      {
+                                                                                "text": "GitHub Actions has also been configured in the dev branch to run end-to-end tests prior to making a pull request."
+                                                                      }
                                                             ]
                                                   }
                                         }
