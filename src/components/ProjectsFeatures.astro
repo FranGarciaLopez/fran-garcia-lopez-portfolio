@@ -1,8 +1,12 @@
 ---
 interface AlgorithmFeature {
-  description: string;
-  benefits?: string[];
-  steps?: string[];
+  features: [
+    {
+      description: string;
+      benefits?: string[];
+      steps?: string[];
+    },
+  ];
 }
 
 interface AlgorithmFeatures {
@@ -14,29 +18,45 @@ const { algorithm_features } = Astro.props as {
 };
 ---
 
-<div class="container mx-auto max-w-7xl lg:px-0">
+<div class="w-full
+    max-w-7xl
+    mx-auto
+    mt-6
+    md:mt-8
+    space-y-10">
   {
     Object.entries(algorithm_features).map(([key, feature]) => (
       <div
-        class="border border-[#4448] p-10 rounded-xl bg-[#1a1c1e] mt-10 transform 
-        md:p-16 md:mt-10 md:mb-5 md:hover:scale-105 md:hover:shadow-2xl
-        transition-all duration-500 hover:bg-gradient-to-t from-[#2c2f36] via-[#3c4049] to-[#4a4e58]
-        hover:shadow-2xl hover:scale-105"
+        class="
+          border border-[#4448]
+          p-6 md:p-10
+          rounded-xl bg-[#1a1c1e]
+          transition-all duration-500
+          hover:scale-105 hover:shadow-2xl
+          hover:bg-gradient-to-t from-[#2c2f36] via-[#3c4049] to-[#4a4e58]
+        "
       >
         <h3
-          class="text-2xl md:text-4xl font-serif tracking-wide text-[#f5f5dc] capitalize
-          md:mb-4 md:mt-0"
+          class="
+            text-2xl md:text-3xl lg:text-4xl
+            font-serif
+            tracking-wide
+            text-[#f5f5dc]
+            capitalize
+            mb-4
+          "
         >
           {key.replace(/_/g, " ")}
         </h3>
-        <p class="text-lg md:text-3xl text-[#a1a1aa] mt-4 leading-relaxed py-3 tracking-wide">
+
+        <p class="text-lg md:text-xl text-[#a1a1aa] leading-relaxed mt-2">
           {feature.description}
         </p>
 
         {feature.benefits && (
           <ul class="list-disc list-inside text-[#c2b280] mt-4 space-y-3">
             {feature.benefits.map((benefit) => (
-              <li class="leading-relaxed text-lg md:text-3xl">{benefit}</li>
+              <li class="leading-relaxed text-lg md:text-xl">{benefit}</li>
             ))}
           </ul>
         )}
@@ -44,7 +64,7 @@ const { algorithm_features } = Astro.props as {
         {feature.steps && (
           <ul class="list-disc list-inside text-[#c2b280] mt-4 space-y-3">
             {feature.steps.map((step) => (
-              <li class="leading-relaxed text-lg md:text-3xl">{step}</li>
+              <li class="leading-relaxed text-lg md:text-xl">{step}</li>
             ))}
           </ul>
         )}

@@ -28,9 +28,11 @@ interface Project {
   name: { en: string; es: string };
   description: { en: { text: string }[]; es: { text: string }[] };
   role: { en: string; es: string };
-  institution: string;
+  institution: string | { en: string; es: string };
   timeframe: { en: string; es: string };
   github_repositories?: string[];
+  url: string;
+  images: string[];
   algorithm_features: {
     titles: { en: string; es: string };
     en: Record<string, string>;
@@ -40,8 +42,6 @@ interface Project {
     en: { description: { text: string }[] };
     es: { description: { text: string }[] };
   };
-  url: string;
-  images: string[];
 }
 
 const { project, lang } = Astro.props as {
@@ -55,18 +55,21 @@ const repoData = await Promise.all(
 ---
 
 <Layout title={`Project | ${project.name[lang]}`} lang={lang}>
+  {
+    /*
+    Contenedor principal:
+    - Asegura una altura mínima (min-h-screen).
+    - Usa py y px consistentes en móviles/medianas/grandes (p.ej. px-4 -> px-8 -> px-10).
+    - max-w-7xl y mx-auto para centrar y limitar el ancho en pantallas grandes.
+  */
+  }
   <section
-    class="relative min-h-screen bg-[#222428] text-white py-16 px-4 lg:px-0"
+    class="relative min-h-screen bg-[#222428] text-white
+    px-4 md:px-8 lg:px-10
+    py-8 md:py-12 lg:py-16"
   >
-    <!--  <div
-      id="project-loader"
-      class="absolute inset-0 flex items-center justify-center"
-    >
-      <ProjectDetailsSkeleton />
-    </div> -->
-
-    <div class="max-w-4xl mx-auto my-10" id="project-content">
-      <!-- Back Button -->
+    <div class="max-w-7xl mx-auto">
+      <!-- Botón Volver -->
       <button
         type="button"
         class="text-[#eae0d5] rounded-2xl py-2 px-2 hover:bg-[#c2b280] hover:text-black transition-all duration-300 flex items-center"
@@ -80,14 +83,24 @@ const repoData = await Promise.all(
         </svg>
       </button>
 
-      <!-- Project Title -->
+      <!-- Título del Proyecto -->
       <h1
         class="text-3xl md:text-7xl lg:text-5xl font-semibold tracking-wide text-[#f5f5dc] uppercase mt-6"
       >
         {project.name[lang]}
       </h1>
 
-      <!-- Project Description -->
+      <!-- Botón de Ver Proyecto -->
+      <div class="mt-6">
+        <a
+          href={project.url}
+          class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-4"
+        >
+          {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
+        </a>
+      </div>
+
+      <!-- Descripción -->
       <div
         class="mt-6 text-lg md:text-2xl lg:text-xl text-[#eae0d5] leading-relaxed"
       >
@@ -98,19 +111,42 @@ const repoData = await Promise.all(
         }
       </div>
 
-      <!-- GitHub Repositories -->
+      <!-- Imágenes -->
+      <BentoGrid project_images={project.images} class="mt-12" />
+
+      <!-- Características del Algoritmo -->
+      {
+        project.algorithm_features && (
+          <div class="mt-12">
+            <h2
+              class="
+              text-xl sm:text-3xl md:text-4xl lg:text-5xl
+              mt-10 md:mt-12 md:mb-6
+              font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start
+            "
+            >
+              {project.algorithm_features.titles[lang]}
+            </h2>
+            <ProjectFeatures
+              algorithm_features={project.algorithm_features[lang]}
+            />
+          </div>
+        )
+      }
+
+      <!-- Repositorios GitHub -->
       {
         repoData.length > 0 && (
-          <div class="mt-6">
+          <div class="mt-8 mx-2">
             <h2 class="text-lg text-[#f5f5dc] font-bold">
               {lang === "es"
                 ? "Repositorios de GitHub:"
                 : "GitHub Repositories:"}
             </h2>
-            <ul class="list-disc list-inside text-[#c2b280]">
+            <ul class="list-none list-inside text-[#c2b280]">
               {repoData.map((repo) =>
                 repo ? (
-                  <li class="mb-2">
+                  <li class="mt-2">
                     <a
                       href={repo.url}
                       class="text-[#0099ff] underline hover:text-[#0077cc] transition-all duration-300"
@@ -130,89 +166,50 @@ const repoData = await Promise.all(
         )
       }
 
-      <!-- Project Images -->
-      <BentoGrid project_images={project.images} class="mt-12" />
-
-      <!-- Algorithm Features -->
-      {
-        project.algorithm_features && (
-          <div class="mt-12">
-            <h2
-              class="text-2xl sm:text-6xl md:text-5xl lg:text-4xl mt-10
-              md:mt-20 md:mb-10
-              font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase text-start mx-2"
-            >
-              {project.algorithm_features.titles[lang]}
-            </h2>
-            <ProjectFeatures
-              algorithm_features={project.algorithm_features[lang]}
-            />
-          </div>
-        )
-      }
-
+      <!-- Testing Details -->
       <TestingDetails
         testingDetails={project.end_to_end_testing_with_vitest?.[lang]}
         lang={lang}
       />
 
-      <!-- Additional Details -->
-      <div class="text-[#c2b280] md:text-xl space-y-4 mx-2 my-2">
-        <p class="text-lg">
+      <!-- Detalles Adicionales -->
+      <div class="text-[#c2b280] md:text-xl mt-2">
+        <p class="text-lg mx-2">
           <strong class="text-[#f5f5dc] text-lg">
             {lang === "es" ? "Rol:" : "Role:"}
           </strong>
           {project.role[lang]}
         </p>
-        <p class="text-lg">
+        <p class="text-lg mt-4 mx-2">
           <strong class="text-[#f5f5dc] text-lg">
             {lang === "es" ? "Institución:" : "Institution:"}
           </strong>
           {
             typeof project.institution === "string" ? (
               project.institution.includes("MiduDev") ? (
-                <span class="text-[#0099ff] font-bold text-lg">
+                <span class="text-[#0099ff] font-bold text-lg ml-2 mx-2">
                   {lang === "es"
                     ? "Inspirado en el tutorial de MiduDev"
                     : "Inspired by MiduDev's tutorial"}
                 </span>
               ) : (
-                <span class="text-[#fcb700] text-lg">
+                <span class="text-[#fcb700] text-lg ml-2 mx-2">
                   {project.institution}
                 </span>
               )
             ) : (
-              <span class="text-[#0099ff] text-lg">
+              <span class="text-[#0099ff] text-lg ml-2 mx-2">
                 {project.institution[lang]}
               </span>
             )
           }
         </p>
-        <p class="text-lg">
+        <p class="text-lg mt-4 mx-2">
           <strong class="text-[#f5f5dc] text-lg">
             {lang === "es" ? "Período de tiempo:" : "Timeframe:"}
           </strong>
           {project.timeframe[lang]}
         </p>
-        <div class="mt-6">
-          {
-            project.url === "https://www.harmonicinc.com/" ? (
-              <a
-                href={project.url}
-                class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
-              >
-                {lang === "es" ? "Ver web" : "Check website"}
-              </a>
-            ) : (
-              <a
-                href={project.url}
-                class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-3 mx-2"
-              >
-                {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
-              </a>
-            )
-          }
-        </div>
       </div>
     </div>
   </section>
@@ -223,6 +220,7 @@ const repoData = await Promise.all(
     const projectLoader = document.getElementById("project-loader");
     const projectContent = document.getElementById("project-content");
 
+    // Si hay un loader, lo ocultamos al cargar
     if (document.readyState === "complete") {
       if (projectLoader && projectContent) {
         projectLoader.style.display = "none";

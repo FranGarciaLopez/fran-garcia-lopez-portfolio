@@ -9,17 +9,24 @@ const { project_images } = Astro.props as {
 ---
 
 <section
-    class="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-12 gap-5 pt-2"
+    class="w-full
+    max-w-7xl
+    mx-auto
+    mt-8
+    grid grid-cols-1 sm:grid-cols-12
+    gap-5"
 >
     {
         project_images.map((image, index) => (
             <div
-                class={`rounded-lg overflow-hidden relative flex
-                    ${
-                        index === 1 || index === 4
-                            ? "col-span-6 row-span-2 lg:col-span-6 lg:row-span-2" // Portrait images (taller)
-                            : "col-span-6 lg:col-span-6" // Landscape images (wider)
-                    }`}
+                class={`
+          rounded-lg overflow-hidden relative flex
+          ${
+              index === 1 || index === 4
+                  ? "col-span-6 row-span-2 lg:col-span-6 lg:row-span-2"
+                  : "col-span-6 lg:col-span-6"
+          }
+        `}
                 data-scroll
             >
                 <img
