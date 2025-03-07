@@ -1,13 +1,12 @@
-import { Sitemap } from "@astro/sitemap";
+import { SitemapStream, streamToPromise } from "sitemap";
 
 export async function get() {
+  const sitemap = new SitemapStream({
+    hostname: "https://fran-garcia-lopez.com", // Your site's base URL
+  });
+
   const sitemapData = [
-    {
-      url: "/en",
-      lastmod: "2025-03-07",
-      changefreq: "daily",
-      priority: 1.0,
-    },
+    { url: "/en", lastmod: "2025-03-07", changefreq: "daily", priority: 1.0 },
     {
       url: "/en/#projects",
       lastmod: "2025-03-07",
@@ -22,7 +21,19 @@ export async function get() {
     },
   ];
 
+  // Add each URL to the sitemap
+  sitemapData.forEach((urlData) => {
+    sitemap.write(urlData);
+  });
+
+  sitemap.end();
+
+  const xml = await streamToPromise(sitemap);
+
   return {
-    body: Sitemap(sitemapData),
+    body: xml.toString(),
+    headers: {
+      "Content-Type": "application/xml",
+    },
   };
 }

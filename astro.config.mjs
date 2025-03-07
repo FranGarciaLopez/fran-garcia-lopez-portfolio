@@ -6,8 +6,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://fran-garcia-lopez.com",
   integrations: [tailwind(), sitemap()],
-  site: "https://fran-garcia-lopez.com/es",
   redirects: {
     "/": "/es",
   },
