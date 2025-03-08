@@ -13,7 +13,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     locales.map((lang) => ({
       params: { lang, id: project.id.toString() },
       props: { project, lang },
-    })),
+    }))
   );
 };
 
@@ -50,11 +50,23 @@ const { project, lang } = Astro.props as {
 };
 
 const repoData = await Promise.all(
-  project.github_repositories?.map(fetchGitHubRepoData) || [],
+  project.github_repositories?.map(fetchGitHubRepoData) || []
 );
 ---
 
 <Layout title={`Project | ${project.name[lang]}`} lang={lang}>
+  <head>
+    <title>{project.name} - Fran García López</title>
+    <meta
+      name="description"
+      content={project.description[lang].map((d) => d.text).join(" ")}
+    />
+    <link
+      rel="canonical"
+      href={`https://fran-garcia-lopez.com/${lang}/projects/${project.id}/`}
+    />
+  </head>
+
   {
     /*
     Contenedor principal:
@@ -159,7 +171,7 @@ const repoData = await Promise.all(
                       ⭐ {repo.stars} | 🍴 {repo.forks} | 📅 {repo.lastUpdated}
                     </span>
                   </li>
-                ) : null,
+                ) : null
               )}
             </ul>
           </div>

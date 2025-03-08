@@ -1,5 +1,7 @@
 ---
-import redirect from Astro.redirect;
+import type { APIContext } from "astro";
 
-redirect("/es");
+export async function GET({ redirect }: APIContext) {
+  return redirect("/es", 301);
+}
 ---
