@@ -1003,7 +1003,7 @@ astro-eslint-parser@^1.0.2:
     is-glob "^4.0.3"
     semver "^7.3.8"
 
-astro@^5.1.8:
+astro@^5.4.2:
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/astro/-/astro-5.4.2.tgz#90cd2281a9c62735001ce17f1f3388b7f36b70f5"
   integrity sha512-9Z3fAniIRJaK/o43OroZA1wHUIU+qHiOR9ovlVT/2XQaN25QRXScIsKWlFp0G/zrx5OuuoJ+QnaoHHW061u26A==
