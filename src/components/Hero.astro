@@ -1,31 +1,75 @@
-<section class="hero-section">
-          <div class="hero-content">
-                    <h1 class="hero-title">
-                              Clean Code <span>Maketh</span> Developer
+---
+import { getTranslation } from "../i18n/getTranslation";
+const { lang } = Astro.props;
+
+import HeroSkeleton from "../skeletons/HeroSkeleton.astro";
+---
+
+<section
+          class="relative w-full min-h-screen bg-[#222428] text-white flex items-center justify-center px-4 pb-0 sm:px-8 md:px-12"
+>
+          <!-- Skeleton Loader (Initial) -->
+          <div
+                    id="hero-loader"
+                    class="absolute inset-0 flex items-center justify-center"
+          >
+                    <HeroSkeleton />
+          </div>
+
+          <!-- Actual Hero Content (Hidden by Default) -->
+          <div id="hero-content" class="max-w-4xl text-center m-4">
+                    <h1
+                              class="text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4vw] font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase"
+                    >
+                              {getTranslation(lang, "hero", "title")}
                     </h1>
-                    <p class="hero-description">
-                              In the world of web development, one name stands
-                              with style and precision:
-                              <span class="hero-highlight"
-                                        >Fran García López.</span
+                    <p
+                              class="mt-4 text-base sm:text-lg md:text-xl italic text-[#eae0d5] leading-relaxed"
+                    >
+                              {getTranslation(lang, "hero", "subtitle")}
+                              <span
+                                        class="text-[#c2b280] font-bold"
+                                        id="dev-name">Fran García López.</span
                               >
                     </p>
 
-                    <div class="hero-buttons">
-                              <a href="#projects" class="hero-button"
-                                        >View My Work</a
+                    <div
+                              class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+                    >
+                              <a
+                                        href="#projects"
+                                        class="inline-block px-6 py-3 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all"
                               >
+                                        {
+                                                  getTranslation(
+                                                            lang,
+                                                            "hero",
+                                                            "viewWork",
+                                                  )
+                                        }
+                              </a>
+
                               <a
                                         href="https://www.linkedin.com/in/fran-garcia-teleco-umh/"
-                                        class="hero-icon"
+                                        class="text-2xl hover:opacity-80 transition-all duration-300"
                               >
+                                        <!-- linkedin svg -->
                                         <svg
                                                   fill="white"
                                                   version="1.1"
+                                                  id="Layer_1"
                                                   viewBox="0 0 310 310"
-                                                  class="icon-size"
-                                        >
-                                                  <g id="SVGRepo_iconCarrier">
+                                                  class="w-6 h-6"
+                                                  ><g
+                                                            id="SVGRepo_bgCarrier"
+                                                            stroke-width="0"
+                                                  ></g><g
+                                                            id="SVGRepo_tracerCarrier"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                  ></g><g
+                                                            id="SVGRepo_iconCarrier"
+                                                  >
                                                             <g id="XMLID_801_">
                                                                       <path
                                                                                 id="XMLID_802_"
@@ -40,13 +84,14 @@
                                                                                 d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"
                                                                       ></path>
                                                             </g>
-                                                  </g>
-                                        </svg>
+                                                  </g></svg
+                                        >
                               </a>
                               <a
                                         href="https://github.com/FranGarciaLopez"
-                                        class="hero-icon"
+                                        class="text-2xl hover:opacity-80 transition-all duration-300"
                               >
+                                        <!-- github svg -->
                                         <svg
                                                   viewBox="0 0 20 20"
                                                   version="1.1"
@@ -102,3 +147,83 @@
                     </div>
           </div>
 </section>
+<script>
+          document.addEventListener("astro:page-load", () => {
+                    const heroContent = document.getElementById("hero-content");
+                    const heroLoader = document.getElementById("hero-loader");
+
+                    if (document.readyState === "complete") {
+                              if (heroContent && heroLoader) {
+                                        heroContent.style.opacity = "1";
+                                        heroLoader.style.display = "none";
+                              }
+                    } else {
+                              window.addEventListener("load", () => {
+                                        if (heroContent && heroLoader) {
+                                                  heroContent.style.opacity =
+                                                            "1";
+                                                  heroLoader.style.display =
+                                                            "none";
+                                        }
+                              });
+                    }
+          });
+
+          document.addEventListener("astro:page-load", () => {
+                    function showContent() {
+                              const heroContent =
+                                        document.getElementById("hero-content");
+                              const heroLoader =
+                                        document.getElementById("hero-loader");
+
+                              if (heroContent && heroLoader) {
+                                        heroContent.style.opacity = "1";
+                                        heroLoader.style.display = "none";
+                              }
+                    }
+
+                    if (document.readyState === "complete") {
+                              showContent();
+                    } else {
+                              window.addEventListener("load", showContent);
+                    }
+
+                    /* typewriter for the h1 */
+                    const h1 = document.querySelector("h1");
+                    const h1Text = h1?.textContent;
+                    if (!h1Text) return;
+                    h1.textContent = "";
+
+                    for (let i = 0; i < h1Text.length; i++) {
+                              setTimeout(() => {
+                                        h1.textContent += h1Text[i];
+                              }, 150 * i);
+                    }
+
+                    const spanName =
+                              document.querySelector("p > span#dev-name");
+                    const spanText = spanName?.textContent;
+                    if (!spanText) return;
+                    spanName.textContent = "";
+
+                    const names = [
+                              "Fran García López",
+                              "a Developer",
+                              "a Team Player",
+                              "a Dancer",
+                              "a Traveler",
+                              "Fran García López",
+                    ];
+
+                    const duration = 20;
+                    for (let i = 0; i < names.length; i++) {
+                              setTimeout(
+                                        () => {
+                                                  spanName.textContent =
+                                                            names[i];
+                                        },
+                                        150 * i * duration,
+                              );
+                    }
+          });
+</script>

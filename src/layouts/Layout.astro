@@ -1,7 +1,7 @@
 ---
 import NavBar from "../components/NavBar.astro";
-const { title } = Astro.props;
 import { ClientRouter } from "astro:transitions";
+const { title, lang } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,8 +10,12 @@ import { ClientRouter } from "astro:transitions";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="../../src/styles/tailwind.css" />
+    <link rel="sitemap" href="/sitemap_es.xml" />
+    <link rel="sitemap" href="/sitemap_en.xml" />
+
     <title>{title}</title>
+
+    <!-- Client Router for Page Transitions -->
     <ClientRouter />
 
     <!-- GSAP and Lenis Scripts -->
@@ -27,16 +31,26 @@ import { ClientRouter } from "astro:transitions";
 
   <body class="relative bg-[#222428]">
     <div class="relative z-10">
-      <NavBar />
+      <NavBar lang={lang} />
       <slot />
     </div>
 
     <script>
-      // Initialize Lenis
-      const lenis = new Lenis();
+      // Initialize Lenis for Smooth Scrolling
+      const lenis = new Lenis({
+        smooth: true,
+        lerp: 0.1,
+        wheelMultiplier: 1,
+        infinite: false,
+      });
 
-      // Use requestAnimationFrame to continuously update the scroll
-      function raf(time) {
+      function raf(time = 0) {
+        if (
+          !document.startViewTransition ||
+          document.startViewTransition.active
+        ) {
+          return; // Stop Lenis when transitioning
+        }
         lenis.raf(time);
         requestAnimationFrame(raf);
       }

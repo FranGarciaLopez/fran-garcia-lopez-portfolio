@@ -1,0 +1,46 @@
+---
+import { locales } from "../i18n/config";
+const { lang } = Astro.props;
+---
+
+<select
+  id="lang-switcher"
+  class="block w-full px-4 py-2 text-[#eae0d5] bg-transparent
+  rounded-md focus:border-blue-500 focus:outline-none focus:ring"
+>
+  {
+    Object.entries(locales).map(([code, name]) => (
+      <option
+        class="text-white bg-gray-800"
+        value={code}
+        selected={code === lang}
+      >
+        {name}
+      </option>
+    ))
+  }
+</select>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const langSwitcher = document.getElementById(
+      "lang-switcher",
+    ) as HTMLSelectElement;
+
+    if (!langSwitcher) return;
+
+    langSwitcher.addEventListener("change", function () {
+      const newLang = this.value;
+      const currentPath = window.location.pathname;
+      const pathParts = currentPath.split("/").filter((part) => part !== "");
+
+      if (["en", "es"].includes(pathParts[0])) {
+        pathParts[0] = newLang;
+      } else {
+        pathParts.unshift(newLang);
+      }
+
+      window.location.href = `/${pathParts.join("/")}`;
+    });
+  });
+</script>

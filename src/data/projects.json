@@ -2,30 +2,56 @@
           "projects": [
                     {
                               "id": 1,
-                              "name": "Groupify",
-                              "role": "Full Stack Developer",
+                              "name": {
+                                        "es": "Groupify",
+                                        "en": "Groupify"
+                              },
+                              "role": {
+                                        "en": "Full Stack Developer",
+                                        "es": "Desarrollador Full Stack"
+                              },
                               "institution": "Nuclio Digital School",
-                              "timeframe": "From June 2024 to January 2025",
+                              "timeframe": {
+                                        "en": "From June 2024 to January 2025",
+                                        "es": "De junio 2024 a enero 2025"
+                              },
                               "url": "https://rojo-frontend.onrender.com/",
-                              "description": [
-                                        {
-                                                  "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
-                                        },
-                                        {
-                                                  "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
-                                        },
-                                        {
-                                                  "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
-                                        }
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/rojo-frontend",
+                                        "https://github.com/FranGarciaLopez/rojo-backend"
                               ],
-                              "bg-image": "/images/Nuclio/Nuclio-final-project.png",
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Nuestro equipo, compuesto por Luigi Cucciolilio, Belen Bastos y yo, desarrollamos una aplicación web que conecta a los usuarios con intereses compartidos en diversos eventos."
+                                                  },
+                                                  {
+                                                            "text": "Los usuarios pueden seleccionar sus eventos preferidos, y a través de un algoritmo de agrupación avanzado, gestionado por un administrador, se organizan en grupos con otras personas afines que no han conocido antes, utilizando un algoritmo."
+                                                  },
+                                                  {
+                                                            "text": "A cada grupo se le proporciona acceso a un chat en vivo, fomentando la interacción en tiempo real y garantizando una experiencia social fluida y enriquecedora."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
+                                                  },
+                                                  {
+                                                            "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
+                                                  },
+                                                  {
+                                                            "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/Nuclio/Nuclio-final-project.webp",
                               "images": [
-                                        "/images/Nuclio/Nuclio-final-project-landing.png",
-                                        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.png",
-                                        "/images/Nuclio/Nuclio-final-project-dashboard.png",
-                                        "/images/Nuclio/Nuclio-final-project-event-details.png",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.png",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.png"
+                                        "/images/Nuclio/Nuclio-final-project-landing.webp",
+                                        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.webp",
+                                        "/images/Nuclio/Nuclio-final-project-dashboard.webp",
+                                        "/images/Nuclio/Nuclio-final-project-event-details.webp",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.webp",
+                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.webp"
                               ],
                               "technologies": {
                                         "frontend": [
@@ -46,51 +72,141 @@
                                         ]
                               },
                               "algorithm_features": {
-                                        "dynamic_grouping": {
-                                                  "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
-                                                  "benefits": [
-                                                            "Prevents event duplication through an efficient tracking system."
-                                                  ]
+                                        "titles": {
+                                                  "es": "Características del Algoritmo",
+                                                  "en": "Algorithm Features"
                                         },
-                                        "group_formation_process": {
-                                                  "description": "Users with common interests are extracted through aggregated queries.",
-                                                  "steps": [
-                                                            "A random shuffle method is used to ensure diversity in group formation.",
-                                                            "Users are divided into pairs using list partitioning techniques."
-                                                  ]
+                                        "es": {
+                                                  "agrupación_dinámica": {
+                                                            "description": "Los usuarios se agrupan automáticamente en función de los eventos seleccionados mediante agregaciones de MongoDB.",
+                                                            "benefits": [
+                                                                      "Evita la duplicación de eventos a través de un sistema de seguimiento eficiente."
+                                                            ]
+                                                  },
+                                                  "proceso_de_formación_de_grupos": {
+                                                            "description": "Los usuarios con intereses comunes se extraen mediante consultas agregadas.",
+                                                            "steps": [
+                                                                      "Se utiliza un método de mezcla aleatoria para garantizar la diversidad en la formación de grupos.",
+                                                                      "Los usuarios se dividen en pares mediante técnicas de particionamiento de listas."
+                                                            ]
+                                                  },
+                                                  "asignación_de_eventos_únicos": {
+                                                            "description": "La disponibilidad de eventos para cada usuario se verifica en tiempo real.",
+                                                            "benefits": [
+                                                                      "Garantiza la equidad al evitar asignaciones de eventos duplicados a los grupos."
+                                                            ]
+                                                  },
+                                                  "persistencia_de_datos": {
+                                                            "description": "Los grupos formados se almacenan en la base de datos de MongoDB.",
+                                                            "steps": [
+                                                                      "Las referencias de los grupos se actualizan en los perfiles de usuario."
+                                                            ]
+                                                  }
                                         },
-                                        "unique_event_assignment": {
-                                                  "description": "Event availability for each user is verified in real time.",
-                                                  "benefits": [
-                                                            "Ensures fairness by avoiding duplicate event assignments to groups."
-                                                  ]
+                                        "en": {
+                                                  "dynamic_grouping": {
+                                                            "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
+                                                            "benefits": [
+                                                                      "Prevents event duplication through an efficient tracking system."
+                                                            ]
+                                                  },
+                                                  "group_formation_process": {
+                                                            "description": "Users with common interests are extracted through aggregated queries.",
+                                                            "steps": [
+                                                                      "A random shuffle method is used to ensure diversity in group formation.",
+                                                                      "Users are divided into pairs using list partitioning techniques."
+                                                            ]
+                                                  },
+                                                  "unique_event_assignment": {
+                                                            "description": "Event availability for each user is verified in real time.",
+                                                            "benefits": [
+                                                                      "Ensures fairness by avoiding duplicate event assignments to groups."
+                                                            ]
+                                                  },
+                                                  "data_persistence": {
+                                                            "description": "Formed groups are stored in the MongoDB database.",
+                                                            "steps": [
+                                                                      "Group references are updated in user profiles."
+                                                            ]
+                                                  }
+                                        }
+                              },
+                              "end_to_end_testing_with_vitest": {
+                                        "es": {
+                                                  "configuración_de_pruebas": {
+                                                            "description": [
+                                                                      {
+                                                                                "text": "Se ha realizado la configuracion para realizar pruebas end-to-end con Vite y Jest una vez que el proyecto se guarda en local"
+                                                                      },
+                                                                      {
+                                                                                "text": "Para ello, se ha utilizado la librería concurrently, la cual permite ejecutar múltiples comandos en paralelo."
+                                                                      },
+                                                                      {
+                                                                                "text": "También se ha configurado GitHub Actions en la rama dev para ejecutar las pruebas de extremo a extremo previo a realizar un pull request."
+                                                                      }
+                                                            ]
+                                                  }
                                         },
-                                        "data_persistence": {
-                                                  "description": "Formed groups are stored in the MongoDB database.",
-                                                  "steps": [
-                                                            "Group references are updated in user profiles."
-                                                  ]
+                                        "en": {
+                                                  "testing_configuration": {
+                                                            "description": [
+                                                                      {
+                                                                                "text": "Configuration has been made to perform end-to-end tests with Vite and Jest once the project is saved locally."
+                                                                      },
+                                                                      {
+                                                                                "text": "For this purpose, the concurrently library has been used, which allows running multiple commands in parallel."
+                                                                      },
+                                                                      {
+                                                                                "text": "GitHub Actions has also been configured in the dev branch to run end-to-end tests prior to making a pull request."
+                                                                      }
+                                                            ]
+                                                  }
                                         }
                               }
                     },
                     {
                               "id": 2,
-                              "name": "Tesla Clone Landing Page",
-                              "role": "Frontend Development",
-                              "institution": "Inspired in MiduDev's tutorial",
-                              "timeframe": "June 2023",
+                              "name": {
+                                        "es": "Clon de la página Landing de Tesla",
+                                        "en": "Tesla Landing Page Clone"
+                              },
+                              "role": {
+                                        "es": "Desarrollador Frontend",
+                                        "en": "Frontend Developer"
+                              },
+                              "institution": {
+                                        "es": "Inspirado en el tutorial de MiduDev",
+                                        "en": "Inspired in MiduDev's tutorial"
+                              },
+                              "timeframe": {
+                                        "es": "Junio 2023",
+                                        "en": "June 2023"
+                              },
                               "url": "https://tesla-clone-website-6cz8.onrender.com/",
-                              "description": [
-                                        {
-                                                  "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
-                                        },
-                                        {
-                                                  "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
-                                        }
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/tesla-clone-website"
                               ],
-                              "bg-image": "/images/tesla-landing-clone.png",
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Clon de la página Landing de Tesla desarrollado con el Framework frontend Astro y Tailwind CSS, es un diseño responsive que se adapta a diferentes tamaños de pantalla."
+                                                  },
+                                                  {
+                                                            "text": "El proyecto incluye un encabezado dinámico que cambia su apariencia según la posición de desplazamiento, una barra de navegación responsive, y un efecto de desplazamiento que permite al usuario navegar por las diferentes secciones de la página."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
+                                                  },
+                                                  {
+                                                            "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/tesla-landing-clone.webp",
                               "images": [
-                                        "/images/tesla-landing-clone-1.png"
+                                        "/images/tesla/tesla-landing-clone-1.webp"
                               ],
                               "technologies": {
                                         "frontend": [
@@ -108,6 +224,104 @@
                                                   "MongoDB",
                                                   "Mongoose",
                                                   "JWT"
+                                        ]
+                              }
+                    },
+                    {
+                              "id": 3,
+                              "name": {
+                                        "es": "Harmonic - VOS 360",
+                                        "en": "Harmonic - VOS 360"
+                              },
+                              "role": {
+                                        "es": "Ingeniero DevOps",
+                                        "en": "DevOps Engineer"
+                              },
+                              "institution": "Harmonic Inc.",
+                              "timeframe": {
+                                        "es": "Desde enero 2025",
+                                        "en": "From January 2025"
+                              },
+                              "url": "https://www.harmonicinc.com/",
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Experto en comandos de Kubernetes para evaluación del estado de contenedores, con gran habilidad en la comunicación con clientes a través de Slack, obteniendo experiencia On Call para turnos en EMEA, AMS y APAC."
+                                                  },
+                                                  {
+                                                            "text": "Ingeniero de nivel 1 - Proporcioné soporte técnico 24/7 y monitoreo proactivo para Harmonic's VOS 360 Cloud Media Processing, asegurando un rendimiento y fiabilidad óptimos de las soluciones de video multiscreen en entornos de nube pública y privada, trabajando con clientes internacionales."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Expert in Kubernetes commands for container status evaluation, with strong client communication skills via Slack, gaining On Call experience for shifts in EMEA, AMS, and APAC."
+                                                  },
+                                                  {
+                                                            "text": "Level 1 Engineer - Provided 24/7 technical support and proactive monitoring for Harmonic's VOS 360 Cloud Media Processing, ensuring optimal performance and reliability of multiscreen video solutions in public and private cloud environments, working with international clients."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/harmonic-logo.webp",
+                              "images": [
+                                        "/images/harmonic-logo.webp"
+                              ],
+                              "technologies": {
+                                        "devops": [
+                                                  "Kubernetes",
+                                                  "Docker",
+                                                  "Grafana",
+                                                  "Prometheus",
+                                                  "Slack",
+                                                  "AWS Cloud",
+                                                  "Linux Bash Scripting"
+                                        ]
+                              }
+                    },
+                    {
+                              "id": 4,
+                              "name": {
+                                        "es": "The Latin Action",
+                                        "en": "The Latin Action"
+                              },
+                              "role": {
+                                        "es": "Desarrollador",
+                                        "en": "Developer"
+                              },
+                              "institution": {
+                                        "es": "Proyecto Personal",
+                                        "en": "Personal Project"
+                              },
+                              "timeframe": {
+                                        "es": "2024",
+                                        "en": "2024"
+                              },
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/dance-website"
+                              ],
+                              "url": "https://www.thelatinaction.com",
+                              "bg-image": "/images/the-latin-action-landing.webp",
+                              "images": [
+                                        "/images/thelatinaction/the-latin-action-landing-project.webp",
+                                        "/images/thelatinaction/the-latin-action-mobile.png",
+                                        "/images/thelatinaction/the-latin-action-gallery.webp"
+                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Framework agnóstico de frontend, Astro, para el desarrollo web, utilizando JavaScript, HTML y Tailwind CSS."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Frontend agnostic framework for web development, Astro, using JavaScript, HTML, and Tailwind CSS."
+                                                  }
+                                        ]
+                              },
+                              "technologies": {
+                                        "frontend": [
+                                                  "JavaScript",
+                                                  "HTML",
+                                                  "Tailwind CSS"
                                         ]
                               }
                     }
