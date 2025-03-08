@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/
 Allow: /
 
-Sitemap: https://fran-garcia-lopez.com/sitemap_en.xml
-Sitemap: https://fran-garcia-lopez.com/sitemap_es.xml
+Sitemap: https://fran-garcia-lopez.com/sitemap.xml
