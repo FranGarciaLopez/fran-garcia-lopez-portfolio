@@ -103,14 +103,18 @@ const repoData = await Promise.all(
       </h1>
 
       <!-- Botón de Ver Proyecto -->
-      <div class="mt-6">
-        <a
-          href={project.url}
-          class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-4"
-        >
-          {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
-        </a>
-      </div>
+      {
+        project.url && (
+          <div class="mt-6">
+            <a
+              href={project.url}
+              class="inline-block text-black font-bold bg-[#eae0d5] text-lg rounded-lg hover:bg-[#c2b280] transition-all duration-300 py-2 px-4"
+            >
+              {lang === "es" ? "Ver el Proyecto" : "Check the Project"}
+            </a>
+          </div>
+        )
+      }
 
       <!-- Descripción -->
       <div

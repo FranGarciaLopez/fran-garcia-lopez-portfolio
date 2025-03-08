@@ -3,6 +3,115 @@
                     {
                               "id": 1,
                               "name": {
+                                        "es": "Generador de preguntas para entrevistas usando Mistrail AI API",
+                                        "en": "Interview Questions Generator using Mistrail AI API"
+                              },
+                              "role": {
+                                        "es": "Desarrollador",
+                                        "en": "Developer"
+                              },
+                              "institution": {
+                                        "es": "Proyecto Personal",
+                                        "en": "Personal Project"
+                              },
+                              "timeframe": {
+                                        "es": "Marzo 2025",
+                                        "en": "March 2025"
+                              },
+                              "url": "",
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/questions-backend",
+                                        "https://github.com/FranGarciaLopez/questions-frontend"
+                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Generador de preguntas para entrevistas que utiliza la API de Mistrail AI para generar preguntas a partir de un texto de entrada, una dificultad y una cantidad de preguntas."
+                                                  },
+                                                  {
+                                                            "text": "El proyecto incluye un frontend desarrollado con NextJs y Tailwind CSS (Shadcn library), y un backend desarrollado con Node.js y Express, que se comunica con la API de Mistrail AI para generar preguntas y respuestas."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Interview questions generator that uses the Mistrail AI API to generate questions from an input text, a difficulty, and a number of questions."
+                                                  },
+                                                  {
+                                                            "text": "The project includes a frontend developed with React and Tailwind CSS, and a backend developed with Node.js and Express, which communicates with the Mistrail AI API to generate questions and answers."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/questions-generator/mistrail-ai.webp", 
+                              "images": [
+                                        "/images/questions-generator/questions-generated-mistrail-ai.webp",
+                                        "/images/questions-generator/questions-generated-mistrail-ai-phone.webp"
+                              ],
+                              "technologies": {
+                                        "frontend": [
+                                                  "Next.js",
+                                                  "React",
+                                                  "Tailwind CSS",
+                                                  "Shadcn"
+                                        ],
+                                        "backend": [
+                                                  "Node.js",
+                                                  "Express",
+                                                  "Axios"
+                                        ]
+                              },
+                              "algorithm_features": {
+                                        "titles": {
+                                                  "es": "Características",
+                                                  "en": "Features"
+                                        },
+                                        "es": {
+                                                  "generación_de_preguntas": {
+                                                            "description": "Las preguntas se generan a partir de un texto de entrada, una dificultad y una cantidad de preguntas.",
+                                                            "steps": [
+                                                                      "Se envía una solicitud POST a la API de Mistrail AI con el texto de entrada, la dificultad y la cantidad de preguntas.",
+                                                                      "La API devuelve un objeto JSON con las preguntas y respuestas generadas."
+                                                            ]
+                                                  },
+                                                  "selección_de_dificultad": {
+                                                            "description": "La dificultad de las preguntas generadas se selecciona mediante un menú desplegable.",
+                                                            "benefits": [
+                                                                      "Permite al usuaroi elegir el nivel de dificultad de las preguntas generadas."
+                                                            ]
+                                                  },
+                                                  "selección_de_cantidad": {
+                                                            "description": "La cantidad de preguntas generadas se selecciona escribiendo la cantidad que se desea.",
+                                                            "benefits": [
+                                                                      "Permite al usuario elegir la cantidad de preguntas generadas."
+                                                            ]
+                                                  }
+                                        },
+                                        "en": {
+                                                  "question_generation": {
+                                                            "description": "Questions are generated from an input text, a difficulty, and a number of questions.",
+                                                            "steps": [
+                                                                      "A POST request is sent to the Mistrail AI API with the input text, difficulty, and number of questions.",
+                                                                      "The API returns a JSON object with the generated questions and answers."
+                                                            ]
+                                                  },
+                                                  "difficulty_selection": {
+                                                            "description": "The difficulty of the generated questions is selected through a dropdown menu.",
+                                                            "benefits": [
+                                                                      "Allows the user to choose the difficulty level of the generated questions."
+                                                            ]
+                                                  },
+                                                  "quantity_selection": {
+                                                            "description": "The quantity of generated questions is selected by typing the desired quantity.",
+                                                            "benefits": [
+                                                                      "Allows the user to choose the quantity of generated questions."
+                                                            ]
+                                                  }
+                                        }
+                              }
+                              
+                    },
+                    {
+                              "id": 2,
+                              "name": {
                                         "es": "Groupify",
                                         "en": "Groupify"
                               },
@@ -165,7 +274,7 @@
                               }
                     },
                     {
-                              "id": 2,
+                              "id": 3,
                               "name": {
                                         "es": "Clon de la página Landing de Tesla",
                                         "en": "Tesla Landing Page Clone"
@@ -228,7 +337,7 @@
                               }
                     },
                     {
-                              "id": 3,
+                              "id": 4,
                               "name": {
                                         "es": "Harmonic - VOS 360",
                                         "en": "Harmonic - VOS 360"
@@ -278,7 +387,7 @@
                               }
                     },
                     {
-                              "id": 4,
+                              "id": 5,
                               "name": {
                                         "es": "The Latin Action",
                                         "en": "The Latin Action"
