@@ -41,7 +41,7 @@
                                                   }
                                         ]
                               },
-                              "bg-image": "/images/questions-generator/mistrail-ai.webp", 
+                              "bg-image": "/images/questions-generator/mistrail-ai.webp",
                               "images": [
                                         "/images/questions-generator/questions-generated-mistrail-ai.webp",
                                         "/images/questions-generator/questions-generated-mistrail-ai-phone.webp"
@@ -107,7 +107,6 @@
                                                   }
                                         }
                               }
-                              
                     },
                     {
                               "id": 2,
@@ -432,6 +431,155 @@
                                                   "HTML",
                                                   "Tailwind CSS"
                                         ]
+                              }
+                    },
+                    {
+                              "id": 6,
+                              "name": {
+                                        "es": "Quizer - Generador de Preguntas",
+                                        "en": "Quizer - Questions Generator"
+                              },
+                              "role": {
+                                        "es": "Desarrollador",
+                                        "en": "Developer"
+                              },
+                              "institution": {
+                                        "es": "Proyecto Personal",
+                                        "en": "Personal Project"
+                              },
+                              "timeframe": {
+                                        "es": "Marzo 2023",
+                                        "en": "March 2023"
+                              },
+                              "url": "https://github.com/FranGarciaLopez/quizer",
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/quizer"
+                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Quizer es una aplicación web para pruebas de conocimiento. Incluye un backend en Python con arquitectura RESTful, una base de datos PostgreSQL y un frontend en Vue.js. Admite autenticación con bcrypt y operaciones CRUD."
+                                                  },
+                                                  {
+                                                            "text": "La aplicación tiene un CMS para la gestión por parte de administradores, está containerizada con Docker y permite pruebas end-to-end con Nightwatch."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Quizer is a web app for knowledge testing. It includes a Python backend with RESTful architecture, a PostgreSQL database, and a Vue.js frontend. It supports bcrypt-based authentication and CRUD operations."
+                                                  },
+                                                  {
+                                                            "text": "The app features an admin-level CMS, is containerized with Docker, and supports end-to-end testing with Nightwatch."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/quizer/quizer-bg.webp",
+                              "images": [
+                                        
+                              ],
+                              "technologies": {
+                                        "frontend": [
+                                                  "Vue.js",
+                                                  "JavaScript"
+                                        ],
+                                        "backend": [
+                                                  "Python",
+                                                  "Flask",
+                                                  "PostgreSQL",
+                                                  "bcrypt",
+                                                  "JWT",
+                                                  "Docker"
+                                        ],
+                                        "testing": [
+                                                  "Nightwatch",
+                                                  "GitHub Actions"
+                                        ],
+                                        "version_control": [
+                                                  "GitHub",
+                                                  "Gitflow"
+                                        ]
+                              },
+                              "algorithm_features": {
+                                        "titles": {
+                                                  "es": "Características",
+                                                  "en": "Features"
+                                        },
+                                        "es": {
+                                                  "base_de_datos": {
+                                                            "description": "Base de datos creada con PostgreSQL para almacenar y gestionar los datos.",
+                                                            "benefits": [
+                                                                      "Gestión eficiente de datos estructurados."
+                                                            ]
+                                                  },
+                                                  "api_rest": {
+                                                            "description": "Backend construido con Flask, siguiendo una arquitectura RESTful.",
+                                                            "benefits": [
+                                                                      "Facilita la escalabilidad y el mantenimiento."
+                                                            ]
+                                                  },
+                                                  "autenticación_segura": {
+                                                            "description": "Autenticación mediante bcrypt y tokens JWT para seguridad.",
+                                                            "benefits": [
+                                                                      "Protección avanzada de las credenciales de usuario."
+                                                            ]
+                                                  },
+                                                  "cms_admin": {
+                                                            "description": "CMS para que los administradores gestionen preguntas y pruebas.",
+                                                            "benefits": [
+                                                                      "Control completo sobre el contenido generado."
+                                                            ]
+                                                  },
+                                                  "test_automatizados": {
+                                                            "description": "Pruebas end-to-end con Nightwatch ejecutadas mediante GitHub Actions.",
+                                                            "benefits": [
+                                                                      "Garantiza la estabilidad y funcionamiento de la plataforma."
+                                                            ]
+                                                  },
+                                                  "contenedorización": {
+                                                            "description": "Aplicación distribuida mediante Docker para portabilidad y escalabilidad.",
+                                                            "benefits": [
+                                                                      "Facilita la implementación en diferentes entornos."
+                                                            ]
+                                                  }
+                                        },
+                                        "en": {
+                                                  "database": {
+                                                            "description": "Database created with PostgreSQL to store and manage data.",
+                                                            "benefits": [
+                                                                      "Efficient management of structured data."
+                                                            ]
+                                                  },
+                                                  "rest_api": {
+                                                            "description": "Backend built with Flask, following a RESTful architecture.",
+                                                            "benefits": [
+                                                                      "Facilitates scalability and maintenance."
+                                                            ]
+                                                  },
+                                                  "secure_authentication": {
+                                                            "description": "Authentication using bcrypt and JWT tokens for security.",
+                                                            "benefits": [
+                                                                      "Advanced protection for user credentials."
+                                                            ]
+                                                  },
+                                                  "admin_cms": {
+                                                            "description": "CMS allows admins to manage questions and tests.",
+                                                            "benefits": [
+                                                                      "Complete control over the generated content."
+                                                            ]
+                                                  },
+                                                  "automated_testing": {
+                                                            "description": "End-to-end tests with Nightwatch, executed with GitHub Actions.",
+                                                            "benefits": [
+                                                                      "Ensures platform stability and functionality."
+                                                            ]
+                                                  },
+                                                  "containerization": {
+                                                            "description": "App distributed with Docker for portability and scalability.",
+                                                            "benefits": [
+                                                                      "Facilitates deployment across different environments."
+                                                            ]
+                                                  }
+                                        }
                               }
                     }
           ]
