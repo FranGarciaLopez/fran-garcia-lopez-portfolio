@@ -505,6 +505,12 @@
                                                   "en": "Features"
                                         },
                                         "es": {
+                                                  "Nota del proyecto": {
+                                                            "description": "Proyecto realizado como TFG para la Universidad Miguel Hernández de Elche.",
+                                                            "benefits": [
+                                                                      "Matricula de Honor."
+                                                            ]
+                                                  },
                                                   "base_de_datos": {
                                                             "description": "Base de datos creada con PostgreSQL para almacenar y gestionar los datos.",
                                                             "benefits": [
@@ -543,6 +549,12 @@
                                                   }
                                         },
                                         "en": {
+                                                  "project_note": {
+                                                            "description": "Project carried out as a TFG for the Miguel Hernández University of Elche.",
+                                                            "benefits": [
+                                                                      "Honor's degree."
+                                                            ]
+                                                  },
                                                   "database": {
                                                             "description": "Database created with PostgreSQL to store and manage data.",
                                                             "benefits": [
