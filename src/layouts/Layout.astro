@@ -21,8 +21,21 @@ const { title, lang } = Astro.props;
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#222428" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap_es.xml" />
-    <link rel="sitemap" href="/sitemap_en.xml" />
+    <link rel="sitemap" href="/sitemap-es.xml" />
+    <link rel="sitemap" href="/sitemap-en.xml" />
+    <link rel="canonical" href="https://fran-garcia-lopez.com/es" />
+    <link
+      rel="alternate"
+      href="https://fran-garcia-lopez.com/en"
+      hreflang="en"
+    />
+
+    <meta property="og:title" content="Fran García López - Web Developer" />
+    <meta
+      property="og:description"
+      content="Explore Fran García López's portfolio."
+    />
+    <meta property="og:url" content="https://fran-garcia-lopez.com" />
 
     <title>{title}</title>
 
