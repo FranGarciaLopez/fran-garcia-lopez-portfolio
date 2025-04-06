@@ -111,6 +111,115 @@
                     {
                               "id": 2,
                               "name": {
+                                        "es": "Sistema de Pedidos con Telegram Bot",
+                                        "en": "Ordering System with Telegram Bot"
+                              },
+                              "role": {
+                                        "es": "Desarrollador Full Stack",
+                                        "en": "Full Stack Developer"
+                              },
+                              "institution": {
+                                        "es": "Nuclio Hackathon",
+                                        "en": "Nuclio Hackathon"
+                              },
+                              "timeframe": {
+                                        "es": "Abril 2025",
+                                        "en": "April 2025"
+                              },
+                              "url": "",
+                              "github_repositories": [
+                                        "https://github.com/FranGarciaLopez/telegram-bot-ordering-system"
+                              ],
+                              "description": {
+                                        "es": [
+                                                  {
+                                                            "text": "Desarrollo de un sistema de pedidos a través de un bot de Telegram que permite a los usuarios interactuar con restaurantes, seleccionar menús y realizar pedidos mediante una interfaz conversacional."
+                                                  },
+                                                  {
+                                                            "text": "El sistema cuenta con un backend en Express y Node.js, con MongoDB como base de datos. Incluye autenticación, manejo de pedidos, visualización de menús y seguimiento de órdenes."
+                                                  }
+                                        ],
+                                        "en": [
+                                                  {
+                                                            "text": "Development of an ordering system through a Telegram bot that allows users to interact with restaurants, select menus, and place orders through a conversational interface."
+                                                  },
+                                                  {
+                                                            "text": "The system features a backend built with Express and Node.js, using MongoDB as the database. It includes authentication, order management, menu visualization, and order tracking."
+                                                  }
+                                        ]
+                              },
+                              "bg-image": "/images/telegram-bot-ordering-system.webp",
+                              "images": [
+                                        "",
+                                        ""
+                              ],
+                              "technologies": {
+                                        "frontend": [],
+                                        "backend": [
+                                                  "Node.js",
+                                                  "Express",
+                                                  "MongoDB",
+                                                  "Mongoose",
+                                                  "Telegram Bot API",
+                                                  "Axios",
+                                                  "dotenv",
+                                                  "cors"
+                                        ]
+                              },
+                              "algorithm_features": {
+                                        "titles": {
+                                                  "es": "Características",
+                                                  "en": "Features"
+                                        },
+                                        "es": {
+                                                  "gestión_de_restaurantes": {
+                                                            "description": "Los restaurantes disponibles se obtienen de la base de datos y se muestran al usuario mediante botones interactivos de Telegram.",
+                                                            "steps": [
+                                                                      "Se realiza una consulta a la base de datos para obtener todos los restaurantes disponibles.",
+                                                                      "Los restaurantes se muestran en Telegram mediante botones interactivos."
+                                                            ]
+                                                  },
+                                                  "selección_de_menú": {
+                                                            "description": "Los usuarios pueden seleccionar un menú de un restaurante específico y realizar pedidos.",
+                                                            "steps": [
+                                                                      "El bot muestra los menús disponibles de un restaurante seleccionado.",
+                                                                      "El usuario selecciona un menú y realiza el pedido a través del bot."
+                                                            ]
+                                                  },
+                                                  "registro_y_seguimiento_de_pedidos": {
+                                                            "description": "El sistema permite registrar pedidos y almacenarlos en la base de datos.",
+                                                            "benefits": [
+                                                                      "Permite al usuario revisar sus pedidos anteriores mediante comandos específicos en Telegram."
+                                                            ]
+                                                  }
+                                        },
+                                        "en": {
+                                                  "restaurant_management": {
+                                                            "description": "Available restaurants are fetched from the database and displayed to the user through interactive Telegram buttons.",
+                                                            "steps": [
+                                                                      "A query is made to the database to obtain all available restaurants.",
+                                                                      "Restaurants are displayed on Telegram using interactive buttons."
+                                                            ]
+                                                  },
+                                                  "menu_selection": {
+                                                            "description": "Users can select a menu from a specific restaurant and place orders.",
+                                                            "steps": [
+                                                                      "The bot displays available menus from a selected restaurant.",
+                                                                      "The user selects a menu and places the order through the bot."
+                                                            ]
+                                                  },
+                                                  "order_registration_and_tracking": {
+                                                            "description": "The system allows orders to be registered and stored in the database.",
+                                                            "benefits": [
+                                                                      "Allows users to review their previous orders through specific commands in Telegram."
+                                                            ]
+                                                  }
+                                        }
+                              }
+                    },
+                    {
+                              "id": 3,
+                              "name": {
                                         "es": "Groupify",
                                         "en": "Groupify"
                               },
@@ -273,7 +382,7 @@
                               }
                     },
                     {
-                              "id": 3,
+                              "id": 4,
                               "name": {
                                         "es": "Clon de la página Landing de Tesla",
                                         "en": "Tesla Landing Page Clone"
@@ -336,7 +445,7 @@
                               }
                     },
                     {
-                              "id": 4,
+                              "id": 5,
                               "name": {
                                         "es": "Harmonic - VOS 360",
                                         "en": "Harmonic - VOS 360"
@@ -386,7 +495,7 @@
                               }
                     },
                     {
-                              "id": 5,
+                              "id": 6,
                               "name": {
                                         "es": "The Latin Action",
                                         "en": "The Latin Action"
@@ -474,9 +583,7 @@
                                         ]
                               },
                               "bg-image": "/images/quizer/quizer-bg.webp",
-                              "images": [
-                                        
-                              ],
+                              "images": [],
                               "technologies": {
                                         "frontend": [
                                                   "Vue.js",

@@ -1,0 +1,70 @@
+---
+import gsap from "gsap";
+
+const messages = [
+  {
+    sender: "user",
+    text: "Hola bot, quiero ver los restaurantes disponibles.",
+  },
+  {
+    sender: "bot",
+    text: "🍽️ Restaurantes disponibles:\n1. Pizza World\n2. Sushi House\n3. Vegan Delight",
+  },
+  { sender: "user", text: "Selecciono Pizza World." },
+  {
+    sender: "bot",
+    text: "🍕 Menús de Pizza World:\n- Margherita - $8\n- Pepperoni - $10\n- Vegan Special - $12",
+  },
+  { sender: "user", text: "Quiero el menú Pepperoni." },
+  {
+    sender: "bot",
+    text: "✅ Pedido confirmado:\n- Menú: Pepperoni\n- Precio: $10\n- Método de pago: Efectivo\n¡Gracias por tu pedido!",
+  },
+];
+---
+
+<div class="chat-container" id="chat-container">
+  {
+    messages.map((message, index) => (
+      <div
+        class={`message ${message.sender === "user" ? "user" : "bot"}`}
+        key={index}
+      >
+        <p>{message.text}</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .chat-container {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Arial", sans-serif;
+    overflow-y: auto;
+    height: 500px;
+  }
+
+  .message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    width: fit-content;
+  }
+
+  .user {
+    background-color: #3b82f6;
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .bot {
+    background-color: #374151;
+    text-align: left;
+  }
+</style>

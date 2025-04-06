@@ -9,6 +9,7 @@ const projects = [
   { id: 4, lastmod: "2025-03-06" },
   { id: 5, lastmod: "2025-03-06" },
   { id: 6, lastmod: "2025-03-06" },
+  { id: 7, lastmod: "2025-03-06" },
 ];
 
 export async function GET({ request }: APIContext) {
