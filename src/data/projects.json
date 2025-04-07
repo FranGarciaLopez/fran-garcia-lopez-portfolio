@@ -526,11 +526,23 @@
                                         "es": [
                                                   {
                                                             "text": "Framework agnóstico de frontend, Astro, para el desarrollo web, utilizando JavaScript, HTML y Tailwind CSS."
+                                                  },
+                                                  {
+                                                            "text": "Página estática para la promoción de una academia de baile de un amigo."
+                                                  },
+                                                  {
+                                                            "text": "El proyecto está en proceso y faltan imágenes que deben ser tomadas un día de rodaje."
                                                   }
                                         ],
                                         "en": [
                                                   {
                                                             "text": "Frontend agnostic framework for web development, Astro, using JavaScript, HTML, and Tailwind CSS."
+                                                  },
+                                                  {
+                                                            "text": "Static page for promoting a friend's dance academy."
+                                                  },
+                                                  {
+                                                            "text": "The project is in progress and images need to be taken on a shooting day."
                                                   }
                                         ]
                               },
@@ -543,7 +555,7 @@
                               }
                     },
                     {
-                              "id": 6,
+                              "id": 7,
                               "name": {
                                         "es": "Quizer - Generador de Preguntas",
                                         "en": "Quizer - Questions Generator"
