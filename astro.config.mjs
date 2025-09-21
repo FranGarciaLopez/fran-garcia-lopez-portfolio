@@ -8,7 +8,12 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://fran-garcia-lopez.com",
   integrations: [tailwind(), sitemap()],
-  redirects: {
-    "/": "/es",
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 100, // check every 100ms
+      },
+    },
   },
 });

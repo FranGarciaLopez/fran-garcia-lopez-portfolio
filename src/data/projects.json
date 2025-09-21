@@ -1,717 +1,719 @@
 {
-          "projects": [
-                    {
-                              "id": 1,
-                              "name": {
-                                        "es": "Generador de preguntas para entrevistas usando Mistrail AI API",
-                                        "en": "Interview Questions Generator using Mistrail AI API"
-                              },
-                              "role": {
-                                        "es": "Desarrollador",
-                                        "en": "Developer"
-                              },
-                              "institution": {
-                                        "es": "Proyecto Personal",
-                                        "en": "Personal Project"
-                              },
-                              "timeframe": {
-                                        "es": "Marzo 2025",
-                                        "en": "March 2025"
-                              },
-                              "url": "",
-                              "github_repositories": [
-                                        "https://github.com/FranGarciaLopez/questions-backend",
-                                        "https://github.com/FranGarciaLopez/questions-frontend"
-                              ],
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Generador de preguntas para entrevistas que utiliza la API de Mistrail AI para generar preguntas a partir de un texto de entrada, una dificultad y una cantidad de preguntas."
-                                                  },
-                                                  {
-                                                            "text": "El proyecto incluye un frontend desarrollado con NextJs y Tailwind CSS (Shadcn library), y un backend desarrollado con Node.js y Express, que se comunica con la API de Mistrail AI para generar preguntas y respuestas."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Interview questions generator that uses the Mistrail AI API to generate questions from an input text, a difficulty, and a number of questions."
-                                                  },
-                                                  {
-                                                            "text": "The project includes a frontend developed with React and Tailwind CSS, and a backend developed with Node.js and Express, which communicates with the Mistrail AI API to generate questions and answers."
-                                                  }
-                                        ]
-                              },
-                              "bg-image": "/images/questions-generator/mistrail-ai.webp",
-                              "images": [
-                                        "/images/questions-generator/questions-generated-mistrail-ai.webp",
-                                        "/images/questions-generator/questions-generated-mistrail-ai-phone.webp"
-                              ],
-                              "technologies": {
-                                        "frontend": [
-                                                  "Next.js",
-                                                  "React",
-                                                  "Tailwind CSS",
-                                                  "Shadcn"
-                                        ],
-                                        "backend": [
-                                                  "Node.js",
-                                                  "Express",
-                                                  "Axios"
-                                        ]
-                              },
-                              "algorithm_features": {
-                                        "titles": {
-                                                  "es": "Características",
-                                                  "en": "Features"
-                                        },
-                                        "es": {
-                                                  "generación_de_preguntas": {
-                                                            "description": "Las preguntas se generan a partir de un texto de entrada, una dificultad y una cantidad de preguntas.",
-                                                            "steps": [
-                                                                      "Se envía una solicitud POST a la API de Mistrail AI con el texto de entrada, la dificultad y la cantidad de preguntas.",
-                                                                      "La API devuelve un objeto JSON con las preguntas y respuestas generadas."
-                                                            ]
-                                                  },
-                                                  "selección_de_dificultad": {
-                                                            "description": "La dificultad de las preguntas generadas se selecciona mediante un menú desplegable.",
-                                                            "benefits": [
-                                                                      "Permite al usuaroi elegir el nivel de dificultad de las preguntas generadas."
-                                                            ]
-                                                  },
-                                                  "selección_de_cantidad": {
-                                                            "description": "La cantidad de preguntas generadas se selecciona escribiendo la cantidad que se desea.",
-                                                            "benefits": [
-                                                                      "Permite al usuario elegir la cantidad de preguntas generadas."
-                                                            ]
-                                                  }
-                                        },
-                                        "en": {
-                                                  "question_generation": {
-                                                            "description": "Questions are generated from an input text, a difficulty, and a number of questions.",
-                                                            "steps": [
-                                                                      "A POST request is sent to the Mistrail AI API with the input text, difficulty, and number of questions.",
-                                                                      "The API returns a JSON object with the generated questions and answers."
-                                                            ]
-                                                  },
-                                                  "difficulty_selection": {
-                                                            "description": "The difficulty of the generated questions is selected through a dropdown menu.",
-                                                            "benefits": [
-                                                                      "Allows the user to choose the difficulty level of the generated questions."
-                                                            ]
-                                                  },
-                                                  "quantity_selection": {
-                                                            "description": "The quantity of generated questions is selected by typing the desired quantity.",
-                                                            "benefits": [
-                                                                      "Allows the user to choose the quantity of generated questions."
-                                                            ]
-                                                  }
-                                        }
-                              }
-                    },
-                    {
-                              "id": 2,
-                              "name": {
-                                        "es": "Sistema de Pedidos con Telegram Bot",
-                                        "en": "Ordering System with Telegram Bot"
-                              },
-                              "role": {
-                                        "es": "Desarrollador Full Stack",
-                                        "en": "Full Stack Developer"
-                              },
-                              "institution": {
-                                        "es": "Nuclio Hackathon",
-                                        "en": "Nuclio Hackathon"
-                              },
-                              "timeframe": {
-                                        "es": "Abril 2025",
-                                        "en": "April 2025"
-                              },
-                              "url": "",
-                              "github_repositories": [
-                                        "https://github.com/FranGarciaLopez/telegram-bot-ordering-system"
-                              ],
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Desarrollo de un sistema de pedidos a través de un bot de Telegram que permite a los usuarios interactuar con restaurantes, seleccionar menús y realizar pedidos mediante una interfaz conversacional."
-                                                  },
-                                                  {
-                                                            "text": "El sistema cuenta con un backend en Express y Node.js, con MongoDB como base de datos. Incluye autenticación, manejo de pedidos, visualización de menús y seguimiento de órdenes."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Development of an ordering system through a Telegram bot that allows users to interact with restaurants, select menus, and place orders through a conversational interface."
-                                                  },
-                                                  {
-                                                            "text": "The system features a backend built with Express and Node.js, using MongoDB as the database. It includes authentication, order management, menu visualization, and order tracking."
-                                                  }
-                                        ]
-                              },
-                              "bg-image": "/images/telegram-bot-ordering-system.webp",
-                              "images": [
-                                        "",
-                                        ""
-                              ],
-                              "technologies": {
-                                        "frontend": [],
-                                        "backend": [
-                                                  "Node.js",
-                                                  "Express",
-                                                  "MongoDB",
-                                                  "Mongoose",
-                                                  "Telegram Bot API",
-                                                  "Axios",
-                                                  "dotenv",
-                                                  "cors"
-                                        ]
-                              },
-                              "algorithm_features": {
-                                        "titles": {
-                                                  "es": "Características",
-                                                  "en": "Features"
-                                        },
-                                        "es": {
-                                                  "gestión_de_restaurantes": {
-                                                            "description": "Los restaurantes disponibles se obtienen de la base de datos y se muestran al usuario mediante botones interactivos de Telegram.",
-                                                            "steps": [
-                                                                      "Se realiza una consulta a la base de datos para obtener todos los restaurantes disponibles.",
-                                                                      "Los restaurantes se muestran en Telegram mediante botones interactivos."
-                                                            ]
-                                                  },
-                                                  "selección_de_menú": {
-                                                            "description": "Los usuarios pueden seleccionar un menú de un restaurante específico y realizar pedidos.",
-                                                            "steps": [
-                                                                      "El bot muestra los menús disponibles de un restaurante seleccionado.",
-                                                                      "El usuario selecciona un menú y realiza el pedido a través del bot."
-                                                            ]
-                                                  },
-                                                  "registro_y_seguimiento_de_pedidos": {
-                                                            "description": "El sistema permite registrar pedidos y almacenarlos en la base de datos.",
-                                                            "benefits": [
-                                                                      "Permite al usuario revisar sus pedidos anteriores mediante comandos específicos en Telegram."
-                                                            ]
-                                                  }
-                                        },
-                                        "en": {
-                                                  "restaurant_management": {
-                                                            "description": "Available restaurants are fetched from the database and displayed to the user through interactive Telegram buttons.",
-                                                            "steps": [
-                                                                      "A query is made to the database to obtain all available restaurants.",
-                                                                      "Restaurants are displayed on Telegram using interactive buttons."
-                                                            ]
-                                                  },
-                                                  "menu_selection": {
-                                                            "description": "Users can select a menu from a specific restaurant and place orders.",
-                                                            "steps": [
-                                                                      "The bot displays available menus from a selected restaurant.",
-                                                                      "The user selects a menu and places the order through the bot."
-                                                            ]
-                                                  },
-                                                  "order_registration_and_tracking": {
-                                                            "description": "The system allows orders to be registered and stored in the database.",
-                                                            "benefits": [
-                                                                      "Allows users to review their previous orders through specific commands in Telegram."
-                                                            ]
-                                                  }
-                                        }
-                              }
-                    },
-                    {
-                              "id": 3,
-                              "name": {
-                                        "es": "Groupify",
-                                        "en": "Groupify"
-                              },
-                              "role": {
-                                        "en": "Full Stack Developer",
-                                        "es": "Desarrollador Full Stack"
-                              },
-                              "institution": "Nuclio Digital School",
-                              "timeframe": {
-                                        "en": "From June 2024 to January 2025",
-                                        "es": "De junio 2024 a enero 2025"
-                              },
-                              "url": "https://rojo-frontend.onrender.com/",
-                              "github_repositories": [
-                                        "https://github.com/FranGarciaLopez/rojo-frontend",
-                                        "https://github.com/FranGarciaLopez/rojo-backend"
-                              ],
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Nuestro equipo, compuesto por Luigi Cucciolilio, Belen Bastos y yo, desarrollamos una aplicación web que conecta a los usuarios con intereses compartidos en diversos eventos."
-                                                  },
-                                                  {
-                                                            "text": "Los usuarios pueden seleccionar sus eventos preferidos, y a través de un algoritmo de agrupación avanzado, gestionado por un administrador, se organizan en grupos con otras personas afines que no han conocido antes, utilizando un algoritmo."
-                                                  },
-                                                  {
-                                                            "text": "A cada grupo se le proporciona acceso a un chat en vivo, fomentando la interacción en tiempo real y garantizando una experiencia social fluida y enriquecedora."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
-                                                  },
-                                                  {
-                                                            "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
-                                                  },
-                                                  {
-                                                            "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
-                                                  }
-                                        ]
-                              },
-                              "bg-image": "/images/Nuclio/Nuclio-final-project.webp",
-                              "images": [
-                                        "/images/Nuclio/Nuclio-final-project-landing.webp",
-                                        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.webp",
-                                        "/images/Nuclio/Nuclio-final-project-dashboard.webp",
-                                        "/images/Nuclio/Nuclio-final-project-event-details.webp",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.webp",
-                                        "/images/Nuclio/Nuclio-final-project-admin-dashboard.webp"
-                              ],
-                              "technologies": {
-                                        "frontend": [
-                                                  "Vite with React",
-                                                  "React Router",
-                                                  "Axios",
-                                                  "Font Awesome",
-                                                  "Tailwind CSS",
-                                                  "Socket.IO"
-                                        ],
-                                        "backend": [
-                                                  "Node.js",
-                                                  "Express",
-                                                  "Socket.IO",
-                                                  "MongoDB",
-                                                  "Mongoose",
-                                                  "JWT"
-                                        ]
-                              },
-                              "algorithm_features": {
-                                        "titles": {
-                                                  "es": "Características del Algoritmo",
-                                                  "en": "Algorithm Features"
-                                        },
-                                        "es": {
-                                                  "agrupación_dinámica": {
-                                                            "description": "Los usuarios se agrupan automáticamente en función de los eventos seleccionados mediante agregaciones de MongoDB.",
-                                                            "benefits": [
-                                                                      "Evita la duplicación de eventos a través de un sistema de seguimiento eficiente."
-                                                            ]
-                                                  },
-                                                  "proceso_de_formación_de_grupos": {
-                                                            "description": "Los usuarios con intereses comunes se extraen mediante consultas agregadas.",
-                                                            "steps": [
-                                                                      "Se utiliza un método de mezcla aleatoria para garantizar la diversidad en la formación de grupos.",
-                                                                      "Los usuarios se dividen en pares mediante técnicas de particionamiento de listas."
-                                                            ]
-                                                  },
-                                                  "asignación_de_eventos_únicos": {
-                                                            "description": "La disponibilidad de eventos para cada usuario se verifica en tiempo real.",
-                                                            "benefits": [
-                                                                      "Garantiza la equidad al evitar asignaciones de eventos duplicados a los grupos."
-                                                            ]
-                                                  },
-                                                  "persistencia_de_datos": {
-                                                            "description": "Los grupos formados se almacenan en la base de datos de MongoDB.",
-                                                            "steps": [
-                                                                      "Las referencias de los grupos se actualizan en los perfiles de usuario."
-                                                            ]
-                                                  }
-                                        },
-                                        "en": {
-                                                  "dynamic_grouping": {
-                                                            "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
-                                                            "benefits": [
-                                                                      "Prevents event duplication through an efficient tracking system."
-                                                            ]
-                                                  },
-                                                  "group_formation_process": {
-                                                            "description": "Users with common interests are extracted through aggregated queries.",
-                                                            "steps": [
-                                                                      "A random shuffle method is used to ensure diversity in group formation.",
-                                                                      "Users are divided into pairs using list partitioning techniques."
-                                                            ]
-                                                  },
-                                                  "unique_event_assignment": {
-                                                            "description": "Event availability for each user is verified in real time.",
-                                                            "benefits": [
-                                                                      "Ensures fairness by avoiding duplicate event assignments to groups."
-                                                            ]
-                                                  },
-                                                  "data_persistence": {
-                                                            "description": "Formed groups are stored in the MongoDB database.",
-                                                            "steps": [
-                                                                      "Group references are updated in user profiles."
-                                                            ]
-                                                  }
-                                        }
-                              },
-                              "end_to_end_testing_with_vitest": {
-                                        "es": {
-                                                  "configuración_de_pruebas": {
-                                                            "description": [
-                                                                      {
-                                                                                "text": "Se ha realizado la configuracion para realizar pruebas end-to-end con Vite y Jest una vez que el proyecto se guarda en local"
-                                                                      },
-                                                                      {
-                                                                                "text": "Para ello, se ha utilizado la librería concurrently, la cual permite ejecutar múltiples comandos en paralelo."
-                                                                      },
-                                                                      {
-                                                                                "text": "También se ha configurado GitHub Actions en la rama dev para ejecutar las pruebas de extremo a extremo previo a realizar un pull request."
-                                                                      }
-                                                            ]
-                                                  }
-                                        },
-                                        "en": {
-                                                  "testing_configuration": {
-                                                            "description": [
-                                                                      {
-                                                                                "text": "Configuration has been made to perform end-to-end tests with Vite and Jest once the project is saved locally."
-                                                                      },
-                                                                      {
-                                                                                "text": "For this purpose, the concurrently library has been used, which allows running multiple commands in parallel."
-                                                                      },
-                                                                      {
-                                                                                "text": "GitHub Actions has also been configured in the dev branch to run end-to-end tests prior to making a pull request."
-                                                                      }
-                                                            ]
-                                                  }
-                                        }
-                              }
-                    },
-                    {
-                              "id": 4,
-                              "name": {
-                                        "es": "Clon de la página Landing de Tesla",
-                                        "en": "Tesla Landing Page Clone"
-                              },
-                              "role": {
-                                        "es": "Desarrollador Frontend",
-                                        "en": "Frontend Developer"
-                              },
-                              "institution": {
-                                        "es": "Inspirado en el tutorial de MiduDev",
-                                        "en": "Inspired in MiduDev's tutorial"
-                              },
-                              "timeframe": {
-                                        "es": "Junio 2023",
-                                        "en": "June 2023"
-                              },
-                              "url": "https://tesla-clone-website-6cz8.onrender.com/",
-                              "github_repositories": [
-                                        "https://github.com/FranGarciaLopez/tesla-clone-website"
-                              ],
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Clon de la página Landing de Tesla desarrollado con el Framework frontend Astro y Tailwind CSS, es un diseño responsive que se adapta a diferentes tamaños de pantalla."
-                                                  },
-                                                  {
-                                                            "text": "El proyecto incluye un encabezado dinámico que cambia su apariencia según la posición de desplazamiento, una barra de navegación responsive, y un efecto de desplazamiento que permite al usuario navegar por las diferentes secciones de la página."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
-                                                  },
-                                                  {
-                                                            "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
-                                                  }
-                                        ]
-                              },
-                              "bg-image": "/images/tesla-landing-clone.webp",
-                              "images": [
-                                        "/images/tesla/tesla-landing-clone-1.webp"
-                              ],
-                              "technologies": {
-                                        "frontend": [
-                                                  "Vite with React",
-                                                  "React Router",
-                                                  "Axios",
-                                                  "Font Awesome",
-                                                  "Tailwind CSS",
-                                                  "Socket.IO"
-                                        ],
-                                        "backend": [
-                                                  ".js",
-                                                  "Express",
-                                                  "Socket.IO",
-                                                  "MongoDB",
-                                                  "Mongoose",
-                                                  "JWT"
-                                        ]
-                              }
-                    },
-                    {
-                              "id": 5,
-                              "name": {
-                                        "es": "Harmonic - VOS 360",
-                                        "en": "Harmonic - VOS 360"
-                              },
-                              "role": {
-                                        "es": "Ingeniero DevOps",
-                                        "en": "DevOps Engineer"
-                              },
-                              "institution": "Harmonic Inc.",
-                              "timeframe": {
-                                        "es": "Desde enero 2025",
-                                        "en": "From January 2025"
-                              },
-                              "url": "https://www.harmonicinc.com/",
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Experto en comandos de Kubernetes para evaluación del estado de contenedores, con gran habilidad en la comunicación con clientes a través de Slack, obteniendo experiencia On Call para turnos en EMEA, AMS y APAC."
-                                                  },
-                                                  {
-                                                            "text": "Ingeniero de nivel 1 - Proporcioné soporte técnico 24/7 y monitoreo proactivo para Harmonic's VOS 360 Cloud Media Processing, asegurando un rendimiento y fiabilidad óptimos de las soluciones de video multiscreen en entornos de nube pública y privada, trabajando con clientes internacionales."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Expert in Kubernetes commands for container status evaluation, with strong client communication skills via Slack, gaining On Call experience for shifts in EMEA, AMS, and APAC."
-                                                  },
-                                                  {
-                                                            "text": "Level 1 Engineer - Provided 24/7 technical support and proactive monitoring for Harmonic's VOS 360 Cloud Media Processing, ensuring optimal performance and reliability of multiscreen video solutions in public and private cloud environments, working with international clients."
-                                                  }
-                                        ]
-                              },
-                              "bg-image": "/images/harmonic-logo.webp",
-                              "images": [
-                                        "/images/harmonic-logo.webp"
-                              ],
-                              "technologies": {
-                                        "devops": [
-                                                  "Kubernetes",
-                                                  "Docker",
-                                                  "Grafana",
-                                                  "Prometheus",
-                                                  "Slack",
-                                                  "AWS Cloud",
-                                                  "Linux Bash Scripting"
-                                        ]
-                              }
-                    },
-                    {
-                              "id": 6,
-                              "name": {
-                                        "es": "The Latin Action",
-                                        "en": "The Latin Action"
-                              },
-                              "role": {
-                                        "es": "Desarrollador",
-                                        "en": "Developer"
-                              },
-                              "institution": {
-                                        "es": "Proyecto Personal",
-                                        "en": "Personal Project"
-                              },
-                              "timeframe": {
-                                        "es": "2024",
-                                        "en": "2024"
-                              },
-                              "github_repositories": [
-                                        "https://github.com/FranGarciaLopez/dance-website"
-                              ],
-                              "url": "https://www.thelatinaction.com",
-                              "bg-image": "/images/the-latin-action-landing.webp",
-                              "images": [
-                                        "/images/thelatinaction/the-latin-action-landing-project.webp",
-                                        "/images/thelatinaction/the-latin-action-mobile.png",
-                                        "/images/thelatinaction/the-latin-action-gallery.webp"
-                              ],
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Framework agnóstico de frontend, Astro, para el desarrollo web, utilizando JavaScript, HTML y Tailwind CSS."
-                                                  },
-                                                  {
-                                                            "text": "Página estática para la promoción de una academia de baile de un amigo."
-                                                  },
-                                                  {
-                                                            "text": "El proyecto está en proceso y faltan imágenes que deben ser tomadas un día de rodaje."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Frontend agnostic framework for web development, Astro, using JavaScript, HTML, and Tailwind CSS."
-                                                  },
-                                                  {
-                                                            "text": "Static page for promoting a friend's dance academy."
-                                                  },
-                                                  {
-                                                            "text": "The project is in progress and images need to be taken on a shooting day."
-                                                  }
-                                        ]
-                              },
-                              "technologies": {
-                                        "frontend": [
-                                                  "JavaScript",
-                                                  "HTML",
-                                                  "Tailwind CSS"
-                                        ]
-                              }
-                    },
-                    {
-                              "id": 7,
-                              "name": {
-                                        "es": "Quizer - Generador de Preguntas",
-                                        "en": "Quizer - Questions Generator"
-                              },
-                              "role": {
-                                        "es": "Desarrollador",
-                                        "en": "Developer"
-                              },
-                              "institution": {
-                                        "es": "Proyecto Personal",
-                                        "en": "Personal Project"
-                              },
-                              "timeframe": {
-                                        "es": "Marzo 2023",
-                                        "en": "March 2023"
-                              },
-                              "url": "https://github.com/FranGarciaLopez/quizer",
-                              "github_repositories": [
-                                        "https://github.com/FranGarciaLopez/quizer"
-                              ],
-                              "description": {
-                                        "es": [
-                                                  {
-                                                            "text": "Quizer es una aplicación web para pruebas de conocimiento. Incluye un backend en Python con arquitectura RESTful, una base de datos PostgreSQL y un frontend en Vue.js. Admite autenticación con bcrypt y operaciones CRUD."
-                                                  },
-                                                  {
-                                                            "text": "La aplicación tiene un CMS para la gestión por parte de administradores, está containerizada con Docker y permite pruebas end-to-end con Nightwatch."
-                                                  }
-                                        ],
-                                        "en": [
-                                                  {
-                                                            "text": "Quizer is a web app for knowledge testing. It includes a Python backend with RESTful architecture, a PostgreSQL database, and a Vue.js frontend. It supports bcrypt-based authentication and CRUD operations."
-                                                  },
-                                                  {
-                                                            "text": "The app features an admin-level CMS, is containerized with Docker, and supports end-to-end testing with Nightwatch."
-                                                  }
-                                        ]
-                              },
-                              "bg-image": "/images/quizer/quizer-bg.webp",
-                              "images": [],
-                              "technologies": {
-                                        "frontend": [
-                                                  "Vue.js",
-                                                  "JavaScript"
-                                        ],
-                                        "backend": [
-                                                  "Python",
-                                                  "Flask",
-                                                  "PostgreSQL",
-                                                  "bcrypt",
-                                                  "JWT",
-                                                  "Docker"
-                                        ],
-                                        "testing": [
-                                                  "Nightwatch",
-                                                  "GitHub Actions"
-                                        ],
-                                        "version_control": [
-                                                  "GitHub",
-                                                  "Gitflow"
-                                        ]
-                              },
-                              "algorithm_features": {
-                                        "titles": {
-                                                  "es": "Características",
-                                                  "en": "Features"
-                                        },
-                                        "es": {
-                                                  "Nota del proyecto": {
-                                                            "description": "Proyecto realizado como TFG para la Universidad Miguel Hernández de Elche.",
-                                                            "benefits": [
-                                                                      "Matricula de Honor."
-                                                            ]
-                                                  },
-                                                  "base_de_datos": {
-                                                            "description": "Base de datos creada con PostgreSQL para almacenar y gestionar los datos.",
-                                                            "benefits": [
-                                                                      "Gestión eficiente de datos estructurados."
-                                                            ]
-                                                  },
-                                                  "api_rest": {
-                                                            "description": "Backend construido con Flask, siguiendo una arquitectura RESTful.",
-                                                            "benefits": [
-                                                                      "Facilita la escalabilidad y el mantenimiento."
-                                                            ]
-                                                  },
-                                                  "autenticación_segura": {
-                                                            "description": "Autenticación mediante bcrypt y tokens JWT para seguridad.",
-                                                            "benefits": [
-                                                                      "Protección avanzada de las credenciales de usuario."
-                                                            ]
-                                                  },
-                                                  "cms_admin": {
-                                                            "description": "CMS para que los administradores gestionen preguntas y pruebas.",
-                                                            "benefits": [
-                                                                      "Control completo sobre el contenido generado."
-                                                            ]
-                                                  },
-                                                  "test_automatizados": {
-                                                            "description": "Pruebas end-to-end con Nightwatch ejecutadas mediante GitHub Actions.",
-                                                            "benefits": [
-                                                                      "Garantiza la estabilidad y funcionamiento de la plataforma."
-                                                            ]
-                                                  },
-                                                  "contenedorización": {
-                                                            "description": "Aplicación distribuida mediante Docker para portabilidad y escalabilidad.",
-                                                            "benefits": [
-                                                                      "Facilita la implementación en diferentes entornos."
-                                                            ]
-                                                  }
-                                        },
-                                        "en": {
-                                                  "project_note": {
-                                                            "description": "Project carried out as a TFG for the Miguel Hernández University of Elche.",
-                                                            "benefits": [
-                                                                      "Honor's degree."
-                                                            ]
-                                                  },
-                                                  "database": {
-                                                            "description": "Database created with PostgreSQL to store and manage data.",
-                                                            "benefits": [
-                                                                      "Efficient management of structured data."
-                                                            ]
-                                                  },
-                                                  "rest_api": {
-                                                            "description": "Backend built with Flask, following a RESTful architecture.",
-                                                            "benefits": [
-                                                                      "Facilitates scalability and maintenance."
-                                                            ]
-                                                  },
-                                                  "secure_authentication": {
-                                                            "description": "Authentication using bcrypt and JWT tokens for security.",
-                                                            "benefits": [
-                                                                      "Advanced protection for user credentials."
-                                                            ]
-                                                  },
-                                                  "admin_cms": {
-                                                            "description": "CMS allows admins to manage questions and tests.",
-                                                            "benefits": [
-                                                                      "Complete control over the generated content."
-                                                            ]
-                                                  },
-                                                  "automated_testing": {
-                                                            "description": "End-to-end tests with Nightwatch, executed with GitHub Actions.",
-                                                            "benefits": [
-                                                                      "Ensures platform stability and functionality."
-                                                            ]
-                                                  },
-                                                  "containerization": {
-                                                            "description": "App distributed with Docker for portability and scalability.",
-                                                            "benefits": [
-                                                                      "Facilitates deployment across different environments."
-                                                            ]
-                                                  }
-                                        }
-                              }
-                    }
-          ]
+  "professional": [
+    {
+      "id": 5,
+      "name": {
+        "es": "Harmonic - VOS 360",
+        "en": "Harmonic - VOS 360"
+      },
+      "role": {
+        "es": "Ingeniero DevOps",
+        "en": "DevOps Engineer"
+      },
+      "institution": "Harmonic Inc.",
+      "timeframe": {
+        "es": "Desde Mayo 2023",
+        "en": "From May 2023"
+      },
+      "url": "",
+      "description": {
+        "es": [
+          {
+            "text": "Experto en comandos de Kubernetes para evaluación del estado de contenedores, con gran habilidad en la comunicación con clientes a través de Slack, obteniendo experiencia On Call para turnos en EMEA, AMS y APAC."
+          },
+          {
+            "text": "Ingeniero de nivel 1 - Proporcioné soporte técnico 24/7 y monitoreo proactivo para Harmonic's VOS 360 Cloud Media Processing, asegurando un rendimiento y fiabilidad óptimos de las soluciones de video multiscreen en entornos de nube pública y privada, trabajando con clientes internacionales."
+          }
+        ],
+        "en": [
+          {
+            "text": "Expert in Kubernetes commands for container status evaluation, with strong client communication skills via Slack, gaining On Call experience for shifts in EMEA, AMS, and APAC."
+          },
+          {
+            "text": "Level 1 Engineer - Provided 24/7 technical support and proactive monitoring for Harmonic's VOS 360 Cloud Media Processing, ensuring optimal performance and reliability of multiscreen video solutions in public and private cloud environments, working with international clients."
+          }
+        ]
+      },
+      "bg-image": "/images/harmonic-logo.webp",
+      "images": [
+        "/images/harmonic-logo.webp"
+      ],
+      "technologies": {
+        "devops": [
+          "Kubernetes",
+          "Docker",
+          "Grafana",
+          "Prometheus",
+          "Slack",
+          "AWS Cloud",
+          "Linux Bash Scripting"
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": {
+        "es": "Generador de preguntas para entrevistas usando Mistrail AI API",
+        "en": "Interview Questions Generator using Mistrail AI API"
+      },
+      "role": {
+        "es": "Desarrollador",
+        "en": "Developer"
+      },
+      "institution": {
+        "es": "Proyecto Personal",
+        "en": "Personal Project"
+      },
+      "timeframe": {
+        "es": "Marzo 2025",
+        "en": "March 2025"
+      },
+      "url": "",
+      "github_repositories": [
+        "https://github.com/FranGarciaLopez/questions-backend",
+        "https://github.com/FranGarciaLopez/questions-frontend"
+      ],
+      "description": {
+        "es": [
+          {
+            "text": "Generador de preguntas para entrevistas que utiliza la API de Mistrail AI para generar preguntas a partir de un texto de entrada, una dificultad y una cantidad de preguntas."
+          },
+          {
+            "text": "El proyecto incluye un frontend desarrollado con NextJs y Tailwind CSS (Shadcn library), y un backend desarrollado con Node.js y Express, que se comunica con la API de Mistrail AI para generar preguntas y respuestas."
+          }
+        ],
+        "en": [
+          {
+            "text": "Interview questions generator that uses the Mistrail AI API to generate questions from an input text, a difficulty, and a number of questions."
+          },
+          {
+            "text": "The project includes a frontend developed with React and Tailwind CSS, and a backend developed with Node.js and Express, which communicates with the Mistrail AI API to generate questions and answers."
+          }
+        ]
+      },
+      "bg-image": "/images/questions-generator/mistrail-ai.webp",
+      "images": [
+        "/images/questions-generator/questions-generated-mistrail-ai.webp",
+        "/images/questions-generator/questions-generated-mistrail-ai-phone.webp"
+      ],
+      "technologies": {
+        "frontend": [
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "Shadcn"
+        ],
+        "backend": [
+          "Node.js",
+          "Express",
+          "Axios"
+        ]
+      },
+      "algorithm_features": {
+        "titles": {
+          "es": "Características",
+          "en": "Features"
+        },
+        "es": {
+          "generación_de_preguntas": {
+            "description": "Las preguntas se generan a partir de un texto de entrada, una dificultad y una cantidad de preguntas.",
+            "steps": [
+              "Se envía una solicitud POST a la API de Mistrail AI con el texto de entrada, la dificultad y la cantidad de preguntas.",
+              "La API devuelve un objeto JSON con las preguntas y respuestas generadas."
+            ]
+          },
+          "selección_de_dificultad": {
+            "description": "La dificultad de las preguntas generadas se selecciona mediante un menú desplegable.",
+            "benefits": [
+              "Permite al usuaroi elegir el nivel de dificultad de las preguntas generadas."
+            ]
+          },
+          "selección_de_cantidad": {
+            "description": "La cantidad de preguntas generadas se selecciona escribiendo la cantidad que se desea.",
+            "benefits": [
+              "Permite al usuario elegir la cantidad de preguntas generadas."
+            ]
+          }
+        },
+        "en": {
+          "question_generation": {
+            "description": "Questions are generated from an input text, a difficulty, and a number of questions.",
+            "steps": [
+              "A POST request is sent to the Mistrail AI API with the input text, difficulty, and number of questions.",
+              "The API returns a JSON object with the generated questions and answers."
+            ]
+          },
+          "difficulty_selection": {
+            "description": "The difficulty of the generated questions is selected through a dropdown menu.",
+            "benefits": [
+              "Allows the user to choose the difficulty level of the generated questions."
+            ]
+          },
+          "quantity_selection": {
+            "description": "The quantity of generated questions is selected by typing the desired quantity.",
+            "benefits": [
+              "Allows the user to choose the quantity of generated questions."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": {
+        "es": "Sistema de Pedidos con Telegram Bot",
+        "en": "Ordering System with Telegram Bot"
+      },
+      "role": {
+        "es": "Desarrollador Full Stack",
+        "en": "Full Stack Developer"
+      },
+      "institution": {
+        "es": "Nuclio Hackathon",
+        "en": "Nuclio Hackathon"
+      },
+      "timeframe": {
+        "es": "Abril 2025",
+        "en": "April 2025"
+      },
+      "url": "",
+      "github_repositories": [
+        "https://github.com/FranGarciaLopez/telegram-bot-ordering-system"
+      ],
+      "description": {
+        "es": [
+          {
+            "text": "Desarrollo de un sistema de pedidos a través de un bot de Telegram que permite a los usuarios interactuar con restaurantes, seleccionar menús y realizar pedidos mediante una interfaz conversacional."
+          },
+          {
+            "text": "El sistema cuenta con un backend en Express y Node.js, con MongoDB como base de datos. Incluye autenticación, manejo de pedidos, visualización de menús y seguimiento de órdenes."
+          }
+        ],
+        "en": [
+          {
+            "text": "Development of an ordering system through a Telegram bot that allows users to interact with restaurants, select menus, and place orders through a conversational interface."
+          },
+          {
+            "text": "The system features a backend built with Express and Node.js, using MongoDB as the database. It includes authentication, order management, menu visualization, and order tracking."
+          }
+        ]
+      },
+      "bg-image": "/images/telegram-bot-ordering-system.webp",
+      "images": [
+        "",
+        ""
+      ],
+      "technologies": {
+        "frontend": [],
+        "backend": [
+          "Node.js",
+          "Express",
+          "MongoDB",
+          "Mongoose",
+          "Telegram Bot API",
+          "Axios",
+          "dotenv",
+          "cors"
+        ]
+      },
+      "algorithm_features": {
+        "titles": {
+          "es": "Características",
+          "en": "Features"
+        },
+        "es": {
+          "gestión_de_restaurantes": {
+            "description": "Los restaurantes disponibles se obtienen de la base de datos y se muestran al usuario mediante botones interactivos de Telegram.",
+            "steps": [
+              "Se realiza una consulta a la base de datos para obtener todos los restaurantes disponibles.",
+              "Los restaurantes se muestran en Telegram mediante botones interactivos."
+            ]
+          },
+          "selección_de_menú": {
+            "description": "Los usuarios pueden seleccionar un menú de un restaurante específico y realizar pedidos.",
+            "steps": [
+              "El bot muestra los menús disponibles de un restaurante seleccionado.",
+              "El usuario selecciona un menú y realiza el pedido a través del bot."
+            ]
+          },
+          "registro_y_seguimiento_de_pedidos": {
+            "description": "El sistema permite registrar pedidos y almacenarlos en la base de datos.",
+            "benefits": [
+              "Permite al usuario revisar sus pedidos anteriores mediante comandos específicos en Telegram."
+            ]
+          }
+        },
+        "en": {
+          "restaurant_management": {
+            "description": "Available restaurants are fetched from the database and displayed to the user through interactive Telegram buttons.",
+            "steps": [
+              "A query is made to the database to obtain all available restaurants.",
+              "Restaurants are displayed on Telegram using interactive buttons."
+            ]
+          },
+          "menu_selection": {
+            "description": "Users can select a menu from a specific restaurant and place orders.",
+            "steps": [
+              "The bot displays available menus from a selected restaurant.",
+              "The user selects a menu and places the order through the bot."
+            ]
+          },
+          "order_registration_and_tracking": {
+            "description": "The system allows orders to be registered and stored in the database.",
+            "benefits": [
+              "Allows users to review their previous orders through specific commands in Telegram."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": {
+        "es": "Groupify",
+        "en": "Groupify"
+      },
+      "role": {
+        "en": "Full Stack Developer",
+        "es": "Desarrollador Full Stack"
+      },
+      "institution": "Nuclio Digital School",
+      "timeframe": {
+        "en": "From June 2024 to January 2025",
+        "es": "De junio 2024 a enero 2025"
+      },
+      "url": "https://rojo-frontend.onrender.com/",
+      "github_repositories": [
+        "https://github.com/FranGarciaLopez/rojo-frontend",
+        "https://github.com/FranGarciaLopez/rojo-backend"
+      ],
+      "description": {
+        "es": [
+          {
+            "text": "Nuestro equipo, compuesto por Luigi Cucciolilio, Belen Bastos y yo, desarrollamos una aplicación web que conecta a los usuarios con intereses compartidos en diversos eventos."
+          },
+          {
+            "text": "Los usuarios pueden seleccionar sus eventos preferidos, y a través de un algoritmo de agrupación avanzado, gestionado por un administrador, se organizan en grupos con otras personas afines que no han conocido antes, utilizando un algoritmo."
+          },
+          {
+            "text": "A cada grupo se le proporciona acceso a un chat en vivo, fomentando la interacción en tiempo real y garantizando una experiencia social fluida y enriquecedora."
+          }
+        ],
+        "en": [
+          {
+            "text": "Our team, consisting of Luigi Cucciolilio, Belen Bastos and me, developed a web application that connects users with shared interests in various events."
+          },
+          {
+            "text": "Users can select their preferred events, and through an advanced grouping algorithm, managed by an administrator, they are organized into groups with other like-minded individuals they haven't met before, using an algorithim."
+          },
+          {
+            "text": "Each group is provided with access to a live chat, fostering real-time interaction and ensuring a seamless and enriching social experience."
+          }
+        ]
+      },
+      "bg-image": "/images/Nuclio/Nuclio-final-project.webp",
+      "images": [
+        "/images/Nuclio/Nuclio-final-project-landing.webp",
+        "/images/Nuclio/Nuclio-final-project-dashboard-mobile.webp",
+        "/images/Nuclio/Nuclio-final-project-dashboard.webp",
+        "/images/Nuclio/Nuclio-final-project-event-details.webp",
+        "/images/Nuclio/Nuclio-final-project-admin-dashboard-mobile.webp",
+        "/images/Nuclio/Nuclio-final-project-admin-dashboard.webp"
+      ],
+      "technologies": {
+        "frontend": [
+          "Vite with React",
+          "React Router",
+          "Axios",
+          "Font Awesome",
+          "Tailwind CSS",
+          "Socket.IO"
+        ],
+        "backend": [
+          "Node.js",
+          "Express",
+          "Socket.IO",
+          "MongoDB",
+          "Mongoose",
+          "JWT"
+        ]
+      },
+      "algorithm_features": {
+        "titles": {
+          "es": "Características del Algoritmo",
+          "en": "Algorithm Features"
+        },
+        "es": {
+          "agrupación_dinámica": {
+            "description": "Los usuarios se agrupan automáticamente en función de los eventos seleccionados mediante agregaciones de MongoDB.",
+            "benefits": [
+              "Evita la duplicación de eventos a través de un sistema de seguimiento eficiente."
+            ]
+          },
+          "proceso_de_formación_de_grupos": {
+            "description": "Los usuarios con intereses comunes se extraen mediante consultas agregadas.",
+            "steps": [
+              "Se utiliza un método de mezcla aleatoria para garantizar la diversidad en la formación de grupos.",
+              "Los usuarios se dividen en pares mediante técnicas de particionamiento de listas."
+            ]
+          },
+          "asignación_de_eventos_únicos": {
+            "description": "La disponibilidad de eventos para cada usuario se verifica en tiempo real.",
+            "benefits": [
+              "Garantiza la equidad al evitar asignaciones de eventos duplicados a los grupos."
+            ]
+          },
+          "persistencia_de_datos": {
+            "description": "Los grupos formados se almacenan en la base de datos de MongoDB.",
+            "steps": [
+              "Las referencias de los grupos se actualizan en los perfiles de usuario."
+            ]
+          }
+        },
+        "en": {
+          "dynamic_grouping": {
+            "description": "Users are automatically grouped based on selected events using MongoDB aggregations.",
+            "benefits": [
+              "Prevents event duplication through an efficient tracking system."
+            ]
+          },
+          "group_formation_process": {
+            "description": "Users with common interests are extracted through aggregated queries.",
+            "steps": [
+              "A random shuffle method is used to ensure diversity in group formation.",
+              "Users are divided into pairs using list partitioning techniques."
+            ]
+          },
+          "unique_event_assignment": {
+            "description": "Event availability for each user is verified in real time.",
+            "benefits": [
+              "Ensures fairness by avoiding duplicate event assignments to groups."
+            ]
+          },
+          "data_persistence": {
+            "description": "Formed groups are stored in the MongoDB database.",
+            "steps": [
+              "Group references are updated in user profiles."
+            ]
+          }
+        }
+      },
+      "end_to_end_testing_with_vitest": {
+        "es": {
+          "configuración_de_pruebas": {
+            "description": [
+              {
+                "text": "Se ha realizado la configuracion para realizar pruebas end-to-end con Vite y Jest una vez que el proyecto se guarda en local"
+              },
+              {
+                "text": "Para ello, se ha utilizado la librería concurrently, la cual permite ejecutar múltiples comandos en paralelo."
+              },
+              {
+                "text": "También se ha configurado GitHub Actions en la rama dev para ejecutar las pruebas de extremo a extremo previo a realizar un pull request."
+              }
+            ]
+          }
+        },
+        "en": {
+          "testing_configuration": {
+            "description": [
+              {
+                "text": "Configuration has been made to perform end-to-end tests with Vite and Jest once the project is saved locally."
+              },
+              {
+                "text": "For this purpose, the concurrently library has been used, which allows running multiple commands in parallel."
+              },
+              {
+                "text": "GitHub Actions has also been configured in the dev branch to run end-to-end tests prior to making a pull request."
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": {
+        "es": "Clon de la página Landing de Tesla",
+        "en": "Tesla Landing Page Clone"
+      },
+      "role": {
+        "es": "Desarrollador Frontend",
+        "en": "Frontend Developer"
+      },
+      "institution": {
+        "es": "Inspirado en el tutorial de MiduDev",
+        "en": "Inspired in MiduDev's tutorial"
+      },
+      "timeframe": {
+        "es": "Junio 2023",
+        "en": "June 2023"
+      },
+      "url": "https://tesla-clone-website-6cz8.onrender.com/",
+      "github_repositories": [
+        "https://github.com/FranGarciaLopez/tesla-clone-website"
+      ],
+      "description": {
+        "es": [
+          {
+            "text": "Clon de la página Landing de Tesla desarrollado con el Framework frontend Astro y Tailwind CSS, es un diseño responsive que se adapta a diferentes tamaños de pantalla."
+          },
+          {
+            "text": "El proyecto incluye un encabezado dinámico que cambia su apariencia según la posición de desplazamiento, una barra de navegación responsive, y un efecto de desplazamiento que permite al usuario navegar por las diferentes secciones de la página."
+          }
+        ],
+        "en": [
+          {
+            "text": "Tesla landing page clone developed with Astro frontend Framework and Tailwind CSS, it is a responsive design that adapts to different screen sizes."
+          },
+          {
+            "text": "The project includes a dynamic header that changes its appearance according to the scroll position, a responsive navigation bar, and a scroll snap effect that allows the user to navigate through the different sections of the page."
+          }
+        ]
+      },
+      "bg-image": "/images/tesla-landing-clone.webp",
+      "images": [
+        "/images/tesla/tesla-landing-clone-1.webp"
+      ],
+      "technologies": {
+        "frontend": [
+          "Vite with React",
+          "React Router",
+          "Axios",
+          "Font Awesome",
+          "Tailwind CSS",
+          "Socket.IO"
+        ],
+        "backend": [
+          ".js",
+          "Express",
+          "Socket.IO",
+          "MongoDB",
+          "Mongoose",
+          "JWT"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": {
+        "es": "The Latin Action",
+        "en": "The Latin Action"
+      },
+      "role": {
+        "es": "Desarrollador",
+        "en": "Developer"
+      },
+      "institution": {
+        "es": "Proyecto Personal",
+        "en": "Personal Project"
+      },
+      "timeframe": {
+        "es": "2024",
+        "en": "2024"
+      },
+      "github_repositories": [
+        "https://github.com/FranGarciaLopez/dance-website"
+      ],
+      "url": "https://www.thelatinaction.com",
+      "bg-image": "/images/the-latin-action-landing.webp",
+      "images": [
+        "/images/thelatinaction/the-latin-action-landing-project.webp",
+        "/images/thelatinaction/the-latin-action-mobile.png",
+        "/images/thelatinaction/the-latin-action-gallery.webp"
+      ],
+      "description": {
+        "es": [
+          {
+            "text": "Framework agnóstico de frontend, Astro, para el desarrollo web, utilizando JavaScript, HTML y Tailwind CSS."
+          },
+          {
+            "text": "Página estática para la promoción de una academia de baile de un amigo."
+          },
+          {
+            "text": "El proyecto está en proceso y faltan imágenes que deben ser tomadas un día de rodaje."
+          }
+        ],
+        "en": [
+          {
+            "text": "Frontend agnostic framework for web development, Astro, using JavaScript, HTML, and Tailwind CSS."
+          },
+          {
+            "text": "Static page for promoting a friend's dance academy."
+          },
+          {
+            "text": "The project is in progress and images need to be taken on a shooting day."
+          }
+        ]
+      },
+      "technologies": {
+        "frontend": [
+          "JavaScript",
+          "HTML",
+          "Tailwind CSS"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": {
+        "es": "Quizer - Generador de Preguntas",
+        "en": "Quizer - Questions Generator"
+      },
+      "role": {
+        "es": "Desarrollador",
+        "en": "Developer"
+      },
+      "institution": {
+        "es": "Proyecto Personal",
+        "en": "Personal Project"
+      },
+      "timeframe": {
+        "es": "Marzo 2023",
+        "en": "March 2023"
+      },
+      "url": "https://github.com/FranGarciaLopez/quizer",
+      "github_repositories": [
+        "https://github.com/FranGarciaLopez/quizer"
+      ],
+      "description": {
+        "es": [
+          {
+            "text": "Quizer es una aplicación web para pruebas de conocimiento. Incluye un backend en Python con arquitectura RESTful, una base de datos PostgreSQL y un frontend en Vue.js. Admite autenticación con bcrypt y operaciones CRUD."
+          },
+          {
+            "text": "La aplicación tiene un CMS para la gestión por parte de administradores, está containerizada con Docker y permite pruebas end-to-end con Nightwatch."
+          }
+        ],
+        "en": [
+          {
+            "text": "Quizer is a web app for knowledge testing. It includes a Python backend with RESTful architecture, a PostgreSQL database, and a Vue.js frontend. It supports bcrypt-based authentication and CRUD operations."
+          },
+          {
+            "text": "The app features an admin-level CMS, is containerized with Docker, and supports end-to-end testing with Nightwatch."
+          }
+        ]
+      },
+      "bg-image": "/images/quizer/quizer-bg.webp",
+      "images": [],
+      "technologies": {
+        "frontend": [
+          "Vue.js",
+          "JavaScript"
+        ],
+        "backend": [
+          "Python",
+          "Flask",
+          "PostgreSQL",
+          "bcrypt",
+          "JWT",
+          "Docker"
+        ],
+        "testing": [
+          "Nightwatch",
+          "GitHub Actions"
+        ],
+        "version_control": [
+          "GitHub",
+          "Gitflow"
+        ]
+      },
+      "algorithm_features": {
+        "titles": {
+          "es": "Características",
+          "en": "Features"
+        },
+        "es": {
+          "Nota del proyecto": {
+            "description": "Proyecto realizado como TFG para la Universidad Miguel Hernández de Elche.",
+            "benefits": [
+              "Matricula de Honor."
+            ]
+          },
+          "base_de_datos": {
+            "description": "Base de datos creada con PostgreSQL para almacenar y gestionar los datos.",
+            "benefits": [
+              "Gestión eficiente de datos estructurados."
+            ]
+          },
+          "api_rest": {
+            "description": "Backend construido con Flask, siguiendo una arquitectura RESTful.",
+            "benefits": [
+              "Facilita la escalabilidad y el mantenimiento."
+            ]
+          },
+          "autenticación_segura": {
+            "description": "Autenticación mediante bcrypt y tokens JWT para seguridad.",
+            "benefits": [
+              "Protección avanzada de las credenciales de usuario."
+            ]
+          },
+          "cms_admin": {
+            "description": "CMS para que los administradores gestionen preguntas y pruebas.",
+            "benefits": [
+              "Control completo sobre el contenido generado."
+            ]
+          },
+          "test_automatizados": {
+            "description": "Pruebas end-to-end con Nightwatch ejecutadas mediante GitHub Actions.",
+            "benefits": [
+              "Garantiza la estabilidad y funcionamiento de la plataforma."
+            ]
+          },
+          "contenedorización": {
+            "description": "Aplicación distribuida mediante Docker para portabilidad y escalabilidad.",
+            "benefits": [
+              "Facilita la implementación en diferentes entornos."
+            ]
+          }
+        },
+        "en": {
+          "project_note": {
+            "description": "Project carried out as a TFG for the Miguel Hernández University of Elche.",
+            "benefits": [
+              "Honor's degree."
+            ]
+          },
+          "database": {
+            "description": "Database created with PostgreSQL to store and manage data.",
+            "benefits": [
+              "Efficient management of structured data."
+            ]
+          },
+          "rest_api": {
+            "description": "Backend built with Flask, following a RESTful architecture.",
+            "benefits": [
+              "Facilitates scalability and maintenance."
+            ]
+          },
+          "secure_authentication": {
+            "description": "Authentication using bcrypt and JWT tokens for security.",
+            "benefits": [
+              "Advanced protection for user credentials."
+            ]
+          },
+          "admin_cms": {
+            "description": "CMS allows admins to manage questions and tests.",
+            "benefits": [
+              "Complete control over the generated content."
+            ]
+          },
+          "automated_testing": {
+            "description": "End-to-end tests with Nightwatch, executed with GitHub Actions.",
+            "benefits": [
+              "Ensures platform stability and functionality."
+            ]
+          },
+          "containerization": {
+            "description": "App distributed with Docker for portability and scalability.",
+            "benefits": [
+              "Facilitates deployment across different environments."
+            ]
+          }
+        }
+      }
+    }
+  ]
 }
