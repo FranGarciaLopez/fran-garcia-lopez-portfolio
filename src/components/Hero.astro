@@ -6,224 +6,285 @@ import HeroSkeleton from "../skeletons/HeroSkeleton.astro";
 ---
 
 <section
-          class="relative w-full min-h-screen bg-[#222428] text-white flex items-center justify-center px-4 pb-0 sm:px-8 md:px-12"
+       class="relative w-full min-h-screen text-white flex items-center justify-center px-4 pb-0 sm:px-8 md:px-12 overflow-hidden"
 >
-          <!-- Skeleton Loader (Initial) -->
-          <div
-                    id="hero-loader"
-                    class="absolute inset-0 flex items-center justify-center"
-          >
-                    <HeroSkeleton />
-          </div>
+       <!-- Animated Background Elements -->
+       <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+              <div class="absolute top-20 right-20 w-96 h-96 bg-[#c2b280]/20 rounded-full blur-3xl animate-float"></div>
+              <div class="absolute bottom-40 left-20 w-80 h-80 bg-[#f5f5dc]/20 rounded-full blur-3xl animate-float-delayed"></div>
+              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#bca177]/10 rounded-full blur-3xl animate-pulse-slow"></div>
+       </div>
 
-          <!-- Actual Hero Content (Hidden by Default) -->
-          <div id="hero-content" class="max-w-4xl text-center m-4">
-                    <h1
-                              class="text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4vw] font-serif leading-tight tracking-wide text-[#f5f5dc] uppercase"
-                    >
-                              {getTranslation(lang, "hero", "title")}
-                    </h1>
-                    <p
-                              class="mt-4 text-base sm:text-lg md:text-xl italic text-[#eae0d5] leading-relaxed"
-                    >
-                              {getTranslation(lang, "hero", "subtitle")}
-                              <span
-                                        class="text-[#c2b280] font-bold"
-                                        id="dev-name">Fran García López.</span
-                              >
-                    </p>
+       <!-- Skeleton Loader (Initial) -->
+       <div
+              id="hero-loader"
+              class="absolute inset-0 flex items-center justify-center z-10"
+       >
+              <HeroSkeleton />
+       </div>
 
-                    <div
-                              class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
-                    >
-                              <a
-                                        href="#projects"
-                                        class="inline-block px-6 py-3 text-black bg-[#eae0d5] rounded-lg hover:bg-[#c2b280] transition-all"
-                              >
-                                        {
-                                                  getTranslation(
-                                                            lang,
-                                                            "hero",
-                                                            "viewWork",
-                                                  )
-                                        }
-                              </a>
+       <!-- Actual Hero Content (Hidden by Default) -->
+       <div id="hero-content" class="max-w-5xl text-center m-4 relative z-20 opacity-0 transition-opacity duration-1000">
+              <!-- Main Title with Gradient -->
+              <div class="mb-8">
+                     <h1
+                            class="text-[8vw] sm:text-[6vw] md:text-[5vw] lg:text-[4vw] font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#f5f5dc] via-[#eae0d5] to-[#c2b280] uppercase drop-shadow-2xl"
+                     >
+                            {getTranslation(lang, "hero", "title")}
+                     </h1>
+                     <!-- Decorative line -->
+                     <div class="h-1 w-32 mx-auto mt-6 bg-gradient-to-r from-transparent via-[#c2b280] to-transparent rounded-full"></div>
+              </div>
 
-                              <a
-                                        href="https://www.linkedin.com/in/fran-garcia-teleco-umh/"
-                                        class="text-2xl hover:opacity-80 transition-all duration-300"
-                              >
-                                        <!-- linkedin svg -->
-                                        <svg
-                                                  fill="white"
-                                                  version="1.1"
-                                                  id="Layer_1"
-                                                  viewBox="0 0 310 310"
-                                                  class="w-6 h-6"
-                                                  ><g
-                                                            id="SVGRepo_bgCarrier"
-                                                            stroke-width="0"
-                                                  ></g><g
-                                                            id="SVGRepo_tracerCarrier"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                  ></g><g
-                                                            id="SVGRepo_iconCarrier"
-                                                  >
-                                                            <g id="XMLID_801_">
-                                                                      <path
-                                                                                id="XMLID_802_"
-                                                                                d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"
-                                                                      ></path>
-                                                                      <path
-                                                                                id="XMLID_803_"
-                                                                                d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"
-                                                                      ></path>
-                                                                      <path
-                                                                                id="XMLID_804_"
-                                                                                d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"
-                                                                      ></path>
-                                                            </g>
-                                                  </g></svg
-                                        >
-                              </a>
-                              <a
-                                        href="https://github.com/FranGarciaLopez"
-                                        class="text-2xl hover:opacity-80 transition-all duration-300"
-                              >
-                                        <!-- github svg -->
-                                        <svg
-                                                  viewBox="0 0 20 20"
-                                                  version="1.1"
-                                                  fill="#000000"
-                                                  class="w-6 h-6"
-                                                  ><g
-                                                            id="SVGRepo_bgCarrier"
-                                                            stroke-width="0"
-                                                  ></g><g
-                                                            id="SVGRepo_tracerCarrier"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                  ></g><g
-                                                            id="SVGRepo_iconCarrier"
-                                                  >
-                                                            <title>
-                                                                      github
-                                                                      [#142]
-                                                            </title>
-                                                            <desc
-                                                                      >Created
-                                                                      with
-                                                                      Sketch.</desc
-                                                            >
-                                                            <defs> </defs>
-                                                            <g
-                                                                      id="Page-1"
-                                                                      stroke="none"
-                                                                      stroke-width="1"
-                                                                      fill="none"
-                                                                      fill-rule="evenodd"
-                                                            >
-                                                                      <g
-                                                                                id="Dribbble-Light-Preview"
-                                                                                transform="translate(-140.000000, -7559.000000)"
-                                                                                fill="#ffffff"
-                                                                      >
-                                                                                <g
-                                                                                          id="icons"
-                                                                                          transform="translate(56.000000, 160.000000)"
-                                                                                >
-                                                                                          <path
-                                                                                                    d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                                                                                    id="github-[#142]"
-                                                                                          >
-                                                                                          </path>
-                                                                                </g>
-                                                                      </g>
-                                                            </g>
-                                                  </g></svg
-                                        >
-                              </a>
-                    </div>
-          </div>
+              <!-- Subtitle with Dynamic Text -->
+              <p
+                     class="mt-6 text-lg sm:text-xl md:text-2xl lg:text-3xl italic text-gray-300 leading-relaxed max-w-3xl mx-auto"
+              >
+                     {getTranslation(lang, "hero", "subtitle")}
+                     <span class="block mt-4 text-[#c2b280] font-bold text-2xl sm:text-3xl md:text-4xl not-italic animate-pulse-text" id="dev-name"
+                            >Fran García López.</span
+                     >
+              </p>
+
+              <!-- Call to Action Buttons -->
+              <div
+                     class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-12"
+              >
+                     <!-- Primary CTA -->
+                     <a
+                            href="#projects"
+                            class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-black bg-gradient-to-r from-[#eae0d5] to-[#f5f5dc] rounded-xl hover:from-[#c2b280] hover:to-[#d4c19c] transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#c2b280]/30 transform hover:-translate-y-1 overflow-hidden"
+                     >
+                            <span class="relative z-10 flex items-center gap-2">
+                                   {getTranslation(lang, "hero", "viewWork")}
+                                   <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                   </svg>
+                            </span>
+                            <span class="absolute inset-0 bg-gradient-to-r from-[#bca177] to-[#c2b280] translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                     </a>
+
+                     <!-- Social Links -->
+                     <div class="flex items-center gap-4">
+                            <a
+                                   href="https://www.linkedin.com/in/fran-garcia-teleco-umh/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="group relative p-3 bg-black/30 backdrop-blur-sm border-2 border-[#c2b280]/30 rounded-xl hover:border-[#c2b280] hover:bg-[#c2b280]/10 transition-all duration-300 shadow-lg hover:shadow-[#c2b280]/20 transform hover:scale-110"
+                                   aria-label="LinkedIn Profile"
+                            >
+                            <svg
+                                   fill="white"
+                                   version="1.1"
+                                   id="Layer_1"
+                                   viewBox="0 0 310 310"
+                                   class="w-6 h-6 transition-transform duration-300 group-hover:rotate-6"
+                                   ><g id="SVGRepo_bgCarrier" stroke-width="0"
+                                   ></g><g
+                                          id="SVGRepo_tracerCarrier"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"></g><g
+                                          id="SVGRepo_iconCarrier"
+                                   >
+                                          <g id="XMLID_801_">
+                                                 <path
+                                                        id="XMLID_802_"
+                                                        d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"
+                                                 ></path>
+                                                 <path
+                                                        id="XMLID_803_"
+                                                        d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"
+                                                 ></path>
+                                                 <path
+                                                        id="XMLID_804_"
+                                                        d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"
+                                                 ></path>
+                                          </g>
+                                   </g></svg
+                            >
+                     </a>
+                     <a
+                            href="https://github.com/FranGarciaLopez"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group relative p-3 bg-black/30 backdrop-blur-sm border-2 border-[#c2b280]/30 rounded-xl hover:border-[#c2b280] hover:bg-[#c2b280]/10 transition-all duration-300 shadow-lg hover:shadow-[#c2b280]/20 transform hover:scale-110"
+                            aria-label="GitHub Profile"
+                     >
+                            <!-- github svg -->
+                            <svg
+                                   viewBox="0 0 20 20"
+                                   version="1.1"
+                                   fill="#000000"
+                                   class="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"
+                                   ><g id="SVGRepo_bgCarrier" stroke-width="0"
+                                   ></g><g
+                                          id="SVGRepo_tracerCarrier"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"></g><g
+                                          id="SVGRepo_iconCarrier"
+                                   >
+                                          <title>github [#142]</title>
+                                          <desc>Created with Sketch.</desc>
+                                          <defs> </defs>
+                                          <g
+                                                 id="Page-1"
+                                                 stroke="none"
+                                                 stroke-width="1"
+                                                 fill="none"
+                                                 fill-rule="evenodd"
+                                          >
+                                                 <g
+                                                        id="Dribbble-Light-Preview"
+                                                        transform="translate(-140.000000, -7559.000000)"
+                                                        fill="#ffffff"
+                                                 >
+                                                        <g
+                                                               id="icons"
+                                                               transform="translate(56.000000, 160.000000)"
+                                                        >
+                                                               <path
+                                                                      d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                                                                      id="github-[#142]"
+                                                               >
+                                                               </path>
+                                                        </g>
+                                                 </g>
+                                          </g>
+                                   </g></svg
+                            >
+                     </a>
+              </div>
+       </div>
 </section>
+
+<style>
+       /* Float Animation */
+       @keyframes float {
+              0%, 100% {
+                     transform: translate(0, 0) scale(1);
+              }
+              33% {
+                     transform: translate(30px, -30px) scale(1.1);
+              }
+              66% {
+                     transform: translate(-20px, 20px) scale(0.9);
+              }
+       }
+
+       .animate-float {
+              animation: float 20s ease-in-out infinite;
+       }
+
+       .animate-float-delayed {
+              animation: float 25s ease-in-out infinite;
+              animation-delay: 5s;
+       }
+
+       /* Pulse Slow Animation */
+       @keyframes pulse-slow {
+              0%, 100% {
+                     opacity: 0.2;
+                     transform: translate(-50%, -50%) scale(1);
+              }
+              50% {
+                     opacity: 0.3;
+                     transform: translate(-50%, -50%) scale(1.05);
+              }
+       }
+
+       .animate-pulse-slow {
+              animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+       }
+
+       /* Text Pulse Animation */
+       @keyframes pulse-text {
+              0%, 100% {
+                     opacity: 1;
+                     transform: scale(1);
+              }
+              50% {
+                     opacity: 0.8;
+                     transform: scale(1.02);
+              }
+       }
+
+       .animate-pulse-text {
+              animation: pulse-text 3s ease-in-out infinite;
+       }
+</style>
+
 <script>
-          document.addEventListener("astro:page-load", () => {
-                    const heroContent = document.getElementById("hero-content");
-                    const heroLoader = document.getElementById("hero-loader");
+       document.addEventListener("astro:page-load", () => {
+              const heroContent = document.getElementById("hero-content");
+              const heroLoader = document.getElementById("hero-loader");
 
-                    if (document.readyState === "complete") {
-                              if (heroContent && heroLoader) {
-                                        heroContent.style.opacity = "1";
-                                        heroLoader.style.display = "none";
-                              }
-                    } else {
-                              window.addEventListener("load", () => {
-                                        if (heroContent && heroLoader) {
-                                                  heroContent.style.opacity =
-                                                            "1";
-                                                  heroLoader.style.display =
-                                                            "none";
-                                        }
-                              });
-                    }
-          });
+              if (document.readyState === "complete") {
+                     if (heroContent && heroLoader) {
+                            heroContent.style.opacity = "1";
+                            heroLoader.style.display = "none";
+                     }
+              } else {
+                     window.addEventListener("load", () => {
+                            if (heroContent && heroLoader) {
+                                   heroContent.style.opacity = "1";
+                                   heroLoader.style.display = "none";
+                            }
+                     });
+              }
+       });
 
-          document.addEventListener("astro:page-load", () => {
-                    function showContent() {
-                              const heroContent =
-                                        document.getElementById("hero-content");
-                              const heroLoader =
-                                        document.getElementById("hero-loader");
+       document.addEventListener("astro:page-load", () => {
+              function showContent() {
+                     const heroContent =
+                            document.getElementById("hero-content");
+                     const heroLoader = document.getElementById("hero-loader");
 
-                              if (heroContent && heroLoader) {
-                                        heroContent.style.opacity = "1";
-                                        heroLoader.style.display = "none";
-                              }
-                    }
+                     if (heroContent && heroLoader) {
+                            heroContent.style.opacity = "1";
+                            heroLoader.style.display = "none";
+                     }
+              }
 
-                    if (document.readyState === "complete") {
-                              showContent();
-                    } else {
-                              window.addEventListener("load", showContent);
-                    }
+              if (document.readyState === "complete") {
+                     showContent();
+              } else {
+                     window.addEventListener("load", showContent);
+              }
 
-                    /* typewriter for the h1 */
-                    const h1 = document.querySelector("h1");
-                    const h1Text = h1?.textContent;
-                    if (!h1Text) return;
-                    h1.textContent = "";
+              /* typewriter for the h1 */
+              const h1 = document.querySelector("h1");
+              const h1Text = h1?.textContent;
+              if (!h1Text) return;
+              h1.textContent = "";
 
-                    for (let i = 0; i < h1Text.length; i++) {
-                              setTimeout(() => {
-                                        h1.textContent += h1Text[i];
-                              }, 150 * i);
-                    }
+              for (let i = 0; i < h1Text.length; i++) {
+                     setTimeout(() => {
+                            h1.textContent += h1Text[i];
+                     }, 150 * i);
+              }
 
-                    const spanName =
-                              document.querySelector("p > span#dev-name");
-                    const spanText = spanName?.textContent;
-                    if (!spanText) return;
-                    spanName.textContent = "";
+              const spanName = document.querySelector("p > span#dev-name");
+              const spanText = spanName?.textContent;
+              if (!spanText) return;
+              spanName.textContent = "";
 
-                    const names = [
-                              "Fran García López",
-                              "a Developer",
-                              "a Team Player",
-                              "a Dancer",
-                              "a Traveler",
-                              "Fran García López",
-                    ];
+              const names = [
+                     "Fran García López",
+                     "a Developer",
+                     "a Team Player",
+                     "a Dancer",
+                     "a Traveler",
+                     "Fran García López",
+              ];
 
-                    const duration = 20;
-                    for (let i = 0; i < names.length; i++) {
-                              setTimeout(
-                                        () => {
-                                                  spanName.textContent =
-                                                            names[i];
-                                        },
-                                        150 * i * duration,
-                              );
-                    }
-          });
+              const duration = 20;
+              for (let i = 0; i < names.length; i++) {
+                     setTimeout(
+                            () => {
+                                   spanName.textContent = names[i];
+                            },
+                            150 * i * duration,
+                     );
+              }
+       });
 </script>

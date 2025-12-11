@@ -1,7 +1,6 @@
 export const locales = {
-          en: "English",
-          es: "Español",
+       en: "English",
+       es: "Español",
 };
-        
-export const defaultLocale = "es"; 
-        
+
+export const defaultLocale = "es";

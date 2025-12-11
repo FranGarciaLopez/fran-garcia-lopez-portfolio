@@ -3,44 +3,46 @@ import { locales } from "../i18n/config";
 const { lang } = Astro.props;
 ---
 
-<select
-  id="lang-switcher"
-  class="block w-full px-4 py-2 text-[#eae0d5] bg-transparent
-  rounded-md focus:border-blue-500 focus:outline-none focus:ring"
->
+<div class="flex items-center gap-2 p-1 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-lg">
   {
     Object.entries(locales).map(([code, name]) => (
-      <option
-        class="text-white bg-gray-800"
-        value={code}
-        selected={code === lang}
+      <button
+        data-lang={code}
+        class:list={[
+          "px-4 py-2 rounded-md font-medium transition-all duration-200",
+          "hover:bg-gray-700/50",
+          "focus:outline-none focus:ring-2 focus:ring-blue-500/50",
+          code === lang
+            ? "bg-blue-600 text-white shadow-md"
+            : "text-[#eae0d5] hover:text-white"
+        ]}
       >
         {name}
-      </option>
+      </button>
     ))
   }
-</select>
+</div>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const langSwitcher = document.getElementById(
-      "lang-switcher",
-    ) as HTMLSelectElement;
+    const langButtons = document.querySelectorAll("[data-lang]");
 
-    if (!langSwitcher) return;
+    langButtons.forEach((button) => {
+      button.addEventListener("click", function (this: HTMLElement) {
+        const newLang = this.getAttribute("data-lang");
+        if (!newLang) return;
+        
+        const currentPath = window.location.pathname;
+        const pathParts = currentPath.split("/").filter((part) => part !== "");
 
-    langSwitcher.addEventListener("change", function () {
-      const newLang = this.value;
-      const currentPath = window.location.pathname;
-      const pathParts = currentPath.split("/").filter((part) => part !== "");
+        if (["en", "es"].includes(pathParts[0])) {
+          pathParts[0] = newLang;
+        } else {
+          pathParts.unshift(newLang);
+        }
 
-      if (["en", "es"].includes(pathParts[0])) {
-        pathParts[0] = newLang;
-      } else {
-        pathParts.unshift(newLang);
-      }
-
-      window.location.href = `/${pathParts.join("/")}`;
+        window.location.href = `/${pathParts.join("/")}`;
+      });
     });
   });
 </script>

@@ -8,7 +8,7 @@ import TestingDetails from "../../../../components/TestingDetails.astro";
 import TelegramBotSimulation from "../../../../components/TelegramBotSimulation.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const locales = ["en", "es"];
+  const locales = ["es", "en"];
   return projectData.professional.flatMap((item) =>
     locales.map((lang) => ({
       params: { lang, id: item.id.toString() },

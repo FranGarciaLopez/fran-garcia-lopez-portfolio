@@ -19,18 +19,36 @@
       "description": {
         "es": [
           {
-            "text": "Experto en comandos de Kubernetes para evaluación del estado de contenedores, con gran habilidad en la comunicación con clientes a través de Slack, obteniendo experiencia On Call para turnos en EMEA, AMS y APAC."
+            "text": "Como ingeniero de primer nivel de Harmonic Inc., he proporcionado soporte técnico y monitoreo proactivo para un SaaS de video streaming. En cuanto a las tecnologías DevOps que he aprendido, destaco mi experiencia en Kubernetes, Docker, Grafana y Prometheus para el monitoreo de logs y Slack para la comunicación con clientes."
           },
           {
-            "text": "Ingeniero de nivel 1 - Proporcioné soporte técnico 24/7 y monitoreo proactivo para Harmonic's VOS 360 Cloud Media Processing, asegurando un rendimiento y fiabilidad óptimos de las soluciones de video multiscreen en entornos de nube pública y privada, trabajando con clientes internacionales."
+            "text": "También he adquirido experiencia sistemas basados en la nuve, como AWS, Azure y Google Cloud entre otros en cuanto a la comunicacion y ayuda de identificación de incidencias."
+          }, 
+          {
+            "text": "En cuanto a mis responsabilidades, he gestionado la comunicación con clientes internacionales y he ganado experiencia en turnos de On Call para las regiones EMEA, AMS y APAC."
+          }, 
+          {
+            "text": "Mi rol también incluye la evaluación del estado de los contenedores mediante comandos de Kubernetes, asegurando un rendimiento óptimo del sistema."
+          },
+          {
+            "text": "En resumen, mi experiencia en Harmonic Inc. me ha permitido desarrollar habilidades técnicas y de comunicación esenciales para el éxito en el campo de DevOps."
           }
         ],
         "en": [
           {
-            "text": "Expert in Kubernetes commands for container status evaluation, with strong client communication skills via Slack, gaining On Call experience for shifts in EMEA, AMS, and APAC."
+            "text": "As a first-level engineer at Harmonic Inc., I have provided technical support and proactive monitoring for a video streaming SaaS. Regarding the DevOps technologies I have learned, I highlight my experience in Kubernetes, Docker, Grafana, and Prometheus for log monitoring and Slack for customer communication."
           },
           {
-            "text": "Level 1 Engineer - Provided 24/7 technical support and proactive monitoring for Harmonic's VOS 360 Cloud Media Processing, ensuring optimal performance and reliability of multiscreen video solutions in public and private cloud environments, working with international clients."
+            "text": "I have also gained experience in cloud-based systems such as AWS, Azure, and Google Cloud among others in terms of communication and assistance in incident identification."
+          }, 
+          {
+            "text": "Regarding my responsibilities, I have managed communication with international clients and gained experience in On Call shifts for the EMEA, AMS, and APAC regions."
+          }, 
+          {
+            "text": "My role also includes assessing the status of containers using Kubernetes commands, ensuring optimal system performance."
+          },
+          {
+            "text": "In summary, my experience at Harmonic Inc. has allowed me to develop essential technical and communication skills for success in the DevOps field."
           }
         ]
       },
@@ -78,7 +96,7 @@
       "description": {
         "es": [
           {
-            "text": "Generador de preguntas para entrevistas que utiliza la API de Mistrail AI para generar preguntas a partir de un texto de entrada, una dificultad y una cantidad de preguntas."
+            "text": "Este proyecto está enfocado en el desarrollo de un generador de preguntas para entrevistas que utiliza la API de Mistrail AI para generar preguntas a partir de un texto de entrada, una dificultad y una cantidad de preguntas."
           },
           {
             "text": "El proyecto incluye un frontend desarrollado con NextJs y Tailwind CSS (Shadcn library), y un backend desarrollado con Node.js y Express, que se comunica con la API de Mistrail AI para generar preguntas y respuestas."
@@ -86,7 +104,7 @@
         ],
         "en": [
           {
-            "text": "Interview questions generator that uses the Mistrail AI API to generate questions from an input text, a difficulty, and a number of questions."
+            "text": "This porject is developed to create an interview questions generator, that uses Mistrail's AI API to generate questions from an input, the difficulty of the question, and the number of questions that the user wants to generate."
           },
           {
             "text": "The project includes a frontend developed with React and Tailwind CSS, and a backend developed with Node.js and Express, which communicates with the Mistrail AI API to generate questions and answers."
@@ -130,8 +148,8 @@
               "Permite al usuaroi elegir el nivel de dificultad de las preguntas generadas."
             ]
           },
-          "selección_de_cantidad": {
-            "description": "La cantidad de preguntas generadas se selecciona escribiendo la cantidad que se desea.",
+          "cantidad_de_preguntas": {
+            "description": "La cantidad de preguntas generadas se selecciona mediante un campo de texto donde se escribe la cantidad deseada.",
             "benefits": [
               "Permite al usuario elegir la cantidad de preguntas generadas."
             ]
@@ -151,8 +169,8 @@
               "Allows the user to choose the difficulty level of the generated questions."
             ]
           },
-          "quantity_selection": {
-            "description": "The quantity of generated questions is selected by typing the desired quantity.",
+          "quantity_of_questions": {
+            "description": "The number of the generated questions is an input, where the user writes the desired quantity.",
             "benefits": [
               "Allows the user to choose the quantity of generated questions."
             ]
@@ -521,7 +539,7 @@
       "bg-image": "/images/the-latin-action-landing.webp",
       "images": [
         "/images/thelatinaction/the-latin-action-landing-project.webp",
-        "/images/thelatinaction/the-latin-action-mobile.png",
+        "/images/thelatinaction/the-latin-action-mobile.webp",
         "/images/thelatinaction/the-latin-action-gallery.webp"
       ],
       "description": {
@@ -531,9 +549,6 @@
           },
           {
             "text": "Página estática para la promoción de una academia de baile de un amigo."
-          },
-          {
-            "text": "El proyecto está en proceso y faltan imágenes que deben ser tomadas un día de rodaje."
           }
         ],
         "en": [
@@ -542,9 +557,6 @@
           },
           {
             "text": "Static page for promoting a friend's dance academy."
-          },
-          {
-            "text": "The project is in progress and images need to be taken on a shooting day."
           }
         ]
       },

@@ -1,38 +1,105 @@
 {
-          "title": {
-                    "en": "About Me",
-                    "es": "Sobre Mí"
-          },
-          "subtitle": {
-                    "en": "Top Secret: The truth awaits inside...",
-                    "es": "Ultra Secreto: La verdad te espera dentro..."
-          },
-          "classified_files": [
-                    {
-                              "id": "001",
-                              "title": {
-                                        "en": "Classified File #001",
-                                        "es": "Expediente Clasificado #001"
-                              },
-                              "content": {
-                                        "en": "So yeah, I love coding and spy movies—cool combo, right? I went all in and studied a Full Stack Development Master's at Nuclio Digital School to make it happen.",
-                                        "es": "Me encanta programar y las películas de espías, ¿combinación genial, verdad? Me metí de lleno y estudié un Máster en Desarrollo Full Stack en Nuclio Digital School para hacerlo realidad."
-                              }
-                    },
-                    {
-                              "id": "002",
-                              "title": {
-                                        "en": "Classified File #002",
-                                        "es": "Expediente Clasificado #002"
-                              },
-                              "content": {
-                                        "en": "Besides that, I'm really into dancing and traveling. Dancing sparks my creativity, and let's be real, that's an important part when it comes to Frontend development.",
-                                        "es": "Además de eso, me encanta bailar y viajar. Bailar despierta mi creatividad y, siendo honestos, eso es fundamental cuando se trata de desarrollo Frontend."
-                              }
-                    }
-          ],
-          "email_button": {
-                    "en": "Email Me",
-                    "es": "Envíame un Correo"
-          }
+  "title": {
+    "en": "About Me",
+    "es": "Sobre Mí"
+  },
+  "subtitle": {
+    "en": "Top Secret: The truth awaits inside...",
+    "es": "Ultra Secreto: La verdad te espera dentro..."
+  },
+  "introduction": {
+    "en": "Full Stack Developer passionate about creating exceptional digital experiences. Click the key to unlock my story.",
+    "es": "Desarrollador Full Stack apasionado por crear experiencias digitales excepcionales. Haz clic en la llave para desbloquear mi historia."
+  },
+  "image_overlay": {
+    "en": "Developer",
+    "es": "Desarrollador"
+  },
+  "key_message": {
+    "en": "🎉 You found the secret key! Click below to reveal classified information about my journey.",
+    "es": "🎉 ¡Encontraste la llave secreta! Haz clic abajo para revelar información clasificada sobre mi trayectoria."
+  },
+  "unlock_button": {
+    "en": "Unlock Secrets",
+    "es": "Desbloquear Secretos"
+  },
+  "classified_files": [
+    {
+      "id": "001",
+      "icon": "🎓",
+      "title": {
+        "en": "Classified File #001: Education & Background",
+        "es": "Expediente Clasificado #001: Educación y Formación"
+      },
+      "content": {
+        "en": "So yeah, I love coding and spy movies—cool combo, right? I went all in and studied a Full Stack Development Master's at Nuclio Digital School to make it happen. During this intensive program, I learned the complete software development lifecycle, from ideation to deployment, working with modern technologies and agile methodologies.",
+        "es": "Me encanta programar y las películas de espías, ¿combinación genial, verdad? Me metí de lleno y estudié un Máster en Desarrollo Full Stack en Nuclio Digital School para hacerlo realidad. Durante este programa intensivo, aprendí el ciclo completo de desarrollo de software, desde la ideación hasta el despliegue, trabajando con tecnologías modernas y metodologías ágiles."
+      },
+      "skills_title": {
+        "en": "Core Technologies",
+        "es": "Tecnologías Principales"
+      },
+      "skills": [
+        "JavaScript/TypeScript",
+        "React",
+        "Node.js",
+        "Python",
+        "SQL/NoSQL",
+        "Git",
+        "Agile/Scrum"
+      ]
+    },
+    {
+      "id": "002",
+      "icon": "💃",
+      "title": {
+        "en": "Classified File #002: Beyond the Code",
+        "es": "Expediente Clasificado #002: Más Allá del Código"
+      },
+      "content": {
+        "en": "Besides that, I'm really into dancing and traveling. Dancing sparks my creativity, and let's be real, that's an important part when it comes to Frontend development. The rhythm and flow in dance translate directly to creating smooth, intuitive user interfaces. Traveling exposes me to different cultures and perspectives, which helps me design inclusive, user-centric applications.",
+        "es": "Además de eso, me encanta bailar y viajar. Bailar despierta mi creatividad y, siendo honestos, eso es fundamental cuando se trata de desarrollo Frontend. El ritmo y fluidez del baile se traducen directamente en crear interfaces de usuario suaves e intuitivas. Viajar me expone a diferentes culturas y perspectivas, lo que me ayuda a diseñar aplicaciones inclusivas y centradas en el usuario."
+      },
+      "skills_title": {
+        "en": "Creative Skills",
+        "es": "Habilidades Creativas"
+      },
+      "skills": [
+        "Responsive Design",
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "003",
+      "icon": "🚀",
+      "title": {
+        "en": "Classified File #003: My Mission",
+        "es": "Expediente Clasificado #003: Mi Misión"
+      },
+      "content": {
+        "en": "My mission is to build web applications that not only work flawlessly but also delight users with every interaction. I believe in writing clean, maintainable code and creating experiences that are accessible to everyone. I'm constantly learning new technologies and best practices to stay at the forefront of web development. Whether it's optimizing performance, implementing cutting-edge features, or solving complex problems, I approach every challenge with enthusiasm and dedication.",
+        "es": "Mi misión es construir aplicaciones web que no solo funcionen perfectamente, sino que también deleiten a los usuarios con cada interacción. Creo en escribir código limpio y mantenible, y crear experiencias accesibles para todos. Constantemente estoy aprendiendo nuevas tecnologías y mejores prácticas para estar a la vanguardia del desarrollo web. Ya sea optimizando el rendimiento, implementando características innovadoras o resolviendo problemas complejos, abordo cada desafío con entusiasmo y dedicación."
+      },
+      "skills_title": {
+        "en": "Professional Focus",
+        "es": "Enfoque Profesional"
+      },
+      "skills": [
+        "Performance Optimization",
+        "Testing (Jest, Cypress)",
+        "CI/CD",
+        "Cloud Deployment",
+        "Team Collaboration",
+        "Code Review"
+      ]
+    }
+  ],
+  "email_button": {
+    "en": "Email Me",
+    "es": "Envíame un Correo"
+  },
+  "resume_link": {
+    "en": "#",
+    "es": "#"
+  }
 }

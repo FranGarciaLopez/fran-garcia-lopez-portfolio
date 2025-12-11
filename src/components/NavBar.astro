@@ -1,6 +1,21 @@
 ---
 const { lang } = Astro.props as { lang: "es" | "en" };
 import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+const translations = {
+  es: {
+    works: "Trabajos",
+    about: "Sobre mí",
+    contact: "Contacto"
+  },
+  en: {
+    works: "Works",
+    about: "About",
+    contact: "Contact"
+  }
+};
+
+const t = translations[lang];
 ---
 
 <header
@@ -52,23 +67,24 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
       </li>
       <li>
         <a
-          href={`/${lang}/#projects`}
+          href={`/${lang}/#professional-experience`}
           class="text-3xl md:text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
-          >Works</a
+          >
+          {t.works}
+          </a>
+      </li>
+      <li>
+        <a
+          href={`/${lang}/#about`}
+          class="text-3xl md:text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
+          >{t.about}</a
         >
       </li>
       <li>
         <a
           href={`/${lang}/#about`}
           class="text-3xl md:text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
-          >About</a
-        >
-      </li>
-      <li>
-        <a
-          href={`/${lang}/#about`}
-          class="text-3xl md:text-7xl text-[#eae0d5] font-serif tracking-wide hover:opacity-80"
-          >Contact</a
+          >{t.contact}</a
         >
       </li>
     </ul>
