@@ -1,4 +1,4 @@
-import { APIContext } from 'astro';
+import type { APIContext } from 'astro';
 
 const baseUrl = 'https://fran-garcia-lopez.com';
 
