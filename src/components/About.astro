@@ -367,7 +367,8 @@ const { lang } = Astro.props as { lang: "es" | "en" };
     }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // Function to initialize the About section functionality
+  function initAboutSection() {
     const secretKey = document.getElementById(
       "secret-key",
     ) as HTMLElement | null;
@@ -529,5 +530,11 @@ const { lang } = Astro.props as { lang: "es" | "en" };
         }
       });
     });
-  });
+  }
+
+  // Initialize on first load
+  document.addEventListener("DOMContentLoaded", initAboutSection);
+  
+  // Re-initialize on page navigation (Astro view transitions)
+  document.addEventListener("astro:page-load", initAboutSection);
 </script>
