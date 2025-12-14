@@ -4,537 +4,138 @@ const { lang } = Astro.props as { lang: "es" | "en" };
 ---
 
 <section
-  id="about"
-  class="relative w-full min-h-screen flex items-center justify-center px-6 sm:px-12 md:px-24 py-20 overflow-hidden"
+  id="academic"
+  class="flex flex-col w-full px-6 md:px-16 lg:px-24 xl:px-32 mb-20 mx-auto max-w-7xl items-start space-y-10"
 >
-  <!-- Animated Background Elements -->
-  <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div class="floating-orb orb-1"></div>
-    <div class="floating-orb orb-2"></div>
-    <div class="floating-orb orb-3"></div>
+  <div class="space-y-4">
+    <h2
+      class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-[#f5f5dc] leading-tight tracking-tight animate-fade-in"
+    >
+      {aboutData.title[lang]}
+    </h2>
+    <h3
+      class="text-xl sm:text-2xl md:text-3xl text-[#c2b280] font-light tracking-wide"
+    >
+      {aboutData.subtitle[lang]}
+    </h3>
+    <div
+      class="h-1 w-24 bg-gradient-to-r from-[#c2b280] to-transparent"
+    >
+    </div>
+    <p
+      class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl"
+    >
+      {aboutData.introduction[lang]}
+    </p>
   </div>
 
-  <div
-    class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-16 relative z-10"
-  >
-    <!-- Profile Image Section with Enhanced Design -->
-    <div class="flex justify-center lg:justify-end order-2 lg:order-1">
-      <div class="relative group">
-        <!-- Glow Effect -->
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-[#c2b280] via-[#f5f5dc] to-[#c2b280] rounded-full opacity-75 blur-2xl group-hover:opacity-100 transition-opacity duration-1000 animate-pulse-slow"
-        >
-        </div>
 
-        <!-- Profile Image Container -->
-        <div
-          class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl transform transition-transform duration-700 hover:scale-105"
-        >
-          <img
-            src="/images/profile.webp"
-            alt="Profile picture of Fran García López"
-            class="w-full h-full object-cover filter grayscale-0 hover:grayscale transition-all duration-500"
-            draggable="false"
-          />
+  <div class="w-full mt-10 space-y-12">
+    {
+      aboutData.classified_files.map((file, index) => (
+        <article class="border-2 border-[#c2b280]/30 bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden hover:border-[#c2b280]/60 hover:shadow-2xl transition-all duration-300">
+          <div class="p-6 sm:p-8 border-b border-[#c2b280]/20 bg-gradient-to-r from-[#c2b280]/10 to-transparent">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
 
-          <!-- Overlay on Hover -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8"
-          >
-            <span
-              class="text-[#f5f5dc] font-serif text-2xl font-bold tracking-wider"
-            >
-              {aboutData.image_overlay[lang]}
-            </span>
+                <span class="text-4xl sm:text-5xl" aria-hidden="true">{file.icon}</span>
+                <div>
+                  <h3 class="font-serif text-2xl sm:text-3xl text-[#f5f5dc] mb-2">
+                    {file.title[lang]}
+                  </h3>
+                  {file.institution && (
+                    <p class="text-[#c2b280] text-lg font-medium">
+                      {file.institution[lang]}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-[#c2b280] font-semibold text-lg whitespace-nowrap">
+                {/* El SVG es puramente decorativo, añadir aria-hidden */}
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <time datetime={String(file.year)}>{file.year}</time>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Decorative Elements -->
-        <div
-          class="absolute -top-4 -right-4 w-20 h-20 border-4 border-[#c2b280] rounded-full opacity-50"
-        >
-        </div>
-        <div
-          class="absolute -bottom-4 -left-4 w-16 h-16 border-4 border-[#f5f5dc] rounded-full opacity-50"
-        >
-        </div>
+          <div class="p-6 sm:p-8 space-y-6">
+            <p class="text-base sm:text-lg leading-relaxed text-gray-300 font-light">
+              {file.content[lang]}
+            </p>
+
+            {file.skills && file.skills.length > 0 && (
+              <div class="pt-4">
+                <h4 class="text-[#c2b280] font-semibold mb-4 text-lg sm:text-xl flex items-center gap-2">
+                  {file.skills_title[lang]}
+                </h4>
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                  {file.skills.map((skill) => (
+                    <span class="px-4 py-2 bg-[#c2b280]/20 border border-[#c2b280]/40 rounded-full text-sm sm:text-base text-[#f5f5dc] hover:bg-[#c2b280]/30 hover:scale-105 transition-all duration-200 cursor-default">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <!-- CTA Section - 2 columns on large screens -->
+  <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-16">
+    <!-- Profile Image -->
+    <div class="flex justify-center lg:justify-end">
+      <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden">
+        <img
+          src="/images/profile.webp"
+          alt="Profile picture of Fran García López"
+          class="w-full h-full object-cover"
+          draggable="false"
+          width="288" 
+          height="288"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 rounded-full ring-4 ring-[#c2b280]/30 ring-offset-4 ring-offset-black"></div>
       </div>
     </div>
 
-    <!-- Bio Section with Enhanced Typography -->
-    <div class="text-center lg:text-left order-1 lg:order-2 space-y-8">
-      <!-- Main Title -->
-      <div class="space-y-4">
-        <h2
-          class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-[#f5f5dc] leading-tight tracking-tight animate-fade-in"
-          tabindex="0"
-        >
-          {aboutData.title[lang]}
-        </h2>
-
-        <!-- Decorative Line -->
-        <div
-          class="h-1 w-24 bg-gradient-to-r from-[#c2b280] to-transparent mx-auto lg:mx-0"
-        >
-        </div>
-      </div>
-
-      <!-- Subtitle with Typewriter Effect -->
-      <h3
-        class="text-xl sm:text-2xl md:text-3xl text-[#c2b280] font-light tracking-wide"
-        tabindex="0"
+    <!-- Email Button -->
+    <div class="flex justify-center lg:justify-start">
+      <a
+        href="mailto:frangalo34@gmail.com?subject=Hello%20Fran!&body=Hi%20Fran,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]"
+        class="group relative inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-black bg-gradient-to-r from-[#c2b280] to-[#d4c19c] rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 focus:ring-4 focus:ring-[#c2b280]/50 overflow-hidden"
+        aria-label={aboutData.email_button[lang] + " (Opens email client)"}
       >
-        {aboutData.subtitle[lang]}
-      </h3>
-
-      <!-- Short Introduction -->
-      <p
-        class="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-      >
-        {aboutData.introduction[lang]}
-      </p>
-
-      <!-- Hidden Key Reveal Message -->
-      <div
-        id="secret-key"
-        class="hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/50 rounded-xl p-6 backdrop-blur-sm shadow-lg animate-slide-in"
-      >
-        <p class="text-blue-300 font-semibold text-lg mb-3">
-          {aboutData.key_message[lang]}
-        </p>
-        <button
-          id="unlock-button"
-          class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:ring-4 focus:ring-blue-400/50 shadow-lg"
-          aria-label="Unlock classified information"
-        >
-          🔓 {aboutData.unlock_button[lang]}
-        </button>
-      </div>
-
-      <!-- Hidden Classified Content -->
-      <div
-        id="classified-info"
-        class="opacity-0 pointer-events-none mt-8 space-y-4"
-        aria-hidden="true"
-      >
-        {
-          aboutData.classified_files.map((file, index) => (
-            <details
-              class="group accordion border-2 border-[#c2b280]/30 bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden hover:border-[#c2b280]/60 transition-all duration-300"
-              name="classified"
-              data-index={index}
-            >
-              <summary
-                class="p-6 sm:p-8 bg-gradient-to-r from-[#c2b280]/10 to-transparent font-serif text-xl sm:text-2xl md:text-3xl text-[#f5f5dc] flex justify-between items-center cursor-pointer hover:bg-[#c2b280]/20 transition-all duration-300 group-hover:pl-8"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-4">
-                  <span class="text-3xl">{file.icon}</span>
-                  <span>{file.title[lang]}</span>
-                </div>
-                <span
-                  class="text-2xl transition-transform duration-500 group-open:rotate-180"
-                  aria-hidden="true"
-                >
-                  ▼
-                </span>
-              </summary>
-              <div class="max-h-0 overflow-hidden transition-all duration-700 group-open:max-h-[800px] p-6 sm:p-8 text-base sm:text-lg leading-relaxed text-gray-300 font-light bg-black/40">
-                <p class="mb-4">{file.content[lang]}</p>
-                {file.skills && (
-                  <div class="mt-6">
-                    <h4 class="text-[#c2b280] font-semibold mb-3 text-lg">
-                      {file.skills_title[lang]}
-                    </h4>
-                    <div class="flex flex-wrap gap-2">
-                      {file.skills.map((skill) => (
-                        <span class="px-4 py-2 bg-[#c2b280]/20 border border-[#c2b280]/40 rounded-full text-sm text-[#f5f5dc] hover:bg-[#c2b280]/30 transition-colors duration-300">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </details>
-          ))
-        }
-      </div>
-
-      <!-- Call to Action Section -->
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mt-8"
-      >
-        <a
-          href="mailto:frangalo34@gmail.com?subject=Hello%20Fran!&body=Hi%20Fran,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]"
-          class="group relative inline-flex items-center gap-3 px-8 py-4 text-lg font-bold text-black bg-gradient-to-r from-[#c2b280] to-[#d4c19c] rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 focus:ring-4 focus:ring-[#c2b280]/50 overflow-hidden"
-        >
-          <span class="relative z-10 flex items-center gap-2">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-              ></path>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-              ></path>
-            </svg>
-            {aboutData.email_button[lang]}
-          </span>
-          <span
-            class="absolute inset-0 bg-gradient-to-r from-[#bca177] to-[#c2b280] translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-          ></span>
-        </a>
-
-      </div>
-
-      <!-- Hidden Key (Easter Egg) -->
-      <div class="flex justify-center lg:justify-start">
-        <button
-          id="hidden-key"
-          class="mt-6 text-4xl sm:text-5xl opacity-20 cursor-pointer transition-all duration-700 hover:opacity-100 hover:scale-125 hover:rotate-12 focus:ring-4 focus:ring-blue-400/50 rounded-full p-3"
-          aria-label="Secret unlock key"
-          title="Click to reveal secrets..."
-        >
-          🔑
-        </button>
-      </div>
+        <span class="relative z-10 flex items-center gap-2">
+          {/* El SVG es puramente decorativo, añadir aria-hidden */}
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            ></path>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+            ></path>
+          </svg>
+          {aboutData.email_button[lang]}
+        </span>
+        <span
+          class="absolute inset-0 bg-gradient-to-r from-[#bca177] to-[#c2b280] translate-y-full group-hover:translate-y-0 transition-transform duration-300"
+        ></span>
+      </a>
     </div>
   </div>
 </section>
-
-<style>
-  /* Floating Orbs Background Animation */
-  .floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.15;
-    animation: float 20s ease-in-out infinite;
-  }
-
-  .orb-1 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #c2b280 0%, transparent 70%);
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-
-  .orb-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #f5f5dc 0%, transparent 70%);
-    bottom: 20%;
-    right: 10%;
-    animation-delay: 7s;
-  }
-
-  .orb-3 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, #bca177 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    animation-delay: 14s;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    25% {
-      transform: translate(50px, -50px) scale(1.1);
-    }
-    50% {
-      transform: translate(-30px, 30px) scale(0.9);
-    }
-    75% {
-      transform: translate(30px, 50px) scale(1.05);
-    }
-  }
-
-  /* Accordion Spring Animation */
-  @keyframes spring-slide {
-    0% {
-      opacity: 0;
-      transform: translateY(30px) scale(0.9) rotateX(10deg);
-      filter: blur(15px);
-    }
-    50% {
-      transform: translateY(-8px) scale(1.03) rotateX(-5deg);
-      filter: blur(3px);
-    }
-    70% {
-      transform: translateY(3px) scale(0.98) rotateX(2deg);
-      filter: blur(1px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1) rotateX(0deg);
-      filter: blur(0);
-    }
-  }
-
-  .accordion {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-    filter: blur(15px);
-    perspective: 1000px;
-  }
-
-  /* Fade In Animation */
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 1s ease-out;
-  }
-
-  /* Slide In Animation */
-  @keyframes slide-in {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .animate-slide-in {
-    animation: slide-in 0.5s ease-out;
-  }
-
-  /* Pulse Slow Animation */
-  @keyframes pulse-slow {
-    0%,
-    100% {
-      opacity: 0.75;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  /* Smooth Scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Custom Scrollbar for Details */
-  details[open] > div {
-    scrollbar-width: thin;
-    scrollbar-color: #c2b280 #1a1a1a;
-  }
-
-  details[open] > div::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  details[open] > div::-webkit-scrollbar-track {
-    background: #1a1a1a;
-  }
-
-  details[open] > div::-webkit-scrollbar-thumb {
-    background: #c2b280;
-    border-radius: 3px;
-  }
-
-  details[open] > div::-webkit-scrollbar-thumb:hover {
-    background: #d4c19c;
-  }
-</style>
-
-<script>
-  declare global {
-    interface Window {
-      unlockKey: () => void;
-      revealAccordions: () => void;
-    }
-  }
-
-  // Function to initialize the About section functionality
-  function initAboutSection() {
-    const secretKey = document.getElementById(
-      "secret-key",
-    ) as HTMLElement | null;
-    const hiddenKey = document.getElementById(
-      "hidden-key",
-    ) as HTMLElement | null;
-    const unlockButton = document.getElementById(
-      "unlock-button",
-    ) as HTMLElement | null;
-    const classifiedInfo = document.getElementById(
-      "classified-info",
-    ) as HTMLElement | null;
-
-    // Track if secrets have been unlocked
-    let secretsUnlocked = false;
-
-    // Function to reveal the secret key message
-    window.unlockKey = () => {
-      if (secretKey && !secretsUnlocked) {
-        secretKey.classList.remove("hidden");
-
-        // Hide the hidden key after click
-        if (hiddenKey) {
-          hiddenKey.style.transform = "scale(0) rotate(180deg)";
-          hiddenKey.style.opacity = "0";
-          setTimeout(() => {
-            hiddenKey.style.display = "none";
-          }, 500);
-        }
-      }
-    };
-
-    // Function to reveal the classified content with staggered animation
-    window.revealAccordions = () => {
-      if (secretsUnlocked) return;
-
-      secretsUnlocked = true;
-      const accordions = document.querySelectorAll(
-        "#classified-info details",
-      ) as NodeListOf<HTMLElement>;
-
-      // Show classified info container
-      if (classifiedInfo) {
-        classifiedInfo.classList.remove("opacity-0", "pointer-events-none");
-        classifiedInfo.setAttribute("aria-hidden", "false");
-        classifiedInfo.style.transition = "opacity 0.5s ease-out";
-      }
-
-      // Animate each accordion with staggered timing
-      requestAnimationFrame(() => {
-        accordions.forEach((accordion, index) => {
-          setTimeout(() => {
-            accordion.style.animation = `spring-slide 0.8s ${0.1 * index}s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`;
-          }, index * 200);
-        });
-      });
-
-      // Hide the unlock button
-      if (secretKey) {
-        setTimeout(() => {
-          secretKey.style.transform = "scale(0.95)";
-          secretKey.style.opacity = "0";
-          setTimeout(() => {
-            secretKey.classList.add("hidden");
-          }, 300);
-        }, 500);
-      }
-
-      // Add confetti effect (optional easter egg)
-      createConfetti();
-    };
-
-    // Event listeners
-    if (hiddenKey) {
-      hiddenKey.addEventListener("click", window.unlockKey);
-
-      // Add hover effect
-      hiddenKey.addEventListener("mouseenter", () => {
-        if (!secretsUnlocked) {
-          hiddenKey.style.transform = "scale(1.2) rotate(12deg)";
-        }
-      });
-
-      hiddenKey.addEventListener("mouseleave", () => {
-        if (!secretsUnlocked) {
-          hiddenKey.style.transform = "scale(1) rotate(0deg)";
-        }
-      });
-    }
-
-    if (unlockButton) {
-      unlockButton.addEventListener("click", window.revealAccordions);
-    }
-
-    // Add keyboard shortcut for fun (Ctrl + Shift + K)
-    document.addEventListener("keydown", (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "K" && !secretsUnlocked) {
-        window.unlockKey();
-      }
-    });
-
-    // Simple confetti effect
-    function createConfetti() {
-      const colors = ["#c2b280", "#f5f5dc", "#bca177", "#d4c19c"];
-      const confettiCount = 50;
-
-      for (let i = 0; i < confettiCount; i++) {
-        setTimeout(() => {
-          const confetti = document.createElement("div");
-          confetti.style.position = "fixed";
-          confetti.style.width = "10px";
-          confetti.style.height = "10px";
-          confetti.style.backgroundColor =
-            colors[Math.floor(Math.random() * colors.length)];
-          confetti.style.left = Math.random() * 100 + "%";
-          confetti.style.top = "-10px";
-          confetti.style.borderRadius = Math.random() > 0.5 ? "50%" : "0";
-          confetti.style.opacity = "0.8";
-          confetti.style.pointerEvents = "none";
-          confetti.style.zIndex = "9999";
-
-          document.body.appendChild(confetti);
-
-          const duration = 2000 + Math.random() * 1000;
-          const rotation = Math.random() * 360;
-          const drift = (Math.random() - 0.5) * 200;
-
-          confetti.animate(
-            [
-              {
-                transform: `translateY(0px) translateX(0px) rotate(0deg)`,
-                opacity: 0.8,
-              },
-              {
-                transform: `translateY(${window.innerHeight + 20}px) translateX(${drift}px) rotate(${rotation}deg)`,
-                opacity: 0,
-              },
-            ],
-            {
-              duration: duration,
-              easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-            },
-          );
-
-          setTimeout(() => {
-            confetti.remove();
-          }, duration);
-        }, i * 30);
-      }
-    }
-
-    // Add smooth reveal for accordions when opened
-    const allAccordions = document.querySelectorAll("#classified-info details");
-    allAccordions.forEach((accordion) => {
-      accordion.addEventListener("toggle", function (this: HTMLDetailsElement) {
-        const summary = this.querySelector("summary");
-        if (summary) {
-          summary.setAttribute("aria-expanded", this.open.toString());
-        }
-      });
-    });
-  }
-
-  // Initialize on first load
-  document.addEventListener("DOMContentLoaded", initAboutSection);
-  
-  // Re-initialize on page navigation (Astro view transitions)
-  document.addEventListener("astro:page-load", initAboutSection);
-</script>

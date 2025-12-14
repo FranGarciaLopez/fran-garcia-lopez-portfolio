@@ -2,7 +2,7 @@ export const translations = {
        en: {
               hero: {
                      title: "Clean Code Maketh Developer",
-                     subtitle: "In the world of web development, one name stands with style and precision: ",
+                     subtitle: "In the world of engineering, one name stands with style and precision: ",
                      viewWork: "View My Work",
               },
               about: {
@@ -17,7 +17,7 @@ export const translations = {
        es: {
               hero: {
                      title: "El código limpio forja al desarrollador.",
-                     subtitle: "En el mundo del desarrollo web, un nombre destaca con estilo y precisión: ",
+                     subtitle: "En el mundo de la ingeniería, un nombre destaca con estilo y precisión: ",
                      viewWork: "Ver mis proyectos",
               },
               about: {

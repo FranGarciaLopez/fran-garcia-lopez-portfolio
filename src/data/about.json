@@ -1,23 +1,15 @@
 {
   "title": {
-    "en": "About Me",
-    "es": "Sobre Mí"
+    "en": "My Academic Journey",
+    "es": "Mi Trayectoria Académica"
   },
   "subtitle": {
-    "en": "Top Secret: The truth awaits inside...",
-    "es": "Ultra Secreto: La verdad te espera dentro..."
+    "en": "From Foundations to Expertise",
+    "es": "De los Fundamentos a la Experiencia"
   },
   "introduction": {
-    "en": "Full Stack Developer passionate about creating exceptional digital experiences. Click the key to unlock my story.",
-    "es": "Desarrollador Full Stack apasionado por crear experiencias digitales excepcionales. Haz clic en la llave para desbloquear mi historia."
-  },
-  "image_overlay": {
-    "en": "Developer",
-    "es": "Desarrollador"
-  },
-  "key_message": {
-    "en": "🎉 You found the secret key! Click below to reveal classified information about my journey.",
-    "es": "🎉 ¡Encontraste la llave secreta! Haz clic abajo para revelar información clasificada sobre mi trayectoria."
+    "en": "My story began nearly a decade ago when I realized I wanted to be an engineer to become a teacher. Eventually, I decided to change course and dove into the world of telecommunications engineering and web development. Every one of us was once that restless soul that took everything apart just to understand how it worked. Here's how my journey through education shaped me into the developer I am today.",
+    "es": "Mi historia comienza hace casi 10 años, cuando me dí cuenta de que quería ser ingeniero para ser profesor. Finalmente, decidí cambiar de rumbo y me lancé al mundo de la ingeniería de telecomunicaciones y el desarrollo web. Cada uno de nosotros fue alguna vez un principiante. Si quieres saber mas de mí, aquí está que pasos tomé y cómo mi educación me formó en el ingeniero que soy hoy."
   },
   "unlock_button": {
     "en": "Unlock Secrets",
@@ -26,71 +18,174 @@
   "classified_files": [
     {
       "id": "001",
-      "icon": "🎓",
+      "icon": "📚",
+      "year": "March 2023",
       "title": {
-        "en": "Classified File #001: Education & Background",
-        "es": "Expediente Clasificado #001: Educación y Formación"
+        "en": "Bachelor's Degree in Telecommunications Technology and Service Engineering",
+        "es": "Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación"
+      },
+      "institution": {
+        "en": "Elche Miguel's Hernández University·",
+        "es": "Universidad Miguel Hernández de Elche"
       },
       "content": {
-        "en": "So yeah, I love coding and spy movies—cool combo, right? I went all in and studied a Full Stack Development Master's at Nuclio Digital School to make it happen. During this intensive program, I learned the complete software development lifecycle, from ideation to deployment, working with modern technologies and agile methodologies.",
-        "es": "Me encanta programar y las películas de espías, ¿combinación genial, verdad? Me metí de lleno y estudié un Máster en Desarrollo Full Stack en Nuclio Digital School para hacerlo realidad. Durante este programa intensivo, aprendí el ciclo completo de desarrollo de software, desde la ideación hasta el despliegue, trabajando con tecnologías modernas y metodologías ágiles."
+        "en": "To fullfill my destiny, I chose to start by the roots. I gained foundational knowledge in computer science fundamentals that became the bedrock of my career. Studied data structures, algorithms and software engineering principles, what did help for the future, but not the main focus of the degree. This education mainly provided me with the mathematical and analytical skills needed to tackle complex problems in a structured way.",
+        "es": "Para conseguir mi propósito, decidí estudiar una ingeniería con una solida base de Matemáticas, Física y Tecnología. Durante esos años, adquirí conocimientos fundamentales en ciencias de la computación que se convirtieron en la base de mi carrera. Estudié estructuras de datos, algoritmos y principios de ingeniería de software, que servirá de ayuda en un futuro, pero habilidades las cuales no eran el foco principal de la titulación. Esta formación principalmente me brindó las habilidades matemáticas y analíticas necesarias para abordar problemas complejos de una manera estructurada."
       },
       "skills_title": {
-        "en": "Core Technologies",
-        "es": "Tecnologías Principales"
+        "en": "Foundation Built",
+        "es": "Fundamentos Construidos"
       },
       "skills": [
-        "JavaScript/TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        "SQL/NoSQL",
-        "Git",
-        "Agile/Scrum"
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming",
+        "Database Management",
+        "Software Engineering Principles",
+        "System Design",
+        "Analytical Thinking",
+        "Mathematical Problem Solving"
       ]
     },
     {
       "id": "002",
-      "icon": "💃",
+      "icon": "💻",
+      "year": "2022 - 2023",
       "title": {
-        "en": "Classified File #002: Beyond the Code",
-        "es": "Expediente Clasificado #002: Más Allá del Código"
+        "en": "Self-Taught Web Development Journey",
+        "es": "Trayectoria Autodidacta en Desarrollo Web"
+      },
+      "institution": {
+        "en": "Self-Directed Learning",
+        "es": "Aprendizaje Autodidacta"
       },
       "content": {
-        "en": "Besides that, I'm really into dancing and traveling. Dancing sparks my creativity, and let's be real, that's an important part when it comes to Frontend development. The rhythm and flow in dance translate directly to creating smooth, intuitive user interfaces. Traveling exposes me to different cultures and perspectives, which helps me design inclusive, user-centric applications.",
-        "es": "Además de eso, me encanta bailar y viajar. Bailar despierta mi creatividad y, siendo honestos, eso es fundamental cuando se trata de desarrollo Frontend. El ritmo y fluidez del baile se traducen directamente en crear interfaces de usuario suaves e intuitivas. Viajar me expone a diferentes culturas y perspectivas, lo que me ayuda a diseñar aplicaciones inclusivas y centradas en el usuario."
+        "en": "Driven by curiosity, I started on a self-taught journey into web development, where it became the focus of my final year project. I started with HTML, CSS, and JavaScript, gradually progressing to more advanced topics like responsive design, front-end frameworks with VUE.JS, and back-end API development with Python. Speaking of my final year project, I developed a full-fledged web platform dedicated to conducting quiz-style tests for learning new skills, applying everything I had learned and facing real-world development challenges. This hands-on experience was invaluable in solidifying my understanding of web technologies and development workflows, earning an outstanding grade from the evaluation committee.",
+        "es": "Impulsado por la curiosidad, comencé un viaje autodidacta en el desarrollo web, siendo este campo el tema del TFG. Comencé con HTML, CSS y JavaScript, progresando gradualmente hacia temas más avanzados como el diseño responsivo, frameworks de front-end con VUE.JS y desarrollo API's backend con python. Si pasamos a hablar del TFG, desarrollé una plataforma web completa dedicada a realizar cuestionarios tipo test para aprender una nueva habilidad, aplicando todo lo aprendido y enfrentándome a desafíos reales de desarrollo. Esta experiencia práctica fue invaluable para consolidar mi comprensión de las tecnologías web y los flujos de trabajo de desarrollo, obteniendo una calificación de sobresaliente por parte del tribunal evaluador."
       },
       "skills_title": {
-        "en": "Creative Skills",
-        "es": "Habilidades Creativas"
+        "en": "Technologies & Tools Used",
+        "es": "Tecnologías y Herramientas Utilizadas"
       },
       "skills": [
-        "Responsive Design",
-        "Accessibility"
+        "HTML5, CSS3, JavaScript (ES6+)",
+        "Vue.js & Vuex",
+        "Python & Flask",
+        "RESTful API Development",
+        "Responsive Web Design",
+        "Version Control with Git",
+        "Deployment with Netlify"
+      ]
+    },
+    {
+      "id": "002.1",
+      "icon": "🌐",
+      "year": "2022 - 2023",
+      "title": {
+        "en": "English and German language skills",
+        "es": "Habilidades en idiomas Inglés y Alemán"
+      },
+      "skills_title": {
+        "en": "Languages Learned",
+        "es": "Idiomas Aprendidos"
+      },
+      "institution": {
+        "en": "Self-Directed Learning",
+        "es": "Aprendizaje Autodidacta"
+      },
+      "content": {
+        "en": "During this period, I also dedicated myself to improving my language skills, achieving proficiency in English and basic knowledge of German, which I have been periodically refreshing. These skills have been crucial in accessing a wider range of learning resources, collaborating with international communities, and enhancing my ability to work in diverse teams.",
+        "es": "Durante este período, también me dediqué a mejorar mis habilidades lingüísticas, logrando un dominio del inglés y conocimientos básicos de alemán, los cuales he ido recordando periódicamente. Estas habilidades han sido cruciales para acceder a una gama más amplia de recursos de aprendizaje, colaborar con comunidades internacionales y mejorar mi capacidad para trabajar en equipos diversos."
+      },
+      "skills": [
+        "English (Proficient)",
+        "German (Basic)"
+      ]
+    },
+    {
+      "id": "002.2",
+      "icon": "🛠️",
+      "year": "March 2023 - Ongoing",
+      "title": {
+        "en": "The world wide company, Harmonic inc hired me to work as a DevOps Engineer",
+        "es": "La compañía internacional, Harmonic inc me contrató para trabajar como Ingeniero DevOps"
+      },
+      "institution": {
+        "en": "Harmonic Inc",
+        "es": "Harmonic Inc"
+      },
+      "content": {
+        "en": "In March 2023, I embarked on a professional journey with Harmonic Inc as a DevOps Engineer. This role has allowed me to apply my technical skills in a real-world setting, focusing on automating and optimizing development operations. I've been involved in setting up CI/CD pipelines, managing cloud infrastructure, and ensuring seamless collaboration between development and operations teams. This experience has been instrumental in honing my skills in DevOps practices and tools, preparing me for future challenges in the tech industry.",
+        "es": "En marzo de 2023, comencé mi carrera profesional con Harmonic Inc. como Ingeniero DevOps para plataformas de streaming. Este rol me ha permitido aplicar mis habilidades técnicas en un entorno real. Como ingeniero DevOps, he proporcionado soporte técnico y monitoreo proactivo para un SaaS de video streaming, utilizando tecnologías DevOps como Kubernetes, Docker, Grafana y Prometheus para el monitoreo de logs, y Slack para la comunicación con clientes. También he adquirido experiencia en sistemas basados en la nube, incluyendo AWS, Azure y Google Cloud, contribuyendo en la identificación y resolución de incidencias. Entre las habilidades que destacaría, se encuentran gestionar la comunicación con clientes internacionales y participar en turnos de On Call para las regiones EMEA, AMS y APAC, así como evaluar el estado de los contenedores mediante comandos de Kubernetes para asegurar un rendimiento óptimo del sistema. En resumen, mi experiencia en Harmonic Inc. me ha permitido desarrollar habilidades técnicas y de comunicación esenciales para el éxito en el campo de DevOps."
+      },
+      "skills_title": {
+        "en": "Technologies & Tools Used",
+        "es": "Tecnologías y Herramientas Utilizadas"
+      },
+      "skills": [
+        "Kubernetes & Docker",
+        "Cloud Platforms (AWS, Azure, GCP)",
+        "Monitoring Tools (Grafana, Prometheus)",
+        "Collaboration Tools (Slack, Jira)"
       ]
     },
     {
       "id": "003",
-      "icon": "🚀",
+      "icon": "🎓",
+      "year": "2024 - 2025",
       "title": {
-        "en": "Classified File #003: My Mission",
-        "es": "Expediente Clasificado #003: Mi Misión"
+        "en": "Master's degree in Full Stack Development",
+        "es": "Máster en Desarrollo Full Stack"
+      },
+      "institution": {
+        "en": "Nuclio Digital School",
+        "es": "Nuclio Digital School"
       },
       "content": {
-        "en": "My mission is to build web applications that not only work flawlessly but also delight users with every interaction. I believe in writing clean, maintainable code and creating experiences that are accessible to everyone. I'm constantly learning new technologies and best practices to stay at the forefront of web development. Whether it's optimizing performance, implementing cutting-edge features, or solving complex problems, I approach every challenge with enthusiasm and dedication.",
-        "es": "Mi misión es construir aplicaciones web que no solo funcionen perfectamente, sino que también deleiten a los usuarios con cada interacción. Creo en escribir código limpio y mantenible, y crear experiencias accesibles para todos. Constantemente estoy aprendiendo nuevas tecnologías y mejores prácticas para estar a la vanguardia del desarrollo web. Ya sea optimizando el rendimiento, implementando características innovadoras o resolviendo problemas complejos, abordo cada desafío con entusiasmo y dedicación."
+        "en": "Intensive 9-month program that transformed me from a developer with basic skills into a full-stack professional. Learned the complete software development lifecycle, from requirements analysis to production deployment. Built real-world projects including e-commerce platforms, social media applications, and data visualization tools that demonstrated mastery of modern development practices.",
+        "es": "Mientras trabajaba de DevOps, siempre me quedó el \"que hubiese pasado si hubiera seguido como desarrollador full-stack\". Por lo que, movido por la curiosidad, decidí inscribirme en un máster de desarrollo full-stack en Nuclio Digital School. Un programa intensivo de 9 meses que me dió los conocimientos de un desarrollador con habilidades básicas a un profesional full-stack. Aprendí el ciclo completo de desarrollo de software, desde análisis de requisitos hasta despliegue en producción. Construí proyectos del mundo real incluyendo plataformas de comercio electrónico, aplicaciones de redes sociales y herramientas de visualización de datos que demostraron dominio de prácticas modernas de desarrollo."
       },
       "skills_title": {
-        "en": "Professional Focus",
-        "es": "Enfoque Profesional"
+        "en": "Tech Stack Mastered",
+        "es": "Stack Tecnológico Dominado"
       },
       "skills": [
+        "JavaScript/TypeScript",
+        "React & Next.js",
+        "Node.js & Express",
+        "MongoDB & PostgreSQL",
+        "Docker",
+        "Vercel",
+        "Git & GitHub"
+      ]
+    },
+    {
+      "id": "004",
+      "icon": "🚀",
+      "year": "Ongoing",
+      "title": {
+        "en": "Continuous Learning & Professional Growth",
+        "es": "Aprendizaje Continuo y Crecimiento Profesional"
+      },
+      "institution": {
+        "en": "Self-Directed & Online Platforms",
+        "es": "Autodidacta y Plataformas Online"
+      },
+      "content": {
+        "en": "The learning expirience never stops. Committed to staying at the cutting edge through industry-recognized certifications, online courses, and hands-on practice. Actively participate in coding bootcamps, hackathons, and tech communities. This continuous investment in learning ensures I'm always equipped with the latest technologies and best practices to deliver exceptional solutions.",
+        "es": "No dejo de aprender y mejorar. Me mantengo actualizado con certificaciones de la industria, cursos online y práctica constante. Participo en hackathons, creando webs para quienes lo necesitan y aplicando directamente lo que aprendo. Esta práctica continua me permite dominar nuevas tecnologías y enfoques para entregar soluciones efectivas y de calidad."
+      },
+      "skills_title": {
+        "en": "Areas of Focus",
+        "es": "Áreas de Enfoque"
+      },
+      "skills": [
+        "Agile & Scrum Methodologies",
+        "Cloud Architecture (AWS/Azure)",
+        "API Development & Integration",
+        "UI/UX Best Practices",
+        "Web Security",
         "Performance Optimization",
-        "Testing (Jest, Cypress)",
-        "CI/CD",
-        "Cloud Deployment",
-        "Team Collaboration",
-        "Code Review"
+        "DevOps & CI/CD"
       ]
     }
   ],
