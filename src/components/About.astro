@@ -1,5 +1,6 @@
 ---
 import aboutData from "../data/about.json";
+import Certificates from "./Certificates.astro";
 const { lang } = Astro.props as { lang: "es" | "en" };
 ---
 
@@ -138,4 +139,6 @@ const { lang } = Astro.props as { lang: "es" | "en" };
       </a>
     </div>
   </div>
+
+  <Certificates lang={lang} />
 </section>
